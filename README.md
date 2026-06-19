@@ -1,6 +1,6 @@
-# 📚 Fundamentos da Programação — E-book Completo
+# 📚 Pensamento Computacional, Lógica de Programação e Algoritmos — E-book Completo
 
-> Do Pensamento Computacional ao Python
+> Pensamento Computacional, Lógica de Programação e Algoritmos
 
 E-book educacional em HTML/CSS, dividido em 3 volumes com 27 capítulos paginados.
 
