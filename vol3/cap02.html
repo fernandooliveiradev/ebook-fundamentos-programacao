@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 2: Sintaxe Básica</title><link rel="stylesheet" href="../estilo.css"></head>
+<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 2</span><a class="next" href="cap03.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 2</span></div>
+<h2 style="margin-top:8px;">Sintaxe Básica</h2>
+<p>A sintaxe do Python é tão limpa que parece pseudocódigo! Veja a comparação:</p>
+<div class="diagram">
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;">
+<text x="350" y="18" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="14" fill="#141413">Pseudocódigo vs Python</text>
+<rect x="20" y="30" width="320" height="210" rx="10" fill="#141413"/>
+<text x="180" y="50" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#87867F">PSEUDOCÓDIGO</text>
+<text x="30" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">SE</text><text x="50" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">(idade &gt;= 18)</text><text x="175" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">ENTÃO</text>
+<text x="50" y="95" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">ESCREVA "Maior"</text>
+<text x="30" y="115" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">SENÃO</text>
+<text x="50" y="135" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">ESCREVA "Menor"</text>
+<text x="30" y="155" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">FIM SE</text>
+<text x="30" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">PARA</text><text x="60" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">i de 1 até 10</text><text x="175" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">FAÇA</text>
+<text x="50" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">ESCREVA i</text>
+<text x="30" y="225" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">FIM PARA</text>
+<text x="350" y="125" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="24" fill="#D97757">→</text>
+<rect x="360" y="30" width="320" height="210" rx="10" fill="#141413"/>
+<text x="520" y="50" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">PYTHON</text>
+<text x="370" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">if</text><text x="385" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">idade &gt;= 18:</text>
+<text x="385" y="95" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">print</text><text x="415" y="95" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">"Maior"</text>
+<text x="370" y="115" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">else:</text>
+<text x="385" y="135" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">print</text><text x="415" y="135" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">"Menor"</text>
+<text x="370" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">for</text><text x="390" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">i</text><text x="400" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">in</text><text x="420" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">range</text><text x="460" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">(1, 11):</text>
+<text x="385" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">print</text><text x="415" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">i</text>
+</svg>
+<div class="diagram-caption">A sintaxe é quase idêntica!</div>
+</div>
+
+<h3>Variáveis em Python (tipagem dinâmica)</h3>
+<div class="code"><span class="cm"># Variáveis em Python — o tipo é inferido automaticamente</span>
+nome = <span class="str">"Fernando"</span>      <span class="cm"># str (string)</span>
+idade = <span class="num">30</span>              <span class="cm"># int (inteiro)</span>
+altura = <span class="num">1.75</span>           <span class="cm"># float (real)</span>
+estuda = <span class="kw">True</span>           <span class="cm"># bool (booleano)</span>
+
+<span class="cm"># Saída</span>
+<span class="fn">print</span>(<span class="str">"Olá, "</span> + nome)
+<span class="fn">print</span>(<span class="str">"Idade: "</span>, idade)
+
+<span class="cm"># Entrada</span>
+entrada = <span class="fn">input</span>(<span class="str">"Digite seu nome: "</span>)</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">💡 Indentação importa!</span>
+<p style="margin-bottom:0;">Python usa <strong>espaços</strong> (indentação) para definir blocos — não usa chaves <code class="inline">{ }</code> como outras linguagens. Isso torna o código visualmente limpo e obrigatoriamente organizado.</p>
+</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap01.html">← Anterior</a><a class="next-btn" href="cap03.html">Próximo →</a></div>
+</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 2</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>

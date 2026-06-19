@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 9: Mini-Projetos Completos</title><link rel="stylesheet" href="../estilo.css"></head>
+<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 9</span><a class="next" href="cap10.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 9</span></div>
+<h2 style="margin-top:8px;">Mini-Projetos Completos</h2>
+<h3>🚀 Projeto 1: Calculadora Simples</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">calculadora</span>():
+    <span class="fn">print</span>(<span class="str">"=== Calculadora ==="</span>)
+    num1 = <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Primeiro número: "</span>))
+    operacao = <span class="fn">input</span>(<span class="str">"Operação (+, -, *, /): "</span>)
+    num2 = <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Segundo número: "</span>))
+
+    <span class="kw">if</span> operacao == <span class="str">"+"</span>: resultado = num1 + num2
+    <span class="kw">elif</span> operacao == <span class="str">"-"</span>: resultado = num1 - num2
+    <span class="kw">elif</span> operacao == <span class="str">"*"</span>: resultado = num1 * num2
+    <span class="kw">elif</span> operacao == <span class="str">"/"</span>:
+        <span class="kw">if</span> num2 != <span class="num">0</span>: resultado = num1 / num2
+        <span class="kw">else</span>: resultado = <span class="str">"Erro: divisão por zero"</span>
+    <span class="kw">else</span>: resultado = <span class="str">"Operação inválida"</span>
+    <span class="fn">print</span>(<span class="str">"Resultado: "</span>, resultado)
+
+<span class="fn">calculadora</span>()</div>
+
+<h3>🚀 Projeto 2: Jogo de Adivinhação</h3>
+<div class="code"><span class="kw">import</span> random
+
+<span class="kw">def</span> <span class="fn">jogo_adivinhacao</span>():
+    <span class="fn">print</span>(<span class="str">"=== Jogo de Adivinhação ==="</span>)
+    numero_secreto = random.<span class="fn">randint</span>(<span class="num">1</span>, <span class="num">100</span>)
+    tentativas = <span class="num">0</span>
+    <span class="kw">while</span> <span class="kw">True</span>:
+        palpite = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Adivinhe (1-100): "</span>))
+        tentativas += <span class="num">1</span>
+        <span class="kw">if</span> palpite == numero_secreto:
+            <span class="fn">print</span>(<span class="str">f"Acertou em {tentativas} tentativas!"</span>)
+            <span class="kw">break</span>
+        <span class="kw">elif</span> palpite &lt; numero_secreto: <span class="fn">print</span>(<span class="str">"Mais alto! ⬆️"</span>)
+        <span class="kw">else</span>: <span class="fn">print</span>(<span class="str">"Mais baixo! ⬇️"</span>)
+
+<span class="fn">jogo_adivinhacao</span>()</div>
+
+<h3>🚀 Projeto 3: Lista de Tarefas</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">lista_tarefas</span>():
+    tarefas = []
+    <span class="kw">while</span> <span class="kw">True</span>:
+        <span class="fn">print</span>(<span class="str">"\n1. Adicionar  2. Ver  3. Remover  4. Sair"</span>)
+        opcao = <span class="fn">input</span>(<span class="str">"Escolha: "</span>)
+        <span class="kw">if</span> opcao == <span class="str">"1"</span>:
+            tarefas.<span class="fn">append</span>(<span class="fn">input</span>(<span class="str">"Nova tarefa: "</span>))
+        <span class="kw">elif</span> opcao == <span class="str">"2"</span>:
+            <span class="kw">for</span> i, t <span class="kw">in</span> <span class="fn">enumerate</span>(tarefas): <span class="fn">print</span>(<span class="str">f"{i+1}. {t}"</span>)
+        <span class="kw">elif</span> opcao == <span class="str">"3"</span> <span class="kw">and</span> tarefas:
+            idx = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Remover nº: "</span>)) - <span class="num">1</span>
+            <span class="kw">if</span> <span class="num">0</span> &lt;= idx &lt; <span class="fn">len</span>(tarefas): tarefas.<span class="fn">pop</span>(idx)
+        <span class="kw">elif</span> opcao == <span class="str">"4"</span>: <span class="kw">break</span>
+
+<span class="fn">lista_tarefas</span>()</div>
+
+<h3>🚀 Projeto 4: Tabuada</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">tabuada</span>(numero):
+    <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">11</span>):
+        <span class="fn">print</span>(<span class="str">f"{numero} x {i} = {numero * i}"</span>)
+
+<span class="fn">tabuada</span>(<span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Digite um número: "</span>)))</div>
+
+<h3>🚀 Projeto 5: Verificador de Número Primo</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">eh_primo</span>(n):
+    <span class="kw">if</span> n &lt; <span class="num">2</span>: <span class="kw">return</span> <span class="kw">False</span>
+    <span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">2</span>, <span class="fn">int</span>(n**<span class="num">0.5</span>) + <span class="num">1</span>):
+        <span class="kw">if</span> n % i == <span class="num">0</span>: <span class="kw">return</span> <span class="kw">False</span>
+    <span class="kw">return</span> <span class="kw">True</span>
+
+n = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Digite um número: "</span>))
+<span class="fn">print</span>(<span class="str">f"{n} é primo!"</span> <span class="kw">if</span> <span class="fn">eh_primo</span>(n) <span class="kw">else</span> <span class="str">f"{n} não é primo."</span>)</div>
+
+<h3>🚀 Projeto 6: Sequência de Fibonacci</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">fibonacci</span>(n):
+    a, b = <span class="num">0</span>, <span class="num">1</span>
+    seq = []
+    <span class="kw">for</span> _ <span class="kw">in</span> <span class="fn">range</span>(n):
+        seq.<span class="fn">append</span>(a)
+        a, b = b, a + b
+    <span class="kw">return</span> seq
+
+<span class="fn">print</span>(<span class="fn">fibonacci</span>(<span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Quantos termos? "</span>))))</div>
+
+<h3>🚀 Projeto 7: Verificador de Palíndromo</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">eh_palindromo</span>(palavra):
+    palavra = palavra.<span class="fn">lower</span>().<span class="fn">replace</span>(<span class="str">" "</span>, <span class="str">""</span>)
+    <span class="kw">return</span> palavra == palavra[::<span class="num">-1</span>]
+
+texto = <span class="fn">input</span>(<span class="str">"Digite uma palavra: "</span>)
+<span class="fn">print</span>(<span class="str">"É palíndromo!"</span> <span class="kw">if</span> <span class="fn">eh_palindromo</span>(texto) <span class="kw">else</span> <span class="str">"Não é palíndromo."</span>)</div>
+
+<h3>🚀 Projeto 8: Calculadora de IMC</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">calcular_imc</span>(peso, altura):
+    imc = peso / (altura ** <span class="num">2</span>)
+    <span class="kw">if</span> imc &lt; <span class="num">18.5</span>: classe = <span class="str">"Abaixo do peso"</span>
+    <span class="kw">elif</span> imc &lt; <span class="num">25</span>: classe = <span class="str">"Peso normal"</span>
+    <span class="kw">elif</span> imc &lt; <span class="num">30</span>: classe = <span class="str">"Sobrepeso"</span>
+    <span class="kw">else</span>: classe = <span class="str">"Obesidade"</span>
+    <span class="kw">return</span> imc, classe
+
+imc, classe = <span class="fn">calcular_imc</span>(<span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Peso (kg): "</span>)), <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Altura (m): "</span>)))
+<span class="fn">print</span>(<span class="str">f"IMC: {imc:.1f} — {classe}"</span>)</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap08.html">← Anterior</a><a class="next-btn" href="cap10.html">Próximo →</a></div>
+</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 9</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 5: Loops em Python</title><link rel="stylesheet" href="../estilo.css"></head>
+<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 5</span><a class="next" href="cap06.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 5</span></div>
+<h2 style="margin-top:8px;">Loops em Python</h2>
+<h3>while</h3>
+<div class="code"><span class="cm"># while</span>
+contador = <span class="num">1</span>
+<span class="kw">while</span> contador &lt;= <span class="num">5</span>:
+    <span class="fn">print</span>(contador)
+    contador += <span class="num">1</span>  <span class="cm"># equivale a contador = contador + 1</span></div>
+<h3>for com range</h3>
+<div class="code"><span class="cm"># for com range (1 a 10)</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">11</span>):
+    <span class="fn">print</span>(i)
+<span class="cm"># range(1, 11) gera: 1, 2, 3, ..., 10</span>
+<span class="cm"># O segundo número é EXCLUSIVO (não inclui 11)</span></div>
+<div class="callout callout-blue">
+<span class="callout-label">💡 range() — atenção ao segundo argumento!</span>
+<p style="margin-bottom:0;"><code class="inline">range(1, 11)</code> vai de 1 a <strong>10</strong> (o 11 é exclusivo). <code class="inline">range(5)</code> vai de 0 a 4. <code class="inline">range(1, 10, 2)</code> vai de 1 a 9 pulando de 2 em 2.</p>
+</div>
+<h3>for percorrendo uma lista</h3>
+<div class="code"><span class="cm"># for percorrendo lista</span>
+frutas = [<span class="str">"maçã"</span>, <span class="str">"banana"</span>, <span class="str">"uva"</span>]
+<span class="kw">for</span> fruta <span class="kw">in</span> frutas:
+    <span class="fn">print</span>(fruta)</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap04.html">← Anterior</a><a class="next-btn" href="cap06.html">Próximo →</a></div>
+</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 5</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>

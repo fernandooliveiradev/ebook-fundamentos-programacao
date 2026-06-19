@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 1 — Pensamento Computacional — Capítulo 2: Decomposição</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 1 — Pensamento Computacional — Cap. 2</span>
+<a class="next" href="cap03.html">Próximo →</a>
+</nav>
+
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 2</span>
+</div>
+<h2 style="margin-top:8px;">Decomposição</h2>
+
+
+<p><strong>Decomposição</strong> é a técnica de dividir um problema grande e complexo em partes menores e mais gerenciáveis. Cada parte pode ser resolvida independentemente, e a combinação das soluções resolve o problema original.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;">
+<defs><marker id="ar1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#87867F" stroke-width="1.5"/></marker></defs>
+<rect x="200" y="10" width="200" height="45" rx="8" fill="#141413"/>
+<text x="300" y="38" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="14" fill="#FAF9F5">Problema Complexo</text>
+<line x1="250" y1="55" x2="80" y2="100" stroke="#87867F" stroke-width="1.5" marker-end="url(#ar1)"/>
+<line x1="290" y1="55" x2="220" y2="100" stroke="#87867F" stroke-width="1.5" marker-end="url(#ar1)"/>
+<line x1="320" y1="55" x2="360" y2="100" stroke="#87867F" stroke-width="1.5" marker-end="url(#ar1)"/>
+<line x1="350" y1="55" x2="500" y2="100" stroke="#87867F" stroke-width="1.5" marker-end="url(#ar1)"/>
+<rect x="20" y="110" width="120" height="40" rx="6" fill="#FAF9F5" stroke="#D97757" stroke-width="1.5"/>
+<text x="80" y="135" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#141413">Sub-problema 1</text>
+<rect x="160" y="110" width="120" height="40" rx="6" fill="#FAF9F5" stroke="#D97757" stroke-width="1.5"/>
+<text x="220" y="135" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#141413">Sub-problema 2</text>
+<rect x="300" y="110" width="120" height="40" rx="6" fill="#FAF9F5" stroke="#D97757" stroke-width="1.5"/>
+<text x="360" y="135" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#141413">Sub-problema 3</text>
+<rect x="440" y="110" width="120" height="40" rx="6" fill="#FAF9F5" stroke="#D97757" stroke-width="1.5"/>
+<text x="500" y="135" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#141413">Sub-problema 4</text>
+<text x="80" y="175" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#788C5D">→ solução</text>
+<text x="220" y="175" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#788C5D">→ solução</text>
+<text x="360" y="175" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#788C5D">→ solução</text>
+<text x="500" y="175" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#788C5D">→ solução</text>
+<line x1="80" y1="190" x2="280" y2="225" stroke="#87867F" stroke-width="1" opacity=".5"/>
+<line x1="220" y1="190" x2="290" y2="225" stroke="#87867F" stroke-width="1" opacity=".5"/>
+<line x1="360" y1="190" x2="310" y2="225" stroke="#87867F" stroke-width="1" opacity=".5"/>
+<line x1="500" y1="190" x2="320" y2="225" stroke="#87867F" stroke-width="1" opacity=".5"/>
+<rect x="200" y="230" width="200" height="25" rx="8" fill="#788C5D"/>
+<text x="300" y="248" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="12" fill="#FAF9F5">Solução Completa</text>
+</svg>
+<div class="diagram-caption">Decomposição: problema → subproblemas → soluções → combinação</div>
+</div>
+
+<h3>Exemplos do dia a dia</h3>
+<p>A decomposição está presente em muitas atividades cotidianas, muitas vezes sem que percebamos:</p>
+
+<ul>
+<li><strong>Construir uma casa:</strong> projetar a planta → preparar o terreno → levantar paredes → instalar elétrica e hidráulica → acabamento. Cada etapa é um subproblema com especialistas próprios.</li>
+<li><strong>Preparo de alimentos:</strong> um cozinheiro divide uma receita complexa em preparar ingredientes, cozimento e apresentação. Isso ajuda a gerenciar tempo e recursos de maneira mais eficiente.</li>
+<li><strong>Corte de cabelo:</strong> o cabeleireiro divide o processo em lavar, cortar, tingir e finalizar, focando em cada parte individualmente.</li>
+<li><strong>Desenvolvimento de software:</strong> um projeto grande é dividido em interface de usuário, processamento de dados e gestão de banco de dados, permitindo que diferentes equipes trabalhem em paralelo.</li>
+<li><strong>Solução de bugs:</strong> ao enfrentar um erro complicado, o programador analisa separadamente diferentes partes do código para localizar a origem.</li>
+<li><strong>Análise social:</strong> um sociólogo examina separadamente acesso à educação, diferenças de renda, políticas governamentais e dinâmicas familiares para compreender a desigualdade.</li>
+</ul>
+
+<div class="callout callout-blue">
+<span class="callout-label">💡 Pergunta-chave</span>
+<p style="margin-bottom:0;">"Como posso dividir este problema em partes menores e mais gerenciáveis?"</p>
+</div>
+
+<h3>Exemplo detalhado: organizar uma festa de aniversário</h3>
+<p>Vamos decompor o problema "organizar uma festa de aniversário" em subproblemas independentes:</p>
+
+<div class="code"><span class="cm">// Decomposição: Organizar uma festa de aniversário</span>
+
+<span class="kw">Sub-problema 1:</span> Planejamento
+  - Definir data e local
+  - Criar lista de convidados
+  - Definir orçamento
+
+<span class="kw">Sub-problema 2:</span> Convites
+  - Escolher formato (digital ou físico)
+  - Enviar para cada convidado
+  - Confirmar presença
+
+<span class="kw">Sub-problema 3:</span> Comida e bebida
+  - Definir cardápio
+  - Fazer lista de compras
+  - Comprar ingredientes
+  - Preparar comida
+
+<span class="kw">Sub-problema 4:</span> Decoração e ambiente
+  - Comprar decoração
+  - Decorar o espaço
+  - Preparar música e entretenimento
+
+<span class="kw">Sub-problema 5:</span> Execução
+  - Receber convidados
+  - Servir comida
+  - Comemorar!
+  - Limpar depois</div>
+
+<p>Observe como cada subproblema pode ser resolvido <strong>independentemente</strong>. Você pode resolver o subproblema 2 (convites) sem precisar saber o cardápio (subproblema 3). Isso é o poder da decomposição: transforma um problema esmagador em uma sequência de tarefas gerenciáveis.</p>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 1.1 — Decomposição</span>
+<p>Decomponha o problema <strong>"lavar roupa"</strong> em pelo menos 5 subtarefas, colocando-as em ordem lógica.</p>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<ol>
+<li>Separar roupas por cor (claras e escuras) e tipo de tecido</li>
+<li>Colocar as roupas na máquina (sem encher demais)</li>
+<li>Adicionar detergente e amaciante nas quantidades corretas</li>
+<li>Selecionar o programa de lavagem adequado (tipo de tecido e temperatura)</li>
+<li>Iniciar a máquina e aguardar o término do ciclo</li>
+<li>Retirar as roupas e estendê-las para secar</li>
+<li>Aguardar a secagem completa</li>
+<li>Passar e guardar as roupas</li>
+</ol>
+</div>
+</details>
+</div>
+
+
+<div class="page-nav">
+<a class="prev-btn" href="cap01.html">← Anterior</a>
+<a class="next-btn" href="cap03.html">Próximo →</a>
+</div>
+</div>
+
+<div class="footer">
+<p>Volume 1 — Pensamento Computacional — Capítulo 2</p>
+<p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 3: Operadores</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 3</span>
+<a class="next" href="cap04.html">Próximo →</a>
+</nav>
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 3</span>
+</div>
+<h2 style="margin-top:8px;">Operadores</h2>
+
+<p>Os operadores são os "tijolos" da lógica. Antes de usar um SE, você precisa saber comparar e combinar valores.</p>
+
+<h3>Operadores aritméticos</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Operador</th><th>Significado</th><th>Exemplo</th><th>Resultado</th></tr></thead>
+<tbody>
+<tr><td><code class="inline">+</code></td><td>Adição</td><td><code class="inline">10 + 5</code></td><td><strong>15</strong></td></tr>
+<tr><td><code class="inline">-</code></td><td>Subtração</td><td><code class="inline">10 - 5</code></td><td><strong>5</strong></td></tr>
+<tr><td><code class="inline">*</code></td><td>Multiplicação</td><td><code class="inline">10 * 5</code></td><td><strong>50</strong></td></tr>
+<tr><td><code class="inline">/</code></td><td>Divisão</td><td><code class="inline">10 / 5</code></td><td><strong>2</strong></td></tr>
+<tr><td><code class="inline">% ou MOD</code></td><td>Módulo (resto da divisão)</td><td><code class="inline">10 % 3</code></td><td><strong>1</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">💡 Importância do operador % (módulo)</span>
+<ul style="margin-bottom:0;">
+<li>Verificar se é par: <code class="inline">num % 2 = 0</code></li>
+<li>Verificar se é ímpar: <code class="inline">num % 2 = 1</code></li>
+<li>Verificar múltiplos: <code class="inline">num % 5 = 0</code> (é múltiplo de 5)</li>
+</ul>
+</div>
+
+<h3>Operadores relacionais</h3>
+<p>Comparam dois valores. O resultado é sempre <strong>VERDADEIRO</strong> ou <strong>FALSO</strong>.</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Operador</th><th>Significado</th><th>Exemplo</th><th>Resultado</th></tr></thead>
+<tbody>
+<tr><td><code class="inline">= ou ==</code></td><td>Igual a</td><td><code class="inline">5 = 5</code></td><td>VERDADEIRO</td></tr>
+<tr><td><code class="inline">&lt;&gt; ou !=</code></td><td>Diferente de</td><td><code class="inline">5 &lt;&gt; 3</code></td><td>VERDADEIRO</td></tr>
+<tr><td><code class="inline">&gt;</code></td><td>Maior que</td><td><code class="inline">10 &gt; 5</code></td><td>VERDADEIRO</td></tr>
+<tr><td><code class="inline">&lt;</code></td><td>Menor que</td><td><code class="inline">3 &lt; 8</code></td><td>VERDADEIRO</td></tr>
+<tr><td><code class="inline">&gt;=</code></td><td>Maior ou igual</td><td><code class="inline">7 &gt;= 7</code></td><td>VERDADEIRO</td></tr>
+<tr><td><code class="inline">&lt;=</code></td><td>Menor ou igual</td><td><code class="inline">4 &lt;= 6</code></td><td>VERDADEIRO</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Operadores lógicos</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Operador</th><th>Efeito</th><th>Resulta em VERDADEIRO quando...</th></tr></thead>
+<tbody>
+<tr><td><strong>E (AND)</strong></td><td>Todas as condições verdadeiras</td><td><code class="inline">(5 &gt; 3) E (10 &gt; 7) = V</code></td></tr>
+<tr><td><strong>OU (OR)</strong></td><td>Pelo menos uma verdadeira</td><td><code class="inline">(5 &lt; 3) OU (10 &gt; 7) = V</code></td></tr>
+<tr><td><strong>NAO (NOT)</strong></td><td>Inverte o valor</td><td><code class="inline">NAO (5 &gt; 3) = F</code></td></tr>
+<tr><td><strong>XOU (XOR)</strong></td><td>Uma, e somente uma, verdadeira</td><td><code class="inline">(5 &gt; 3) XOU (10 &lt; 7) = V</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exemplo completo</h3>
+<div class="code"><span class="kw">ALGORITMO</span> ExemploOperadores
+<span class="kw">VAR</span>
+    idade: <span class="fn">INTEIRO</span>
+    possuiCarteira: <span class="fn">LOGICO</span>
+    ehVip: <span class="fn">LOGICO</span>
+    valorCompra: <span class="fn">REAL</span>
+<span class="kw">INICIO</span>
+    idade = <span class="num">20</span>
+    possuiCarteira = <span class="kw">VERDADEIRO</span>
+    ehVip = <span class="kw">FALSO</span>
+    valorCompra = <span class="num">150</span>
+
+    <span class="cm">// AND — todas as condições devem ser verdadeiras</span>
+    <span class="kw">SE</span> idade &gt;= <span class="num">18</span> E possuiCarteira = <span class="kw">VERDADEIRO</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Pode dirigir"</span>
+    <span class="kw">FIM SE</span>
+
+    <span class="cm">// OR — pelo menos uma condição verdadeira</span>
+    <span class="kw">SE</span> idade &gt;= <span class="num">60</span> OU ehVip = <span class="kw">VERDADEIRO</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Atendimento prioritário"</span>
+    <span class="kw">FIM SE</span>
+
+    <span class="cm">// Combinação complexa</span>
+    <span class="kw">SE</span> (valorCompra &gt; <span class="num">100</span> E idade &lt; <span class="num">25</span>) OU ehVip = <span class="kw">VERDADEIRO</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Ganhou desconto especial!"</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+
+<div class="callout callout-rust">
+<span class="callout-label">⚠️ Erro clássico: trocar E por OU</span>
+<p style="margin-bottom:0;">Com OU, <em>qualquer</em> idade passa no teste. Use E para definir um intervalo: <code class="inline">SE idade &gt;= 18 E idade &lt;= 60</code> (dentro da faixa).</p>
+</div>
+
+<div class="page-nav">
+<a class="prev-btn" href="cap02.html">← Anterior</a>
+<a class="next-btn" href="cap04.html">Próximo →</a>
+</div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 3</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>

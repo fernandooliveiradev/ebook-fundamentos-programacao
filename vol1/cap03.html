@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 1 — Pensamento Computacional — Capítulo 3: Reconhecimento de Padrões</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 1 — Pensamento Computacional — Cap. 3</span>
+<a class="next" href="cap04.html">Próximo →</a>
+</nav>
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 3</span>
+</div>
+<h2 style="margin-top:8px;">Reconhecimento de Padrões</h2>
+
+<p><strong>Reconhecimento de padrões</strong> é a habilidade de identificar similaridades, repetições e tendências dentro de um problema — ou entre problemas diferentes. Ao reconhecer padrões, podemos <em>reutilizar soluções</em> e simplificar problemas complexos.</p>
+
+<div class="callout callout-blue">
+<span class="callout-label">💡 Perguntas-chave</span>
+<p style="margin-bottom:0;">"Já vi algo parecido antes?" • "O que se repete?" • "Como este problema é similar a outro que já resolvi?"</p>
+</div>
+
+<p>Quando decompomos um problema, frequentemente encontramos padrões entre os subproblemas. Esses padrões — similaridades ou características comuns — podem ser explorados para alcançar soluções mais eficientes. Na literatura acadêmica, o reconhecimento de padrões também é associado ao termo <strong>generalização</strong>.</p>
+
+<h3>Exemplos em diferentes áreas</h3>
+
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Área</th><th>Padrão reconhecido</th></tr></thead>
+<tbody>
+<tr><td><strong>Economia</strong></td><td>Tendências de mercado e comportamentos de consumidores para planejamento estratégico</td></tr>
+<tr><td><strong>Meteorologia</strong></td><td>Padrões climáticos para elaborar previsões do tempo mais precisas</td></tr>
+<tr><td><strong>Biologia</strong></td><td>Padrões de migração de espécies e disseminação de doenças</td></tr>
+<tr><td><strong>Medicina</strong></td><td>Sintomas comuns que indicam diagnósticos específicos (gripe vs. infecção bacteriana)</td></tr>
+<tr><td><strong>Educação</strong></td><td>Dificuldades recorrentes dos alunos em certos tipos de questões</td></tr>
+<tr><td><strong>Cozinha</strong></td><td>Beijinho e brigadeiro seguem o mesmo padrão de cozimento, apesar de ingredientes diferentes</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Padrões na programação</h3>
+<p>Na programação, reconhecer padrões significa identificar trechos de código que se repetem e transformá-los em <strong>funções reutilizáveis</strong>. Por exemplo:</p>
+
+<div class="code"><span class="cm">// Padrão: calcular média de N números</span>
+
+<span class="cm">// Se você já resolveu "média de 3 números":</span>
+media = (n1 + n2 + n3) / 3
+
+<span class="cm">// E precisa de "média de 5 números", o padrão é o mesmo:</span>
+media = (n1 + n2 + n3 + n4 + n5) / 5
+
+<span class="cm">// Padrão reconhecido: somar todos e dividir pela quantidade</span>
+<span class="cm">// Isso se torna uma função reutilizável!</span></div>
+
+<p>Quanto mais padrões são identificados, mais dinâmica e rápida se torna a resolução de novos problemas. Um algoritmo projetado para um problema específico pode ser <strong>adaptado</strong> para uma série de situações similares, aplicando uma solução generalizada.</p>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 1.2 — Reconhecimento de Padrões</span>
+<p>Identifique o padrão comum nos seguintes problemas e escreva uma solução generalizada:</p>
+<ul>
+<li>Calcular a média de 3 notas</li>
+<li>Calcular a média de 5 notas</li>
+<li>Calcular a média de 10 notas</li>
+</ul>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<p><strong>Padrão:</strong> Somar todas as notas e dividir pela quantidade de notas.</p>
+<p><strong>Solução generalizada:</strong> <code class="inline">média = soma_de_todas_as_notas ÷ quantidade_de_notas</code></p>
+<p>Este padrão funciona para 3, 5, 10 ou qualquer quantidade de notas. Na programação, isso se torna uma <em>função reutilizável</em> — um conceito que veremos no Volume 2.</p>
+</div>
+</details>
+</div>
+
+<div class="page-nav">
+<a class="prev-btn" href="cap02.html">← Anterior</a>
+<a class="next-btn" href="cap04.html">Próximo →</a>
+</div>
+</div>
+<div class="footer">
+<p>Volume 1 — Pensamento Computacional — Capítulo 3</p>
+<p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
+</div>
+</body>
+</html>

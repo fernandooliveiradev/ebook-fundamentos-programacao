@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 4: Tabelas Verdade</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 4</span>
+<a class="next" href="cap05.html">Próximo →</a>
+</nav>
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 4</span>
+</div>
+<h2 style="margin-top:8px;">Tabelas Verdade</h2>
+
+<p>As <strong>tabelas verdade</strong> mostram todos os resultados possíveis de uma operação lógica. São fundamentais para entender condicionais. <strong>Decore isto!</strong></p>
+
+<h3>Tabela completa: E, OU, XOU</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th style="text-align:center;">A</th><th style="text-align:center;">B</th><th style="text-align:center;">A E B</th><th style="text-align:center;">A OU B</th><th style="text-align:center;">A XOU B</th></tr></thead>
+<tbody>
+<tr style="text-align:center;"><td>V</td><td>V</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--rust);">F</td></tr>
+<tr style="text-align:center;"><td>V</td><td>F</td><td style="color:var(--rust);">F</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--olive);font-weight:bold;">V</td></tr>
+<tr style="text-align:center;"><td>F</td><td>V</td><td style="color:var(--rust);">F</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--olive);font-weight:bold;">V</td></tr>
+<tr style="text-align:center;"><td>F</td><td>F</td><td style="color:var(--rust);">F</td><td style="color:var(--rust);">F</td><td style="color:var(--rust);">F</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">💡 Resumo</span>
+<ul style="margin-bottom:0;">
+<li><strong>E (AND):</strong> só é verdadeiro se <strong>ambas</strong> forem verdadeiras.</li>
+<li><strong>OU (OR):</strong> é verdadeiro se <strong>pelo menos uma</strong> for verdadeira.</li>
+<li><strong>XOU (XOR):</strong> é verdadeiro se as duas forem <strong>diferentes</strong> (uma V e uma F).</li>
+<li><strong>NAO (NOT):</strong> inverte o valor. V vira F, F vira V.</li>
+</ul>
+</div>
+
+<h3>Tabela rápida para consulta</h3>
+<div class="code">V E V = V      V OU V = V      V XOU V = F
+V E F = F      V OU F = V      V XOU F = V
+F E V = F      F OU V = V      F XOU V = V
+F E F = F      F OU F = F      F XOU F = F
+
+NAO V = F
+NAO F = V</div>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 2.1 — Tabelas Verdade</span>
+<p>Avalie as seguintes expressões, determinando se o resultado é <strong>VERDADEIRO</strong> ou <strong>FALSO</strong>:</p>
+<ul>
+<li>a) <code class="inline">(5 &gt; 3) E (10 = 10)</code></li>
+<li>b) <code class="inline">(2 &gt; 8) OU (4 = 4)</code></li>
+<li>c) <code class="inline">NAO (7 &lt; 3)</code></li>
+<li>d) <code class="inline">(10 % 3 = 1) E (5 != 5)</code></li>
+</ul>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<ul>
+<li><strong>a) VERDADEIRO</strong> — 5 &gt; 3 é V, 10 = 10 é V. V E V = V.</li>
+<li><strong>b) VERDADEIRO</strong> — 2 &gt; 8 é F, mas 4 = 4 é V. F OU V = V.</li>
+<li><strong>c) VERDADEIRO</strong> — 7 &lt; 3 é F. NAO F = V.</li>
+<li><strong>d) FALSO</strong> — 10 % 3 = 1 (V), mas 5 != 5 é F. V E F = F.</li>
+</ul>
+</div>
+</details>
+</div>
+
+<div class="page-nav">
+<a class="prev-btn" href="cap03.html">← Anterior</a>
+<a class="next-btn" href="cap05.html">Próximo →</a>
+</div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 4</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>

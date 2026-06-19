@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 8: Funções e Procedimentos</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 8</span><a class="next" href="cap09.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 8</span></div>
+<h2 style="margin-top:8px;">Funções e Procedimentos</h2>
+
+<h3>Procedimentos (não retornam valor)</h3>
+<div class="code"><span class="kw">PROCEDIMENTO</span> ExibirCabecalho(titulo: <span class="fn">TEXTO</span>)
+<span class="kw">INICIO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"========================"</span>
+    <span class="kw">ESCREVA</span> <span class="str">"    "</span>, titulo
+    <span class="kw">ESCREVA</span> <span class="str">"========================"</span>
+<span class="kw">FIM PROCEDIMENTO</span>
+
+<span class="fn">ExibirCabecalho</span>(<span class="str">"Sistema de Vendas"</span>)</div>
+
+<h3>Funções (retornam valor)</h3>
+<div class="code"><span class="kw">FUNCAO</span> CalcularMedia(n1, n2, n3: <span class="fn">REAL</span>): <span class="fn">REAL</span>
+<span class="kw">VAR</span> media: <span class="fn">REAL</span>
+<span class="kw">INICIO</span>
+    media = (n1 + n2 + n3) / <span class="num">3</span>
+    <span class="kw">RETORNE</span> media
+<span class="kw">FIM FUNCAO</span>
+
+mediaFinal = <span class="fn">CalcularMedia</span>(<span class="num">7.5</span>, <span class="num">8.0</span>, <span class="num">6.5</span>)
+<span class="kw">ESCREVA</span> <span class="str">"Média: "</span>, mediaFinal</div>
+
+<h3>Recursividade</h3>
+<p>Recursividade é quando uma função <strong>chama a si mesma</strong>. Exemplo clássico: fatorial.</p>
+<div class="code"><span class="kw">FUNCAO</span> Fatorial(n: <span class="fn">INTEIRO</span>): <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">SE</span> n &lt;= <span class="num">1</span> <span class="kw">ENTÃO</span>
+        <span class="kw">RETORNE</span> <span class="num">1</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">RETORNE</span> n * <span class="fn">Fatorial</span>(n - <span class="num">1</span>)
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM FUNCAO</span>
+
+<span class="cm">// Fatorial(5) = 5 × 4 × 3 × 2 × 1 = 120</span></div>
+
+<div class="page-nav"><a class="prev-btn" href="cap07.html">← Anterior</a><a class="next-btn" href="cap09.html">Próximo →</a></div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 8</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>

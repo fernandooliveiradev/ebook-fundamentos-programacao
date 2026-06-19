@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 6: Laços de Repetição</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 6</span><a class="next" href="cap07.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 6</span></div>
+<h2 style="margin-top:8px;">Laços de Repetição</h2>
+
+<p>Laços de repetição permitem executar um bloco de código <strong>múltiplas vezes</strong>, evitando repetição manual.</p>
+
+<h3>PARA (FOR)</h3>
+<p>Usado quando sabemos <strong>exatamente quantas vezes</strong> repetir o bloco.</p>
+<div class="code"><span class="kw">PARA</span> variavel <span class="kw">DE</span> inicio <span class="kw">ATE</span> fim <span class="kw">PASSO</span> incremento
+    <span class="cm">// código a repetir</span>
+<span class="kw">FIM PARA</span></div>
+<p>Exemplo: tabuada:</p>
+<div class="code"><span class="kw">ALGORITMO</span> Tabuada
+<span class="kw">VAR</span> numero, i: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Digite um número:"</span>
+    <span class="kw">LEIA</span> numero
+    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">10</span> <span class="kw">PASSO</span> <span class="num">1</span>
+        <span class="kw">ESCREVA</span> numero, <span class="str">" x "</span>, i, <span class="str">" = "</span>, numero * i
+    <span class="kw">FIM PARA</span>
+<span class="kw">FIM</span></div>
+
+<h3>ENQUANTO (WHILE)</h3>
+<p>Usado quando <strong>não sabemos</strong> a quantidade de repetições antecipadamente. A condição é verificada <strong>antes</strong> de cada iteração.</p>
+<div class="code"><span class="kw">ALGORITMO</span> ValidaSenha
+<span class="kw">VAR</span> senha, tentativa: <span class="fn">TEXTO</span>; tentativas: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    senha = <span class="str">"1234"</span>
+    tentativas = <span class="num">0</span>
+    <span class="kw">ENQUANTO</span> tentativa &lt;&gt; senha E tentativas &lt; <span class="num">3</span> <span class="kw">FAÇA</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Digite a senha:"</span>
+        <span class="kw">LEIA</span> tentativa
+        tentativas = tentativas + <span class="num">1</span>
+        <span class="kw">SE</span> tentativa &lt;&gt; senha <span class="kw">ENTÃO</span>
+            <span class="kw">ESCREVA</span> <span class="str">"Senha incorreta. Tentativa "</span>, tentativas, <span class="str">" de 3"</span>
+        <span class="kw">FIM SE</span>
+    <span class="kw">FIM ENQUANTO</span>
+    <span class="kw">SE</span> tentativa = senha <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Acesso liberado!"</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Acesso bloqueado."</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+
+<h3>FAÇA-ENQUANTO (DO WHILE)</h3>
+<p>Executa o bloco <strong>obrigatoriamente pelo menos uma vez</strong> antes de avaliar a condição.</p>
+<div class="code"><span class="kw">ALGORITMO</span> Menu
+<span class="kw">VAR</span> opcao: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">FACA</span>
+        <span class="kw">ESCREVA</span> <span class="str">"1 - Cadastrar"</span>
+        <span class="kw">ESCREVA</span> <span class="str">"2 - Consultar"</span>
+        <span class="kw">ESCREVA</span> <span class="str">"3 - Sair"</span>
+        <span class="kw">LEIA</span> opcao
+    <span class="kw">ENQUANTO</span> opcao &lt;&gt; <span class="num">3</span>
+<span class="kw">FIM</span></div>
+
+<div class="callout callout-rust">
+<span class="callout-label">⚠️ Atenção — Loop infinito!</span>
+<p style="margin-bottom:0;">Se a condição do ENQUANTO nunca se torna falsa, o laço executa para sempre! Sempre garanta que algo dentro do laço <strong>modifique</strong> a condição.</p>
+</div>
+
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Tipo</th><th>Quando usar</th><th>Verifica antes?</th></tr></thead>
+<tbody>
+<tr><td><strong>PARA</strong></td><td>Quando sabemos o número exato de repetições</td><td>Sim</td></tr>
+<tr><td><strong>ENQUANTO</strong></td><td>Quando a repetição depende de uma condição dinâmica</td><td>Sim (pode não executar nenhuma vez)</td></tr>
+<tr><td><strong>FAÇA-ENQUANTO</strong></td><td>Quando precisamos executar pelo menos 1 vez</td><td>Não (executa 1 vez antes de verificar)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 2.3 — Laços de Repetição</span>
+<p>Escreva um pseudocódigo que <strong>somar os números de 1 a 100</strong> e mostre o resultado.</p>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<div class="code">soma ← 0
+<span class="kw">PARA</span> i <span class="kw">DE</span> 1 <span class="kw">ATE</span> 100 <span class="kw">FAÇA</span>
+    soma ← soma + i
+<span class="kw">FIM PARA</span>
+<span class="kw">ESCREVA</span> <span class="str">"A soma é: "</span> + soma</div>
+<p><strong>Resultado: 5050</strong> (a famosa soma de Gauss!)</p>
+</div>
+</details>
+</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap05.html">← Anterior</a><a class="next-btn" href="cap07.html">Próximo →</a></div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 6</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>

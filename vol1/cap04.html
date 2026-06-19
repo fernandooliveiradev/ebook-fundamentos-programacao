@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 1 — Pensamento Computacional — Capítulo 4: Abstração</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 1 — Pensamento Computacional — Cap. 4</span>
+<a class="next" href="cap05.html">Próximo →</a>
+</nav>
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 4</span>
+</div>
+<h2 style="margin-top:8px;">Abstração</h2>
+
+<p><strong>Abstração</strong> é a capacidade de focar no que é <strong>essencial</strong> e ignorar detalhes <strong>irrelevantes</strong>. É como dirigir um carro: você não precisa entender como o motor funciona internamente — basta usar o volante, os pedais e o câmbio. A complexidade está "escondida" atrás de controles simples.</p>
+
+<div class="callout callout-blue">
+<span class="callout-label">💡 Pergunta-chave</span>
+<p style="margin-bottom:0;">"O que realmente importa aqui? O que posso ignorar?"</p>
+</div>
+
+<h3>Exemplos de abstração no cotidiano</h3>
+<ul>
+<li><strong>Dirigir um carro:</strong> você usa volante e pedais sem entender a combustão interna do motor.</li>
+<li><strong>Usar um smartphone:</strong> você toca em ícones sem saber como o sistema operacional processa o toque na tela.</li>
+<li><strong>Ler um mapa:</strong> o mapa mostra ruas e rotas, mas omite a cor das casas, o tipo de árvores e outros detalhes irrelevantes para a navegação.</li>
+<li><strong>Receita de bolo:</strong> a receita diz "misture os secos" — não importa a cor da tigela nem qual colher você usa.</li>
+</ul>
+
+<h3>Abstração na programação</h3>
+<p>Na programação, a abstração significa <strong>esconder a complexidade</strong> e expor apenas o necessário. Por exemplo, em Python você escreve <code class="inline">print("Olá")</code> sem precisar saber como o computador desenha cada pixel na tela.</p>
+
+<p>Um exemplo mais profundo: uma <strong>função</strong> é uma forma de abstração. Quando você usa <code class="inline">calcular_média(notas)</code>, não precisa saber <em>como</em> a função calcula internamente — apenas que ela <em>retorna</em> a média. A complexidade está encapsulada.</p>
+
+<div class="diagram">
+<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;">
+<text x="250" y="20" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="14" fill="#141413">Níveis de Abstração</text>
+<rect x="100" y="35" width="300" height="35" rx="6" fill="#D97757"/>
+<text x="250" y="57" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#FAF9F5">print("Olá") — o que você vê</text>
+<rect x="120" y="78" width="260" height="35" rx="6" fill="#D97757" opacity=".7"/>
+<text x="250" y="100" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#FAF9F5">Função print() do Python</text>
+<rect x="140" y="121" width="220" height="35" rx="6" fill="#D97757" opacity=".5"/>
+<text x="250" y="143" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#FAF9F5">Biblioteca de sistema</text>
+<rect x="160" y="164" width="180" height="30" rx="6" fill="#141413"/>
+<text x="250" y="184" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#FAF9F5">Hardware / pixels na tela</text>
+</svg>
+<div class="diagram-caption">Cada nível esconde a complexidade do nível inferior</div>
+</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">🎯 Exemplo: festa de aniversário</span>
+<p style="margin-bottom:0;"><strong>Essencial:</strong> data, local, convidados, comida.<br><strong>Irrelevante:</strong> a cor do papel do convite, qual prato exato usar, a marca do refrigerante.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 1.3 — Abstração</span>
+<p>Você precisa criar um sistema de <strong>cadastro de alunos</strong> para uma escola. Liste 5 informações essenciais (que o sistema precisa) e 3 informações irrelevantes (que podem ser ignoradas).</p>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<p><strong>Essenciais:</strong> nome, data de nascimento, matrícula, turma, endereço.</p>
+<p><strong>Irrelevantes:</strong> cor favorita, time de futebol, número do calçado.</p>
+<p>A abstração nos ajuda a focar apenas nos dados que o sistema realmente precisa para funcionar.</p>
+</div>
+</details>
+</div>
+
+<div class="page-nav">
+<a class="prev-btn" href="cap03.html">← Anterior</a>
+<a class="next-btn" href="cap05.html">Próximo →</a>
+</div>
+</div>
+<div class="footer">
+<p>Volume 1 — Pensamento Computacional — Capítulo 4</p>
+<p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
+</div>
+</body>
+</html>

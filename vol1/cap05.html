@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 1 — Pensamento Computacional — Capítulo 5: Pensamento Algorítmico</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 1 — Pensamento Computacional — Cap. 5</span>
+<a class="next" href="cap06.html">Próximo →</a>
+</nav>
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 5</span>
+</div>
+<h2 style="margin-top:8px;">Pensamento Algorítmico</h2>
+
+<p><strong>Pensamento algorítmico</strong> é a capacidade de criar uma sequência finita e ordenada de passos para resolver um problema. Um algoritmo é, essencialmente, uma <em>receita</em>: uma lista de instruções que, se seguidas corretamente, produzem um resultado.</p>
+
+<h3>Propriedades de um algoritmo</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Propriedade</th><th>Significado</th></tr></thead>
+<tbody>
+<tr><td><strong>Finito</strong></td><td>Sempre termina em um número finito de passos</td></tr>
+<tr><td><strong>Definido</strong></td><td>Cada passo é claro e sem ambiguidade</td></tr>
+<tr><td><strong>Entrada</strong></td><td>Recebe zero ou mais dados de entrada</td></tr>
+<tr><td><strong>Saída</strong></td><td>Produz pelo menos um resultado</td></tr>
+<tr><td><strong>Eficaz</strong></td><td>Resolve o problema corretamente</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Algoritmos no dia a dia</h3>
+<p>Algoritmos estão presentes em muitas situações cotidianas, muitas vezes sem que percebamos:</p>
+<ul>
+<li><strong>Receita de cozinha:</strong> a receita fornece ingredientes (entrada) e etapas (processo) para produzir um prato (resultado).</li>
+<li><strong>Rotina matinal:</strong> acordar → escovar os dentes → tomar banho → vestir-se → tomar café → sair. Cada passo segue uma ordem lógica.</li>
+<li><strong>GPS:</strong> o sistema usa algoritmos para calcular a melhor rota, considerando distância, tráfego e condições das estradas.</li>
+<li><strong>Decisões de compra:</strong> verificar itens essenciais → comparar preços → procurar promoções → decidir.</li>
+<li><strong>Xadrez:</strong> os jogadores usam estratégias (algoritmos) para prever movimentos e reagir adequadamente.</li>
+<li><strong>Programa de treino físico:</strong> exercícios ordenados em sequência específica para maximizar benefícios.</li>
+</ul>
+
+<h3>Algoritmos no ambiente de trabalho</h3>
+<ul>
+<li><strong>Enfermagem:</strong> triagem de pacientes baseada em sinais vitais e sintomas para determinar a urgência do atendimento.</li>
+<li><strong>Agricultura:</strong> uso de dados climáticos para prever necessidades de irrigação e momentos ideais para plantio e colheita.</li>
+<li><strong>Navegação automotiva:</strong> sistemas que consideram tráfego em tempo real, condições das estradas e preferências do usuário.</li>
+</ul>
+
+<h3>Exemplo: receita de bolo como algoritmo</h3>
+<div class="code"><span class="cm">// Receita de bolo — um algoritmo culinário</span>
+
+<span class="kw">Entrada:</span> 2 xícaras de farinha, 1 de açúcar, 3 ovos, leite
+<span class="kw">Processo:</span>
+  <span class="kw">1.</span> Preaqueça o forno a 180°C
+  <span class="kw">2.</span> Separe os ingredientes
+  <span class="kw">3.</span> Misture os secos em uma tigela
+  <span class="kw">4.</span> Em outra tigela, bata os ovos com o leite
+  <span class="kw">5.</span> Combine as duas misturas
+  <span class="kw">6.</span> Despeje na forma
+  <span class="kw">7.</span> Asse por 30 minutos
+  <span class="kw">8.</span> Deixe esfriar e sirva
+<span class="kw">Saída:</span> Um bolo pronto</div>
+
+<div class="callout callout-olive">
+<span class="callout-label">🔑 A ordem importa!</span>
+<p style="margin-bottom:0;">Se você assar antes de misturar (passo 7 antes do passo 5), o resultado será um desastre. Em programação, a ordem dos passos é igualmente crucial — um passo fora do lugar pode causar erros difíceis de encontrar.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 1.4 — Pensamento Algorítmico</span>
+<p>Escreva um <strong>algoritmo</strong> (sequência de passos) para <strong>"fazer um sanduíche"</strong>. Lembre-se: a ordem importa!</p>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<div class="code"><span class="kw">1.</span> Reúna os ingredientes: pão, queijo, presunto, alface, tomate
+<span class="kw">2.</span> Corte o tomate em fatias
+<span class="kw">3.</span> Lave o alface
+<span class="kw">4.</span> Abra o pão ao meio
+<span class="kw">5.</span> Coloque o queijo
+<span class="kw">6.</span> Coloque o presunto sobre o queijo
+<span class="kw">7.</span> Coloque o alface
+<span class="kw">8.</span> Coloque o tomate
+<span class="kw">9.</span> Feche o pão
+<span class="kw">10.</span> Sirva</div>
+<p>Se você colocar o tomate antes de abrir o pão (passo 8 antes do passo 4), não funciona. A <strong>ordem</strong> é fundamental em algoritmos!</p>
+</div>
+</details>
+</div>
+
+<div class="page-nav">
+<a class="prev-btn" href="cap04.html">← Anterior</a>
+<a class="next-btn" href="cap06.html">Próximo →</a>
+</div>
+</div>
+<div class="footer">
+<p>Volume 1 — Pensamento Computacional — Capítulo 5</p>
+<p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
+</div>
+</body>
+</html>

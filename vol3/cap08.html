@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 8: Tratamento de Erros</title><link rel="stylesheet" href="../estilo.css"></head>
+<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 8</span><a class="next" href="cap09.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 8</span></div>
+<h2 style="margin-top:8px;">Tratamento de Erros</h2>
+<p>Erros acontecem. Python usa <code class="inline">try/except</code> para tratá-los elegantemente:</p>
+<div class="code"><span class="cm"># Tratamento de erros</span>
+<span class="kw">try</span>:
+    numero = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Digite um número: "</span>))
+    resultado = <span class="num">10</span> / numero
+    <span class="fn">print</span>(<span class="str">f"10 / {numero} = {resultado}"</span>)
+<span class="kw">except</span> ValueError:
+    <span class="fn">print</span>(<span class="str">"Erro: você não digitou um número válido!"</span>)
+<span class="kw">except</span> ZeroDivisionError:
+    <span class="fn">print</span>(<span class="str">"Erro: divisão por zero!"</span>)
+<span class="kw">except</span>:
+    <span class="fn">print</span>(<span class="str">"Erro inesperado!"</span>)
+<span class="kw">finally</span>:
+    <span class="fn">print</span>(<span class="str">"Fim do programa."</span>)</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap07.html">← Anterior</a><a class="next-btn" href="cap09.html">Próximo →</a></div>
+</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 8</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>

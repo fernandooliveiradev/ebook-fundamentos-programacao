@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 5: Condicionais</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar">
+<a class="index-link" href="../index.html">📚 Índice</a>
+<span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 5</span>
+<a class="next" href="cap06.html">Próximo →</a>
+</nav>
+<div class="page">
+<div class="chapter-header">
+<span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 5</span>
+</div>
+<h2 style="margin-top:8px;">Condicionais</h2>
+
+<p>Condicionais permitem que o programa <strong>tome decisões</strong>: executa um bloco de código se uma condição for verdadeira e outro se for falsa.</p>
+
+<h3>SE / SENÃO (if / else)</h3>
+<div class="code"><span class="kw">SE</span> condição <span class="kw">ENTÃO</span>
+    <span class="cm">// código se verdadeiro</span>
+<span class="kw">SENÃO</span>
+    <span class="cm">// código se falso</span>
+<span class="kw">FIM SE</span></div>
+
+<p>Exemplo: verificar maioridade:</p>
+<div class="code"><span class="kw">ALGORITMO</span> VerificarMaioridade
+<span class="kw">VAR</span> idade: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Digite sua idade:"</span>
+    <span class="kw">LEIA</span> idade
+    <span class="kw">SE</span> idade &gt;= <span class="num">18</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Você é maior de idade."</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Você é menor de idade."</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+
+<h3>SENÃO SE — Múltiplas condições</h3>
+<div class="code"><span class="kw">ALGORITMO</span> ClassificarNota
+<span class="kw">VAR</span> nota: <span class="fn">REAL</span>
+<span class="kw">INICIO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Digite a nota (0-10):"</span>
+    <span class="kw">LEIA</span> nota
+    <span class="kw">SE</span> nota &gt;= <span class="num">7</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Aprovado"</span>
+    <span class="kw">SENÃO SE</span> nota &gt;= <span class="num">5</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Recuperação"</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Reprovado"</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+
+<h3>ESCOLHA (case / switch)</h3>
+<p>Usado quando há múltiplas opções baseadas no valor de uma variável:</p>
+<div class="code"><span class="kw">ALGORITMO</span> DiaSemana
+<span class="kw">VAR</span> dia: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Digite o número do dia (1-7):"</span>
+    <span class="kw">LEIA</span> dia
+    <span class="kw">ESCOLHA</span> dia
+        <span class="kw">CASO</span> <span class="num">1</span>: <span class="kw">ESCREVA</span> <span class="str">"Domingo"</span>
+        <span class="kw">CASO</span> <span class="num">2</span>: <span class="kw">ESCREVA</span> <span class="str">"Segunda-feira"</span>
+        <span class="kw">CASO</span> <span class="num">3</span>: <span class="kw">ESCREVA</span> <span class="str">"Terça-feira"</span>
+        <span class="kw">CASO</span> <span class="num">4</span>: <span class="kw">ESCREVA</span> <span class="str">"Quarta-feira"</span>
+        <span class="kw">CASO</span> <span class="num">5</span>: <span class="kw">ESCREVA</span> <span class="str">"Quinta-feira"</span>
+        <span class="kw">CASO</span> <span class="num">6</span>: <span class="kw">ESCREVA</span> <span class="str">"Sexta-feira"</span>
+        <span class="kw">CASO</span> <span class="num">7</span>: <span class="kw">ESCREVA</span> <span class="str">"Sábado"</span>
+        <span class="kw">CASO CONTRARIO</span>: <span class="kw">ESCREVA</span> <span class="str">"Dia inválido"</span>
+    <span class="kw">FIM ESCOLHA</span>
+<span class="kw">FIM</span></div>
+
+<div class="exercise">
+<span class="exercise-label">📝 Exercício 2.2 — Condicionais</span>
+<p>Escreva um pseudocódigo que leia um número e informe se é <strong>par</strong> ou <strong>ímpar</strong>.</p>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> ParImpar
+<span class="kw">VAR</span> num: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> num
+    <span class="kw">SE</span> num % <span class="num">2</span> = <span class="num">0</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> num, <span class="str">" é par."</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">ESCREVA</span> num, <span class="str">" é ímpar."</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+</div>
+</details>
+</div>
+
+<div class="page-nav">
+<a class="prev-btn" href="cap04.html">← Anterior</a>
+<a class="next-btn" href="cap06.html">Próximo →</a>
+</div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 5</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>

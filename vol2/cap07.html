@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 7: Estruturas de Dados</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 7</span><a class="next" href="cap08.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 7</span></div>
+<h2 style="margin-top:8px;">Estruturas de Dados</h2>
+
+<h3>Vetores (arrays unidimensionais)</h3>
+<p>Um <strong>vetor</strong> é uma lista de elementos do mesmo tipo, acessados por um índice (começando em 1 no pseudocódigo).</p>
+<div class="code"><span class="kw">ALGORITMO</span> MediaNotas
+<span class="kw">VAR</span>
+    notas: <span class="fn">VETOR</span>[<span class="num">1</span>..<span class="num">5</span>] <span class="kw">DE</span> <span class="fn">REAL</span>
+    soma, media: <span class="fn">REAL</span>; i: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    soma = <span class="num">0</span>
+    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">5</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Digite a nota "</span>, i, <span class="str">":"</span>
+        <span class="kw">LEIA</span> notas[i]
+        soma = soma + notas[i]
+    <span class="kw">FIM PARA</span>
+    media = soma / <span class="num">5</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Média: "</span>, media
+<span class="kw">FIM</span></div>
+
+<h3>Matrizes (arrays bidimensionais)</h3>
+<div class="code"><span class="kw">ALGORITMO</span> MatrizExemplo
+<span class="kw">VAR</span> matriz: <span class="fn">VETOR</span>[<span class="num">1</span>..<span class="num">3</span>][<span class="num">1</span>..<span class="num">3</span>] <span class="kw">DE</span> <span class="fn">INTEIRO</span>; i, j: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">3</span>
+        <span class="kw">PARA</span> j = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">3</span>
+            <span class="kw">LEIA</span> matriz[i][j]
+        <span class="kw">FIM PARA</span>
+    <span class="kw">FIM PARA</span>
+<span class="kw">FIM</span></div>
+
+<h3>Listas dinâmicas</h3>
+<div class="code">lista = []
+lista.<span class="fn">adicionar</span>(<span class="num">10</span>)
+lista.<span class="fn">adicionar</span>(<span class="num">20</span>)
+lista.<span class="fn">inserir</span>(<span class="num">1</span>, <span class="num">15</span>)       <span class="cm">// Resultado: [10, 15, 20]</span>
+lista.<span class="fn">remover</span>(<span class="num">20</span>)          <span class="cm">// Resultado: [10, 15]</span></div>
+
+<h3>Pilhas (LIFO — Last In, First Out)</h3>
+<p>Pilha funciona como uma pilha de pratos: o último colocado é o primeiro retirado.</p>
+<div class="code">pilha = []
+pilha.<span class="fn">empilhar</span>(<span class="str">"A"</span>)
+pilha.<span class="fn">empilhar</span>(<span class="str">"B"</span>)
+pilha.<span class="fn">empilhar</span>(<span class="str">"C"</span>)         <span class="cm">// Estrutura: [A, B, C]</span>
+topo = pilha.<span class="fn">desempilhar</span>()  <span class="cm">// Retorna "C"</span></div>
+
+<h3>Dicionários (mapas)</h3>
+<p>Armazenam pares chave-valor:</p>
+<div class="code">agenda[<span class="str">"João"</span>] = <span class="str">"9999-1111"</span>
+agenda[<span class="str">"Maria"</span>] = <span class="str">"9999-2222"</span>
+telefoneJoao = agenda[<span class="str">"João"</span>]
+
+<span class="kw">PARA</span> cada nome <span class="kw">EM</span> agenda
+    <span class="kw">ESCREVA</span> nome, <span class="str">":"</span>, agenda[nome]
+<span class="kw">FIM PARA</span></div>
+
+<div class="page-nav"><a class="prev-btn" href="cap06.html">← Anterior</a><a class="next-btn" href="cap08.html">Próximo →</a></div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 7</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>

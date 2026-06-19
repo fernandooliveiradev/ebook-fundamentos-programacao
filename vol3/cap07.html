@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 7: Funções em Python</title><link rel="stylesheet" href="../estilo.css"></head>
+<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 7</span><a class="next" href="cap08.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 7</span></div>
+<h2 style="margin-top:8px;">Funções em Python</h2>
+<div class="code"><span class="cm"># Função simples</span>
+<span class="kw">def</span> <span class="fn">saudacao</span>(nome):
+    <span class="kw">return</span> <span class="str">"Olá, "</span> + nome + <span class="str">"!"</span>
+
+mensagem = <span class="fn">saudacao</span>(<span class="str">"Fernando"</span>)
+<span class="fn">print</span>(mensagem)  <span class="cm"># Olá, Fernando!</span>
+
+<span class="cm"># Função com múltiplos parâmetros</span>
+<span class="kw">def</span> <span class="fn">soma</span>(a, b):
+    <span class="kw">return</span> a + b
+
+<span class="fn">print</span>(<span class="fn">soma</span>(<span class="num">10</span>, <span class="num">25</span>))  <span class="cm"># 35</span>
+
+<span class="cm"># Função com parâmetro padrão</span>
+<span class="kw">def</span> <span class="fn">apresentar</span>(nome, idade=<span class="num">18</span>):
+    <span class="fn">print</span>(<span class="str">f"Nome: {nome}, Idade: {idade}"</span>)
+
+<span class="fn">apresentar</span>(<span class="str">"Carlos"</span>)       <span class="cm"># Nome: Carlos, Idade: 18</span>
+<span class="fn">apresentar</span>(<span class="str">"Maria"</span>, <span class="num">25</span>)   <span class="cm"># Nome: Maria, Idade: 25</span>
+
+<span class="cm"># Recursividade — Fatorial</span>
+<span class="kw">def</span> <span class="fn">fatorial</span>(n):
+    <span class="kw">if</span> n &lt;= <span class="num">1</span>:
+        <span class="kw">return</span> <span class="num">1</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> n * <span class="fn">fatorial</span>(n - <span class="num">1</span>)
+
+<span class="fn">print</span>(<span class="fn">fatorial</span>(<span class="num">5</span>))  <span class="cm"># 120</span></div>
+
+<div class="page-nav"><a class="prev-btn" href="cap06.html">← Anterior</a><a class="next-btn" href="cap08.html">Próximo →</a></div>
+</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 7</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>

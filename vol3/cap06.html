@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 6: Listas, Tuplas e Dicionários</title><link rel="stylesheet" href="../estilo.css"></head>
+<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 6</span><a class="next" href="cap07.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 6</span></div>
+<h2 style="margin-top:8px;">Listas, Tuplas e Dicionários</h2>
+<h3>Listas (equivalente ao vetor)</h3>
+<div class="code"><span class="cm"># Listas em Python</span>
+numeros = [<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>, <span class="num">40</span>, <span class="num">50</span>]
+<span class="fn">print</span>(numeros[<span class="num">0</span>])     <span class="cm"># 10 (primeiro elemento)</span>
+<span class="fn">print</span>(numeros[-<span class="num">1</span>])    <span class="cm"># 50 (último elemento)</span>
+<span class="fn">print</span>(<span class="fn">len</span>(numeros))  <span class="cm"># 5 (tamanho)</span>
+numeros.<span class="fn">append</span>(<span class="num">60</span>)  <span class="cm"># adiciona ao final</span>
+numeros.<span class="fn">insert</span>(<span class="num">2</span>, <span class="num">25</span>)  <span class="cm"># insere na posição 2</span>
+numeros.<span class="fn">remove</span>(<span class="num">30</span>)  <span class="cm"># remove o valor 30</span></div>
+<h3>Tuplas (listas imutáveis)</h3>
+<div class="code"><span class="cm"># Tuplas — não podem ser modificadas depois de criadas</span>
+coordenadas = (<span class="num">10</span>, <span class="num">20</span>)
+<span class="fn">print</span>(coordenadas[<span class="num">0</span>])  <span class="cm"># 10</span>
+<span class="cm"># coordenadas[0] = 5  → ERRO! Tuplas são imutáveis</span></div>
+<h3>Dicionários (equivalente ao mapa)</h3>
+<div class="code"><span class="cm"># Dicionários — pares chave-valor</span>
+agenda = {
+    <span class="str">"João"</span>: <span class="str">"9999-1111"</span>,
+    <span class="str">"Maria"</span>: <span class="str">"9999-2222"</span>,
+}
+<span class="fn">print</span>(agenda[<span class="str">"João"</span>])  <span class="cm"># 9999-1111</span>
+agenda[<span class="str">"Ana"</span>] = <span class="str">"9999-4444"</span>  <span class="cm"># adiciona novo contato</span>
+
+<span class="cm"># Percorrendo um dicionário</span>
+<span class="kw">for</span> nome, telefone <span class="kw">in</span> agenda.<span class="fn">items</span>():
+    <span class="fn">print</span>(<span class="str">f"{nome}: {telefone}"</span>)</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap05.html">← Anterior</a><a class="next-btn" href="cap07.html">Próximo →</a></div>
+</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 6</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>

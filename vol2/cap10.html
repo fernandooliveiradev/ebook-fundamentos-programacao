@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 2 — Lógica de Programação — Capítulo 10: Exercícios (35 no total)</title>
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 10</span><a class="next" href="../vol3/cap01.html">Próximo →</a></nav>
+<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 10</span></div>
+<h2 style="margin-top:8px;">Exercícios (35 no total)</h2>
+
+<p>Baseado na apostila de <strong>@TIDASANTIGAS</strong>. Exercícios organizados por dificuldade.</p>
+
+<h3>Nível Básico (10 exercícios)</h3>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 1 — Par ou Ímpar</span>
+<p>Leia um número e informe se é par ou ímpar (use %).</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> ParImpar
+<span class="kw">VAR</span> num: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> num
+    <span class="kw">SE</span> num % <span class="num">2</span> = <span class="num">0</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> num, <span class="str">" é par."</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">ESCREVA</span> num, <span class="str">" é ímpar."</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 2 — Maior de Três</span>
+<p>Leia três valores e retorne o maior.</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> MaiorDeTres
+<span class="kw">VAR</span> a, b, c, maior: <span class="fn">REAL</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> a, b, c
+    maior = a
+    <span class="kw">SE</span> b &gt; maior <span class="kw">ENTÃO</span> maior = b <span class="kw">FIM SE</span>
+    <span class="kw">SE</span> c &gt; maior <span class="kw">ENTÃO</span> maior = c <span class="kw">FIM SE</span>
+    <span class="kw">ESCREVA</span> <span class="str">"O maior é: "</span>, maior
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 3 — Contagem Regressiva</span>
+<p>Exiba o contador de 10 até 1.</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">PARA</span> i = <span class="num">10</span> <span class="kw">ATE</span> <span class="num">1</span> <span class="kw">PASSO</span> -<span class="num">1</span>
+    <span class="kw">ESCREVA</span> i
+<span class="kw">FIM PARA</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 4 — Soma dos Pares</span>
+<p>Somar todos os pares de 1 até 100.</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code">soma = <span class="num">0</span>
+<span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">100</span>
+    <span class="kw">SE</span> i % <span class="num">2</span> = <span class="num">0</span> <span class="kw">ENTÃO</span>
+        soma = soma + i
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM PARA</span>
+<span class="kw">ESCREVA</span> <span class="str">"Soma dos pares: "</span>, soma  <span class="cm">// 2550</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 5 — Tabuada</span>
+<p>Exibir tabuada de 1 a 10 de um número.</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> Tabuada
+<span class="kw">VAR</span> numero, i: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> numero
+    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">10</span>
+        <span class="kw">ESCREVA</span> numero, <span class="str">" x "</span>, i, <span class="str">" = "</span>, numero * i
+    <span class="kw">FIM PARA</span>
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 6 — Média de Notas</span>
+<p>Média de 4 notas e validação de aprovação (≥ 7).</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> MediaAluno
+<span class="kw">VAR</span> notas: <span class="fn">VETOR</span>[<span class="num">1</span>..<span class="num">4</span>] <span class="kw">DE</span> <span class="fn">REAL</span>; soma, media: <span class="fn">REAL</span>; i: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    soma = <span class="num">0</span>
+    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">4</span>
+        <span class="kw">LEIA</span> notas[i]; soma = soma + notas[i]
+    <span class="kw">FIM PARA</span>
+    media = soma / <span class="num">4</span>
+    <span class="kw">SE</span> media &gt;= <span class="num">7</span> <span class="kw">ENTÃO</span> <span class="kw">ESCREVA</span> <span class="str">"Aprovado"</span>
+    <span class="kw">SENÃO SE</span> media &gt;= <span class="num">5</span> <span class="kw">ENTÃO</span> <span class="kw">ESCREVA</span> <span class="str">"Recuperação"</span>
+    <span class="kw">SENÃO</span> <span class="kw">ESCREVA</span> <span class="str">"Reprovado"</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 7 — Fatorial</span>
+<p>Calcular o fatorial de N.</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> Fatorial
+<span class="kw">VAR</span> n, i, fat: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> n; fat = <span class="num">1</span>
+    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> n
+        fat = fat * i
+    <span class="kw">FIM PARA</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Fatorial: "</span>, fat
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 8 — Fibonacci</span>
+<p>Exibir N termos da sequência de Fibonacci (0, 1, 1, 2, 3, 5, 8, 13...).</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> Fibonacci
+<span class="kw">VAR</span> n, a, b, c, i: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> n; a = <span class="num">0</span>; b = <span class="num">1</span>
+    <span class="kw">ESCREVA</span> a, b
+    <span class="kw">PARA</span> i = <span class="num">3</span> <span class="kw">ATE</span> n
+        c = a + b; <span class="kw">ESCREVA</span> c; a = b; b = c
+    <span class="kw">FIM PARA</span>
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 9 — Contador de Vogais</span>
+<p>Contar vogais de uma string.</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> ContaVogais
+<span class="kw">VAR</span> texto: <span class="fn">TEXTO</span>; i, cont: <span class="fn">INTEIRO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> texto; cont = <span class="num">0</span>
+    <span class="kw">PARA</span> i = <span class="num">0</span> <span class="kw">ATE</span> <span class="fn">COMPRIMENTO</span>(texto) - <span class="num">1</span>
+        <span class="kw">SE</span> <span class="fn">CARACTERE</span>(texto, i) = <span class="str">"a"</span> OU <span class="fn">CARACTERE</span>(texto, i) = <span class="str">"e"</span> OU
+           <span class="fn">CARACTERE</span>(texto, i) = <span class="str">"i"</span> OU <span class="fn">CARACTERE</span>(texto, i) = <span class="str">"o"</span> OU
+           <span class="fn">CARACTERE</span>(texto, i) = <span class="str">"u"</span> <span class="kw">ENTÃO</span>
+            cont = cont + <span class="num">1</span>
+        <span class="kw">FIM SE</span>
+    <span class="kw">FIM PARA</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Vogais: "</span>, cont
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<div class="exercise"><span class="exercise-label">📝 Ex 10 — Validação de Login</span>
+<p>Verificar usuário e senha padrão (use E).</p>
+<details><summary>Ver solução</summary><div class="solution-body">
+<div class="code"><span class="kw">ALGORITMO</span> Login
+<span class="kw">VAR</span> usuario, senha: <span class="fn">TEXTO</span>
+<span class="kw">INICIO</span>
+    <span class="kw">LEIA</span> usuario, senha
+    <span class="kw">SE</span> usuario = <span class="str">"admin"</span> E senha = <span class="str">"1234"</span> <span class="kw">ENTÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Login realizado!"</span>
+    <span class="kw">SENÃO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Usuário ou senha inválidos"</span>
+    <span class="kw">FIM SE</span>
+<span class="kw">FIM</span></div>
+</div></details></div>
+
+<h3>Nível Intermediário (10 exercícios propostos)</h3>
+<div class="card"><ol>
+<li>Jogo da Adivinhação — Número secreto entre 1 e 100 com dicas</li>
+<li>Ordenação de Vetor — Bubble Sort de 10 números</li>
+<li>Matriz Transposta — Inverter linhas e colunas de uma matriz 3×3</li>
+<li>Pilha de Livros — CRUD usando empilhar/desempilhar</li>
+<li>Agenda Telefônica — Adicionar e buscar por chave (dicionário)</li>
+<li>Validador de Palíndromo — Verificar se a palavra é igual de trás para frente</li>
+<li>Calculadora de IMC — Cálculo e classificação médica</li>
+<li>Conversor de Bases — Decimal para binário</li>
+<li>Análise de Texto — Contagem estruturada de caracteres</li>
+<li>Sistema de Login com Tentativas — Bloqueio após 3 erros</li>
+</ol></div>
+
+<h3>Nível Avançado (5 exercícios propostos)</h3>
+<div class="card"><ol>
+<li>Fila de Atendimento — Conceito FIFO completo</li>
+<li>Calculadora de Matrizes — Operações 2×2 (soma, multiplicação)</li>
+<li>Lista de Tarefas — CRUD dinâmico</li>
+<li>Busca Binária — Busca otimizada em vetores ordenados</li>
+<li>Controle de Estojos — Exportação JSON estruturada</li>
+</ol></div>
+
+<div class="callout callout-olive">
+<span class="callout-label">✅ Resumo do Volume 2</span>
+<p style="margin-bottom:0;">Neste volume, você dominou: <strong>algoritmos</strong>, <strong>variáveis e tipos</strong>, <strong>operadores</strong>, <strong>tabelas verdade</strong>, <strong>condicionais</strong>, <strong>laços de repetição</strong>, <strong>estruturas de dados</strong>, <strong>funções</strong> e <strong>tratamento de dados</strong>. Tudo em pseudocódigo, independente de linguagem. No próximo volume, vamos aplicar tudo isso em <strong>Python</strong>!</p>
+</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap09.html">← Anterior</a><a class="next-btn" href="../vol3/cap01.html">Próximo →</a></div>
+</div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 10</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
+</body></html>
