@@ -9,70 +9,177 @@
 </head>
 <body>
 <nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 7</span><a class="next" href="cap08.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 7</span></div>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 7</span></div>
 <h2 style="margin-top:8px;">Estruturas de Dados</h2>
 
+<p class="chapter-lead">Estruturas de dados, em inglês <em>data structures</em>, são formas de organizar informações para que o algoritmo consiga guardar, buscar, alterar e percorrer dados com clareza.</p>
+
 <div class="chapter-hook">
-<p>Estruturas de dados (<em>data structures</em>) organizam informação. A escolha da estrutura muda a facilidade de guardar, buscar e processar valores.</p>
+<p>Imagine uma escola tentando guardar notas. Se existe apenas uma nota, uma variável resolve. Mas se existem notas de uma turma inteira, precisamos de uma organização melhor: lista, vetor, matriz, pilha ou dicionário, dependendo do problema.</p>
 </div>
 
-<h3>Vetores (arrays unidimensionais)</h3>
-<p>Um <strong>vetor</strong> (<em>array</em>) é uma lista de elementos do mesmo tipo, acessados por um índice (começando em 1 no pseudocódigo).</p>
+<h3>Por que não usar só variáveis?</h3>
+<p>Uma variável (<em>variable</em>) guarda um valor. Isso funciona bem para uma idade, uma média ou um preço. Mas programas reais quase sempre lidam com conjuntos: vários alunos, vários produtos, várias tentativas, várias tarefas.</p>
+
+<div class="concept-grid">
+<div class="learning-card"><h4>Um valor</h4><p>Use uma variável simples: <code class="inline">idade</code>, <code class="inline">preco</code>, <code class="inline">media</code>.</p></div>
+<div class="learning-card"><h4>Vários valores em ordem</h4><p>Use vetor, lista ou matriz. A posição do dado importa.</p></div>
+<div class="learning-card"><h4>Valores com identificação</h4><p>Use dicionário quando você quer buscar por nome, código ou chave.</p></div>
+</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">Ideia central</span>
+<p>Escolher uma estrutura de dados é escolher uma forma de fazer perguntas ao dado: “qual é o terceiro item?”, “qual telefone pertence a Maria?”, “qual foi o último item colocado?”.</p>
+</div>
+
+<h3>Vetor (array): vários valores do mesmo tipo</h3>
+<p>Um <strong>vetor</strong>, em inglês <em>array</em>, guarda vários elementos em sequência. Cada elemento fica em uma posição chamada <strong>índice</strong> (<em>index</em>). No pseudocódigo deste e-book, usaremos índices começando em 1.</p>
+
+<div class="process-panel">
+<div>
+<h4>Como pensar em um vetor</h4>
+<p>Um vetor é como uma fileira de caixas numeradas. Cada caixa guarda um valor, e você acessa o valor pelo número da posição.</p>
+</div>
+<ol class="process-list">
+<li>Crie o vetor com um tamanho.</li>
+<li>Guarde valores em posições.</li>
+<li>Acesse uma posição quando precisar.</li>
+<li>Percorra o vetor com um laço.</li>
+</ol>
+</div>
+
+<h4>Exemplo: média de cinco notas</h4>
 <div class="code"><span class="kw">ALGORITMO</span> MediaNotas
 <span class="kw">VAR</span>
     notas: <span class="fn">VETOR</span>[<span class="num">1</span>..<span class="num">5</span>] <span class="kw">DE</span> <span class="fn">REAL</span>
-    soma, media: <span class="fn">REAL</span>; i: <span class="fn">INTEIRO</span>
+    soma, media: <span class="fn">REAL</span>
+    i: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
     soma = <span class="num">0</span>
-    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">5</span>
+
+    <span class="kw">PARA</span> i <span class="kw">DE</span> <span class="num">1</span> <span class="kw">ATE</span> <span class="num">5</span>
         <span class="kw">ESCREVA</span> <span class="str">"Digite a nota "</span>, i, <span class="str">":"</span>
         <span class="kw">LEIA</span> notas[i]
         soma = soma + notas[i]
     <span class="kw">FIM PARA</span>
+
     media = soma / <span class="num">5</span>
     <span class="kw">ESCREVA</span> <span class="str">"Média: "</span>, media
 <span class="kw">FIM</span></div>
 
-<h3>Matrizes (two-dimensional arrays)</h3>
+<h3>Matriz (two-dimensional array): linhas e colunas</h3>
+<p>Uma <strong>matriz</strong>, em inglês <em>two-dimensional array</em>, organiza dados em linhas e colunas. Ela é útil quando o dado tem formato de tabela, grade, planilha, mapa ou tabuleiro.</p>
+
+<h4>Exemplo: matriz 3x3</h4>
 <div class="code"><span class="kw">ALGORITMO</span> MatrizExemplo
-<span class="kw">VAR</span> matriz: <span class="fn">VETOR</span>[<span class="num">1</span>..<span class="num">3</span>][<span class="num">1</span>..<span class="num">3</span>] <span class="kw">DE</span> <span class="fn">INTEIRO</span>; i, j: <span class="fn">INTEIRO</span>
+<span class="kw">VAR</span>
+    matriz: <span class="fn">VETOR</span>[<span class="num">1</span>..<span class="num">3</span>][<span class="num">1</span>..<span class="num">3</span>] <span class="kw">DE</span> <span class="fn">INTEIRO</span>
+    linha, coluna: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
-    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">3</span>
-        <span class="kw">PARA</span> j = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">3</span>
-            <span class="kw">LEIA</span> matriz[i][j]
+    <span class="kw">PARA</span> linha <span class="kw">DE</span> <span class="num">1</span> <span class="kw">ATE</span> <span class="num">3</span>
+        <span class="kw">PARA</span> coluna <span class="kw">DE</span> <span class="num">1</span> <span class="kw">ATE</span> <span class="num">3</span>
+            <span class="kw">ESCREVA</span> <span class="str">"Digite o valor da posição "</span>, linha, <span class="str">","</span>, coluna
+            <span class="kw">LEIA</span> matriz[linha][coluna]
         <span class="kw">FIM PARA</span>
     <span class="kw">FIM PARA</span>
 <span class="kw">FIM</span></div>
 
-<h3>Listas dinâmicas (dynamic lists)</h3>
+<div class="callout callout-olive">
+<span class="callout-label">Leitura prática</span>
+<p>Vetor tem uma dimensão: posição. Matriz tem duas: linha e coluna. Por isso, normalmente usamos dois laços: um para as linhas e outro para as colunas.</p>
+</div>
+
+<h3>Lista dinâmica (dynamic list): quando o tamanho pode mudar</h3>
+<p>Uma <strong>lista dinâmica</strong>, em inglês <em>dynamic list</em>, permite adicionar, inserir e remover itens durante a execução do algoritmo. Ela é útil quando não sabemos previamente quantos elementos existirão.</p>
+
 <div class="code">lista = []
 lista.<span class="fn">adicionar</span>(<span class="num">10</span>)
 lista.<span class="fn">adicionar</span>(<span class="num">20</span>)
 lista.<span class="fn">inserir</span>(<span class="num">1</span>, <span class="num">15</span>)       <span class="cm">// Resultado: [10, 15, 20]</span>
 lista.<span class="fn">remover</span>(<span class="num">20</span>)          <span class="cm">// Resultado: [10, 15]</span></div>
 
-<h3>Pilhas (LIFO — Last In, First Out)</h3>
-<p>Pilha funciona como uma pilha de pratos: o último colocado é o primeiro retirado.</p>
+<p>Use lista quando os dados entram e saem com frequência: lista de tarefas, carrinho de compras, nomes inscritos em um evento ou itens de um pedido.</p>
+
+<h3>Pilha (stack): o último entra, o primeiro sai</h3>
+<p>Uma <strong>pilha</strong>, em inglês <em>stack</em>, segue a regra <strong>LIFO</strong>: <em>Last In, First Out</em>, ou seja, “o último a entrar é o primeiro a sair”.</p>
+
+<div class="callout callout-blue">
+<span class="callout-label">Analogia simples</span>
+<p>Pense em uma pilha de pratos. Você coloca um prato por cima e também retira primeiro o prato que está por cima.</p>
+</div>
+
 <div class="code">pilha = []
 pilha.<span class="fn">empilhar</span>(<span class="str">"A"</span>)
 pilha.<span class="fn">empilhar</span>(<span class="str">"B"</span>)
 pilha.<span class="fn">empilhar</span>(<span class="str">"C"</span>)         <span class="cm">// Estrutura: [A, B, C]</span>
+
 topo = pilha.<span class="fn">desempilhar</span>()  <span class="cm">// Retorna "C"</span></div>
 
-<h3>Dicionários (dictionaries / maps)</h3>
-<p>Armazenam pares chave-valor:</p>
+<h3>Dicionário (dictionary / map): buscar por chave</h3>
+<p>Um <strong>dicionário</strong>, em inglês <em>dictionary</em> ou <em>map</em>, guarda pares <strong>chave-valor</strong> (<em>key-value pairs</em>). Em vez de buscar pela posição, você busca pela chave.</p>
+
 <div class="code">agenda[<span class="str">"João"</span>] = <span class="str">"9999-1111"</span>
 agenda[<span class="str">"Maria"</span>] = <span class="str">"9999-2222"</span>
+
 telefoneJoao = agenda[<span class="str">"João"</span>]
 
 <span class="kw">PARA</span> cada nome <span class="kw">EM</span> agenda
     <span class="kw">ESCREVA</span> nome, <span class="str">":"</span>, agenda[nome]
 <span class="kw">FIM PARA</span></div>
 
+<p>Dicionários são bons para cadastro, agenda, estoque, configuração de sistema e qualquer situação em que um identificador aponta para um valor.</p>
+
+<h3>Como escolher a estrutura certa</h3>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>Estrutura</th><th>Nome em inglês</th><th>Use quando...</th><th>Exemplo mental</th></tr></thead>
+<tbody>
+<tr><td><strong>Vetor</strong></td><td><em>array</em></td><td>Você tem valores em sequência e tamanho conhecido.</td><td>Notas de 5 provas.</td></tr>
+<tr><td><strong>Matriz</strong></td><td><em>two-dimensional array</em></td><td>Você precisa de linhas e colunas.</td><td>Planilha, tabuleiro, mapa.</td></tr>
+<tr><td><strong>Lista dinâmica</strong></td><td><em>dynamic list</em></td><td>A quantidade de itens pode mudar.</td><td>Carrinho de compras.</td></tr>
+<tr><td><strong>Pilha</strong></td><td><em>stack</em></td><td>O último item colocado deve sair primeiro.</td><td>Pilha de pratos, desfazer ação.</td></tr>
+<tr><td><strong>Dicionário</strong></td><td><em>dictionary / map</em></td><td>Você quer buscar por uma chave.</td><td>Agenda por nome.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Erros comuns de iniciantes</h3>
+<div class="concept-grid">
+<div class="learning-card"><h4>Usar variável demais</h4><p>Se aparecem <code class="inline">nota1</code>, <code class="inline">nota2</code>, <code class="inline">nota3</code>, talvez um vetor resolva melhor.</p></div>
+<div class="learning-card"><h4>Confundir índice com valor</h4><p>O índice é a posição. O valor é o conteúdo guardado naquela posição.</p></div>
+<div class="learning-card"><h4>Usar matriz sem necessidade</h4><p>Se não existe linha e coluna, uma lista ou vetor costuma ser mais simples.</p></div>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 2.4 — Escolhendo estruturas</span>
+<p>Para cada situação, diga qual estrutura você usaria: vetor, matriz, lista dinâmica, pilha ou dicionário.</p>
+<ul>
+<li>a) Guardar as notas de cinco avaliações.</li>
+<li>b) Representar um tabuleiro 3x3.</li>
+<li>c) Guardar telefones procurando pelo nome da pessoa.</li>
+<li>d) Controlar uma lista de tarefas que pode receber novos itens.</li>
+<li>e) Implementar a função “desfazer” de um editor.</li>
+</ul>
+<details>
+<summary>Ver solução</summary>
+<div class="solution-body">
+<ul>
+<li><strong>a) Vetor</strong> — valores em sequência e quantidade conhecida.</li>
+<li><strong>b) Matriz</strong> — estrutura com linhas e colunas.</li>
+<li><strong>c) Dicionário</strong> — busca por chave, neste caso o nome.</li>
+<li><strong>d) Lista dinâmica</strong> — a quantidade de itens muda.</li>
+<li><strong>e) Pilha</strong> — a última ação feita deve ser a primeira a ser desfeita.</li>
+</ul>
+</div>
+</details>
+</div>
 
 <div class="chapter-bridge">
-<p>Com os dados organizados, também precisamos organizar comportamentos. Funções e procedimentos cumprem esse papel.</p>
+<p>Com os dados organizados, também precisamos organizar comportamentos. Funções e procedimentos dão nome a blocos de lógica para que eles possam ser reaproveitados.</p>
 </div>
+
 <div class="page-nav"><a class="prev-btn" href="cap06.html">← Anterior</a><a class="next-btn" href="cap08.html">Próximo →</a></div>
 </div>
 <div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 7</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
