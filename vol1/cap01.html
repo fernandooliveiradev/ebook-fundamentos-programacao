@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volume 1 — Pensamento Computacional — Capítulo 1: O que é Pensamento Computacional?</title>
 <link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -20,46 +21,104 @@
 </div>
 <h2 style="margin-top:8px;">O que é Pensamento Computacional?</h2>
 
+<div class="chapter-hook">
+<p><strong>Gancho:</strong> Antes de decorar termos, observe a ideia central: pensamento computacional é uma forma de organizar problemas para que uma solução possa ser explicada, testada e repetida.</p>
+</div>
+
 
 <p>O <strong>Pensamento Computacional</strong> não é "pensar como um computador". É uma forma de <em>resolver problemas</em> de maneira sistemática, organizada e lógica — usando conceitos da ciência da computação, mas aplicáveis a qualquer área da vida.</p>
 
-<p>O termo foi popularizado por <strong>Jeannette M. Wing</strong> em 2006, no artigo <em>"Computational Thinking"</em>, publicado na revista <em>Communications of the ACM</em>. Wing defendeu que essa habilidade deveria ser tão fundamental quanto ler, escrever e calcular — uma <strong>letramento do século XXI</strong> para todos, não apenas para cientistas da computação.</p>
+<p>O termo foi popularizado por <strong>Jeannette M. Wing</strong> em 2006, no artigo <em>"Computational Thinking"</em>, publicado na revista <em>Communications of the ACM</em>. Wing defendeu que essa habilidade deveria ser tão fundamental quanto ler, escrever e calcular — um <strong>letramento do século XXI</strong> para todos, não apenas para cientistas da computação.</p>
 
 <div class="callout callout-blue">
 <span class="callout-label">💡 Definição (Wing, 2006, refinada em 2014)</span>
 <p style="margin-bottom:0;">"O pensamento computacional é o processo de pensamento envolvido na formulação de um problema e na expressão de sua solução de forma que um computador — humano ou máquina — possa executá-la eficazmente."</p>
 </div>
 
+<h3>As bases do pensamento computacional</h3>
+
+<section class="learning-system" aria-labelledby="pilares-title">
+<div class="learning-system-head">
+<div>
+<span class="learning-system-kicker">Design mental</span>
+<h4 class="learning-system-title" id="pilares-title">Quatro movimentos para resolver problemas</h4>
+<p class="learning-system-copy">Para o aluno iniciante, pensamento computacional fica mais claro quando deixa de ser uma lista de termos e vira um fluxo de raciocínio. Os pilares abaixo trabalham juntos: entender, comparar, simplificar e executar.</p>
+</div>
+<div class="learning-system-badge">4<br>pilares</div>
+</div>
+
+<div class="pillar-grid">
+<article class="pillar-card">
+<h4>Decomposição</h4>
+<p class="pillar-action">Quebrar um problema grande em partes menores.</p>
+<p>Em vez de resolver “criar um sistema escolar” de uma vez, separamos cadastro de alunos, turmas, notas e relatórios.</p>
+<p class="pillar-example"><strong>Pergunta-guia</strong>Quais partes menores existem aqui?</p>
+</article>
+
+<article class="pillar-card">
+<h4>Reconhecimento de padrões</h4>
+<p class="pillar-action">Encontrar semelhanças entre problemas ou etapas.</p>
+<p>Se vários relatórios calculam média, esse padrão pode virar uma regra ou função reutilizável.</p>
+<p class="pillar-example"><strong>Pergunta-guia</strong>O que se repete?</p>
+</article>
+
+<article class="pillar-card">
+<h4>Abstração</h4>
+<p class="pillar-action">Focar no essencial e ignorar detalhes que não afetam a solução.</p>
+<p>Para calcular uma média, importam as notas e a quantidade de avaliações; a cor do caderno não importa.</p>
+<p class="pillar-example"><strong>Pergunta-guia</strong>O que realmente importa para resolver?</p>
+</article>
+
+<article class="pillar-card">
+<h4>Pensamento algorítmico</h4>
+<p class="pillar-action">Transformar a solução em passos claros e executáveis.</p>
+<p>Depois de entender os dados, definimos a ordem: ler notas, somar, dividir e mostrar resultado.</p>
+<p class="pillar-example"><strong>Pergunta-guia</strong>Qual é a sequência correta?</p>
+</article>
+</div>
+</section>
+
+<div class="process-panel">
+<div>
+<h4>Exemplo aplicado: média da turma</h4>
+<p>Antes de programar, pense computacionalmente: separe o problema, reconheça o padrão do cálculo, ignore dados irrelevantes e só então descreva os passos.</p>
+</div>
+<ol class="process-list">
+<li>Ler as notas dos alunos.</li>
+<li>Somar todas as notas.</li>
+<li>Contar quantas notas foram informadas.</li>
+<li>Dividir a soma pela quantidade.</li>
+<li>Mostrar a média final.</li>
+</ol>
+</div>
+
+<p>Esse exemplo antecipa a jornada do e-book: o Volume 1 fortalece a forma de pensar, o Volume 2 transforma a ideia em pseudocódigo e o Volume 3 leva o mesmo raciocínio para Python.</p>
+
 <h3>Uma breve história</h3>
 
 <p>A ideia de usar computadores como ferramentas de pensamento começou bem antes de Wing. A trajetória tem marcos importantes:</p>
 
-<div class="diagram">
-<svg viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:860px;">
-<line x1="40" y1="100" x2="820" y2="100" stroke="#D1CFC5" stroke-width="2"/>
-<g font-family="ui-monospace,monospace" font-size="11" fill="#3D3D3A">
-<circle cx="60" cy="100" r="8" fill="#D97757"/>
-<text x="60" y="80" text-anchor="middle" fill="#87867F" font-size="10">década de 1960</text>
-<text x="60" y="125" text-anchor="middle" font-size="11">Papert</text>
-<text x="60" y="140" text-anchor="middle" font-size="10" fill="#87867F">Linguagem Logo</text>
-<circle cx="250" cy="100" r="8" fill="#D97757"/>
-<text x="250" y="80" text-anchor="middle" fill="#87867F" font-size="10">1972</text>
-<text x="250" y="125" text-anchor="middle" font-size="11">Papert & Solomon</text>
-<text x="250" y="140" text-anchor="middle" font-size="10" fill="#87867F">"Twenty things to do"</text>
-<circle cx="450" cy="100" r="8" fill="#D97757"/>
-<text x="450" y="80" text-anchor="middle" fill="#87867F" font-size="10">1980</text>
-<text x="450" y="125" text-anchor="middle" font-size="11">Mindstorms</text>
-<text x="450" y="140" text-anchor="middle" font-size="10" fill="#87867F">Construcionismo</text>
-<circle cx="650" cy="100" r="8" fill="#788C5D"/>
-<text x="650" y="80" text-anchor="middle" fill="#87867F" font-size="10">2006</text>
-<text x="650" y="125" text-anchor="middle" font-size="11">Jeannette Wing</text>
-<text x="650" y="140" text-anchor="middle" font-size="10" fill="#87867F">"Pensamento Computacional"</text>
-<circle cx="820" cy="100" r="8" fill="#788C5D"/>
-<text x="820" y="80" text-anchor="middle" fill="#87867F" font-size="10">2025-2026</text>
-<text x="820" y="125" text-anchor="middle" font-size="11">BNCC / Mundo</text>
-</g>
-</svg>
-<div class="diagram-caption">Evolução histórica do Pensamento Computacional</div>
+<div class="timeline-list">
+<div class="timeline-item">
+<div class="timeline-year">Década de 1960</div>
+<div><p><strong>Seymour Papert e a linguagem Logo</strong></p><p>Computadores começam a aparecer como ferramentas para aprender criando, não apenas como máquinas de cálculo.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">1972</div>
+<div><p><strong>Papert e Solomon</strong></p><p>O texto <em>Twenty things to do with a computer</em> defende usos criativos do computador na educação.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">1980</div>
+<div><p><strong>Mindstorms</strong></p><p>Papert consolida a visão construcionista: aprender construindo artefatos, explorando ideias e testando hipóteses.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">2006</div>
+<div><p><strong>Jeannette Wing</strong></p><p>O termo pensamento computacional ganha força como habilidade fundamental para todos, não apenas para programadores.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-year">Hoje</div>
+<div><p><strong>Educação e mundo do trabalho</strong></p><p>Currículos, desafios educacionais e debates sobre IA reforçam a importância de resolver problemas com clareza e método.</p></div>
+</div>
 </div>
 
 <p><strong>Seymour Papert</strong> foi o pioneiro. Trabalhando no MIT na década de 1960, co-criou a linguagem <strong>Logo</strong> — uma linguagem de programação voltada para crianças, com uma "tartaruga gráfica" que se movia e desenhava na tela. Papert defendia que <em>aprender programando</em> era mais poderoso do que ser instruído por máquinas. Ele chamou essa abordagem de <strong>construcionismo</strong>, inspirando-se no construtivismo de Jean Piaget.</p>
@@ -79,9 +138,9 @@
 
 <h3>Como o pensamento computacional se conecta</h3>
 
-<p>O relatório <em>Four Futures</em> explora quatro cenários plausíveis para o futuro do trabalho, todos influenciados pelo avanço da IA. Embora o relatório não use o termo "pensamento computacional" literalmente, em todos os cenários a capacidade de <strong>decompor problemas</strong>, <strong>reconhecer padrões</strong>, <strong>abstrair complexidade</strong> e <strong>criar soluções algorítmicas</strong> aparece como competência fundamental — exatamente os quatro pilares do pensamento computacional.</p>
+<p>O relatório <em>Four Futures</em> explora quatro cenários plausíveis para o futuro do trabalho, todos influenciados pelo avanço da IA. Embora o relatório não use o termo "pensamento computacional" literalmente, ele reforça a importância de adaptação, leitura crítica de tecnologia e preparação para mudanças. Neste e-book, a conexão com <strong>decompor problemas</strong>, <strong>reconhecer padrões</strong>, <strong>abstrair complexidade</strong> e <strong>criar soluções algorítmicas</strong> é uma inferência pedagógica: são habilidades que ajudam o aluno a navegar esses cenários com mais clareza.</p>
 
-<p>A tese de Jeannette Wing (2006) se mantém atual em 2026: o pensamento computacional é uma <strong>meta-habilidade</strong> que sustenta competências essenciais como pensamento analítico, adaptabilidade e competências tecnológicas — habilidades que o WEF identifica como centrais em todos os cenários futuros.</p>
+<p>A tese de Jeannette Wing (2006) se mantém atual em 2026: o pensamento computacional funciona como uma <strong>meta-habilidade</strong> para raciocinar, automatizar, avaliar soluções e aprender novas tecnologias com mais autonomia.</p>
 
 <h3>O pensamento computacional no Brasil</h3>
 
@@ -89,7 +148,7 @@
 
 <ul>
 <li><strong>Base Nacional Comum Curricular (BNCC)</strong> — Homologada em 2017/2018, a BNCC inclui a competência 5, que aborda o uso de tecnologias. Embora não exista uma área específica de "Computação" na BNCC, os conceitos de pensamento computacional estão dispersos em diferentes componentes.</li>
-<li><strong>Política Nacional de Alfabetização Digital (PNED)</strong> — Instituída pela <strong>Lei nº 14.533, de 11 de janeiro de 2023</strong>, e regulamentada pelo <strong>Decreto nº 11.728, de 5 de outubro de 2023</strong>. A PNED estabelece uma estrutura para a incorporação de práticas digitais na educação, contemplando eixos como inclusão digital, educação digital escolar e capacitação.</li>
+<li><strong>Política Nacional de Educação Digital (PNED)</strong> — Instituída pela <strong>Lei nº 14.533, de 11 de janeiro de 2023</strong>, e regulamentada pelo <strong>Decreto nº 11.728, de 5 de outubro de 2023</strong>. A PNED estabelece uma estrutura para a incorporação de práticas digitais na educação, contemplando eixos como inclusão digital, educação digital escolar e capacitação.</li>
 <li><strong>Sociedade Brasileira de Computação (SBC)</strong> — Publicou o <em>"Referencial Curricular para Computação na Educação Básica"</em> (2022), que continua sendo a principal referência para a área. A SBC defende a inclusão da Computação como área própria na BNCC.</li>
 <li><strong>Bebras Brasil</strong> — Desafio internacional de pensamento computacional, presente em mais de 80 países. A 5ª edição brasileira ocorrerá em 2026 (provas de 01 a 07 de outubro). Disponível em <a href="https://bebrasbrasil.com.br/">bebrasbrasil.com.br</a>.</li>
 </ul>
@@ -102,6 +161,10 @@
 </div>
 
 
+
+<div class="chapter-bridge">
+<p>Antes de seguir, guarde o mapa mental deste capítulo: pensamento computacional é resolver problemas usando decomposição, padrões, abstração e passos ordenados. O próximo capítulo aprofunda o primeiro pilar, <strong>decomposição</strong>, mostrando como quebrar um problema grande sem perder o sentido da solução completa.</p>
+</div>
 <div class="page-nav">
 <a class="prev-btn" href="../index.html">← Índice</a>
 <a class="next-btn" href="cap02.html">Próximo →</a>
@@ -110,7 +173,7 @@
 
 <div class="footer">
 <p>Volume 1 — Pensamento Computacional — Capítulo 1</p>
-<p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
+<p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p>
 </div>
 
 </body>

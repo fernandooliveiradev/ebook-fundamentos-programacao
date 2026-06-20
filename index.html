@@ -5,155 +5,173 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pensamento Computacional, Lógica de Programação e Algoritmos — E-book Completo</title>
 <link rel="stylesheet" href="estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-<svg style="display:block;margin:0 auto 24px;" width="280" height="160" viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1748e8"/><stop offset="1" stop-color="#2f64ff"/></linearGradient></defs>
-<line x1="40" y1="80" x2="110" y2="40" stroke="#1748e8" stroke-width="2" opacity=".5"/>
-<line x1="40" y1="80" x2="110" y2="120" stroke="#788C5D" stroke-width="2" opacity=".5"/>
-<line x1="110" y1="40" x2="190" y2="60" stroke="#1748e8" stroke-width="2" opacity=".5"/>
-<line x1="110" y1="120" x2="190" y2="100" stroke="#788C5D" stroke-width="2" opacity=".5"/>
-<line x1="190" y1="60" x2="250" y2="80" stroke="#E3DACC" stroke-width="2" opacity=".4"/>
-<line x1="190" y1="100" x2="250" y2="80" stroke="#E3DACC" stroke-width="2" opacity=".4"/>
-<circle cx="40" cy="80" r="16" fill="none" stroke="url(#g)" stroke-width="2.5"/>
-<circle cx="110" cy="40" r="12" fill="none" stroke="#1748e8" stroke-width="2"/>
-<circle cx="110" cy="120" r="12" fill="none" stroke="#788C5D" stroke-width="2"/>
-<circle cx="190" cy="60" r="12" fill="none" stroke="#1748e8" stroke-width="2"/>
-<circle cx="190" cy="100" r="12" fill="none" stroke="#788C5D" stroke-width="2"/>
-<circle cx="250" cy="80" r="18" fill="url(#g)" opacity=".3"/>
-</svg>
+<header class="hero">
+<div class="hero-inner">
+<div class="hero-copy">
 <span class="eyebrow-light">E-book Completo</span>
 <h1>Pensamento Computacional, Lógica de Programação e Algoritmos</h1>
-<p class="subtitle">Aprenda a pensar antes de programar</p>
-<p class="author">Por <a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
+<p class="subtitle">Uma jornada progressiva para aprender a pensar, organizar soluções e transformar raciocínio em código Python.</p>
+<p class="author">Por <strong>Fernando de Oliveira</strong> — 2026</p>
+<div class="author-links" aria-label="Links do autor">
+<a href="https://fernandodeoliveira.pro">Site</a>
+<span>·</span>
+<a href="https://github.com/fernandooliveiradev">GitHub</a>
+<span>·</span>
+<a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a>
+</div>
 </div>
 
-<div class="page">
+<div class="hero-figure" aria-hidden="true">
+<svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="hero-g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#BFDBFE"/>
+<stop offset="1" stop-color="#3B82F6"/>
+</linearGradient>
+<filter id="hero-shadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000000" flood-opacity=".24"/>
+</filter>
+</defs>
+<rect x="38" y="44" width="344" height="252" rx="22" fill="rgba(15,23,42,.48)" stroke="rgba(191,219,254,.30)"/>
+<path d="M90 225 C130 148 158 124 210 180 C251 224 277 159 330 112" fill="none" stroke="#BFDBFE" stroke-width="5" stroke-linecap="round"/>
+<g filter="url(#hero-shadow)">
+<circle cx="92" cy="226" r="28" fill="#2563EB"/>
+<circle cx="180" cy="158" r="28" fill="#4F7A5B"/>
+<circle cx="252" cy="204" r="28" fill="#B4533B"/>
+<circle cx="330" cy="112" r="30" fill="url(#hero-g)"/>
+</g>
+<g fill="#FAF9F5" font-family="ui-monospace,monospace" font-size="18" font-weight="700" text-anchor="middle">
+<text x="92" y="232">01</text>
+<text x="180" y="164">02</text>
+<text x="252" y="210">03</text>
+<text x="330" y="118">PY</text>
+</g>
+<g fill="none" stroke="rgba(191,219,254,.24)" stroke-width="2">
+<path d="M82 72 H338"/>
+<path d="M82 264 H338"/>
+<path d="M126 72 V264"/>
+<path d="M294 72 V264"/>
+</g>
+</svg>
+</div>
+</div>
+</header>
 
-<!-- INTRODUÇÃO -->
+<main class="page page-wide">
+
+<section>
 <h2>A Jornada de Aprendizado</h2>
-<p>Este e-book foi organizado em <strong>três volumes</strong> que devem ser estudados em ordem. Cada volume constrói sobre o anterior, partindo do zero absoluto: primeiro você aprende a <strong>pensar</strong> como um programador (Pensamento Computacional), depois domina a <strong>Lógica de Programação</strong> e os <strong>Algoritmos</strong> em pseudocódigo, e por fim aplica tudo em <strong>Python</strong>.</p>
-<p>Todo o conteúdo passou por curadoria e revisão gramatical cuidadosa. As referências foram atualizadas para 2026, incluindo dados do <em>Fórum Econômico Mundial</em>, legislação brasileira vigente e a versão mais recente do Python.</p>
+<p class="chapter-lead">Este e-book foi organizado em três volumes que se conectam em sequência: primeiro você aprende a pensar em problemas, depois transforma esse pensamento em lógica estruturada e, por fim, escreve programas em Python.</p>
+<div class="chapter-hook">
+<p><strong>Gancho central:</strong> programar não começa no teclado. Começa quando você entende o problema, separa o essencial do ruído e cria uma sequência de passos que outra pessoa — ou uma máquina — consegue executar.</p>
+</div>
+<p>Ao longo dos capítulos, cada conceito volta em um novo nível de maturidade. Decomposição aparece primeiro em problemas do cotidiano, depois em pseudocódigo e finalmente em funções, listas e mini-projetos em Python.</p>
+</section>
 
-<!-- VOLUMES -->
+<section>
 <h2>Os Três Volumes</h2>
+<div class="toc-grid">
 
-<a href="vol1/cap01.html" style="text-decoration:none;color:inherit;">
-<div class="card card-blue" style="cursor:pointer;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(23,72,232,.15)'" onmouseout="this.style.boxShadow='none'">
-<div style="margin-bottom:8px;"><span class="pill" style="background:rgba(23,72,232,.12);color:var(--blue);">Volume 1</span></div>
-<h3 style="margin-top:4px;">Pensamento Computacional</h3>
-<p style="color:var(--gray-500);font-size:15px;">Aprenda a <em>pensar</em> como um programador antes de tocar em código. Os quatro pilares: decomposição, reconhecimento de padrões, abstração e pensamento algorítmico.</p>
-<div style="font-family:var(--mono);font-size:12px;color:var(--gray-500);margin-top:12px;">
-<p>📖 7 capítulos — um por página</p>
-<p>🎯 6 exercícios práticos com soluções</p>
-<p>🎮 Jogos de lógica e computação desplugada</p>
+<a class="card card-blue toc-card" href="vol1/cap01.html">
+<span class="pill">Volume 1</span>
+<h3>Pensamento Computacional</h3>
+<p>Aprenda a pensar como um resolvedor de problemas antes de tocar em código. Os quatro pilares aparecem com exemplos cotidianos, atividades desplugadas e exercícios guiados.</p>
+<div class="meta-list">
+<p>7 capítulos</p>
+<p>Exercícios com soluções</p>
+<p>Diagramas e atividades práticas</p>
 </div>
-<p style="color:var(--blue);font-size:14px;margin-top:12px;">Começar →</p>
-</div>
+<p><strong>Começar pelo pensamento →</strong></p>
 </a>
 
-<a href="vol2/cap01.html" style="text-decoration:none;color:inherit;">
-<div class="card card-olive" style="cursor:pointer;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(120,140,93,.15)'" onmouseout="this.style.boxShadow='none'">
-<div style="margin-bottom:8px;"><span class="pill" style="background:rgba(120,140,93,.15);color:var(--olive);">Volume 2</span></div>
-<h3 style="margin-top:4px;">Lógica de Programação</h3>
-<p style="color:var(--gray-500);font-size:15px;">Variáveis, operadores, condicionais, laços de repetição, arrays e funções — tudo em pseudocódigo, sem depender de uma linguagem específica.</p>
-<div style="font-family:var(--mono);font-size:12px;color:var(--gray-500);margin-top:12px;">
-<p>📖 10 capítulos — um por página</p>
-<p>🎯 35 exercícios com respostas</p>
-<p>📊 Tabelas verdade, fluxogramas e exemplos detalhados</p>
+<a class="card card-olive toc-card" href="vol2/cap01.html">
+<span class="pill">Volume 2</span>
+<h3>Lógica de Programação</h3>
+<p>Transforme raciocínio em algoritmos: variáveis, operadores, tabelas verdade, condicionais, laços, estruturas de dados, funções e tratamento de dados.</p>
+<div class="meta-list">
+<p>10 capítulos</p>
+<p>35 exercícios progressivos</p>
+<p>Pseudocódigo antes da linguagem</p>
 </div>
-<p style="color:var(--olive);font-size:14px;margin-top:12px;">Continuar →</p>
-</div>
+<p><strong>Construir a lógica →</strong></p>
 </a>
 
-<a href="vol3/cap01.html" style="text-decoration:none;color:inherit;">
-<div class="card card-rust" style="cursor:pointer;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(176,74,63,.15)'" onmouseout="this.style.boxShadow='none'">
-<div style="margin-bottom:8px;"><span class="pill" style="background:rgba(176,74,63,.15);color:var(--rust);">Volume 3</span></div>
-<h3 style="margin-top:4px;">Python na Prática</h3>
-<p style="color:var(--gray-500);font-size:15px;">Aplique tudo o que aprendeu — pensamento computacional, lógica e algoritmos — em Python. Sintaxe, projetos reais e exercícios que transformam teoria em prática.</p>
-<div style="font-family:var(--mono);font-size:12px;color:var(--gray-500);margin-top:12px;">
-<p>📖 10 capítulos — um por página</p>
-<p>🚀 8 mini-projetos completos em Python</p>
-<p>💡 Recursos atualizados para continuar aprendendo</p>
+<a class="card card-rust toc-card" href="vol3/cap01.html">
+<span class="pill">Volume 3</span>
+<h3>Python na Prática</h3>
+<p>Aplique o que aprendeu em programas reais: entrada e saída, operadores, decisões, repetições, coleções, funções, erros e mini-projetos completos.</p>
+<div class="meta-list">
+<p>10 capítulos</p>
+<p>8 mini-projetos</p>
+<p>Do pseudocódigo ao Python</p>
 </div>
-<p style="color:var(--rust);font-size:14px;margin-top:12px;">Finalizar →</p>
-</div>
+<p><strong>Escrever programas →</strong></p>
 </a>
 
-<!-- ROTEIRO -->
+</div>
+</section>
+
+<section>
 <h2>Roteiro de Estudo</h2>
-<div class="card">
-<ol style="margin-left:0;padding-left:0;list-style:none;">
-<li style="margin-bottom:20px;display:flex;gap:16px;">
-<span style="font-family:var(--mono);color:var(--blue);font-weight:bold;min-width:30px;">01</span>
-<div>
-<strong>Volume 1 — Pensamento Computacional</strong> (1-2 semanas)<br>
-<span style="font-size:14px;color:var(--gray-500);">Aprenda a decompor problemas, reconhecer padrões, abstrair e criar algoritmos. Sem código ainda — apenas pensamento estruturado.</span>
+<div class="concept-grid">
+<div class="learning-card">
+<span class="pill">01</span>
+<h3>Pense</h3>
+<p>Leia o Volume 1 sem pressa. O objetivo é criar vocabulário mental: decompor, reconhecer padrões, abstrair e ordenar passos.</p>
 </div>
-</li>
-<li style="margin-bottom:20px;display:flex;gap:16px;">
-<span style="font-family:var(--mono);color:var(--olive);font-weight:bold;min-width:30px;">02</span>
-<div>
-<strong>Volume 2 — Lógica de Programação</strong> (2-3 semanas)<br>
-<span style="font-size:14px;color:var(--gray-500);">Domine variáveis, operadores, condicionais, laços, arrays e funções em pseudocódigo. Resolva 35 exercícios progressivos.</span>
+<div class="learning-card">
+<span class="pill">02</span>
+<h3>Modele</h3>
+<p>No Volume 2, escreva os algoritmos à mão antes de olhar as soluções. Pseudocódigo é treino de clareza, não decoração de comandos.</p>
 </div>
-</li>
-<li style="display:flex;gap:16px;">
-<span style="font-family:var(--mono);color:var(--rust);font-weight:bold;min-width:30px;">03</span>
-<div>
-<strong>Volume 3 — Python na Prática</strong> (3-4 semanas)<br>
-<span style="font-size:14px;color:var(--gray-500);">Transite do pseudocódigo para Python. Construa 8 mini-projetos reais. Saia pronto para continuar aprendendo por conta própria.</span>
+<div class="learning-card">
+<span class="pill">03</span>
+<h3>Programe</h3>
+<p>No Volume 3, rode cada exemplo. Mude valores, force erros e observe o resultado: a prática transforma leitura em habilidade.</p>
 </div>
-</li>
-</ol>
 </div>
+</section>
 
-<!-- REFERÊNCIAS -->
+<section>
 <h2>Materiais e Referências</h2>
-<p>Este e-book foi construído a partir das seguintes fontes, todas verificadas e atualizadas para 2026:</p>
+<p>As referências foram revisadas para manter o material atual e honesto: quando uma fonte fala diretamente de um assunto, ela é citada como base; quando o texto faz uma conexão pedagógica, isso fica tratado como inferência didática.</p>
 
 <h3>Fontes Acadêmicas</h3>
 <ul>
 <li><strong>Batista, E. J. S.</strong> <em>Pensamento Computacional: teoria e prática</em>. Campo Grande: Editora UFMS, 2024.</li>
-<li><strong>Wing, J. M.</strong> "Computational Thinking." <em>Communications of the ACM</em>, 49(3), 33-35, 2006. Definição fundamental, refinada pela autora em 2014 e 2017.</li>
-<li><strong>Lodi, E. & Bocconi, S.</strong> "Computational Thinking: State of the Field, Challenges, and Perspectives." 2024. Panorama atual da pesquisa em PC.</li>
-<li><strong>Selby, C. & Woollard, J.</strong> Framework de PC: decomposição + padrões + abstração + algoritmos + avaliação. 2014, ainda amplamente citado.</li>
-<li><strong>Brennan, K. & Resnick, M.</strong> Framework de PC via Scratch (MIT). 2012, dominante na educação básica.</li>
+<li><strong>Wing, J. M.</strong> "Computational Thinking." <em>Communications of the ACM</em>, 49(3), 33-35, 2006.</li>
+<li><strong>Lodi, E. & Bocconi, S.</strong> "Computational Thinking: State of the Field, Challenges, and Perspectives." 2024.</li>
+<li><strong>Selby, C. & Woollard, J.</strong> Framework de pensamento computacional: decomposição, padrões, abstração, algoritmos e avaliação. 2014.</li>
+<li><strong>Brennan, K. & Resnick, M.</strong> Framework de pensamento computacional via Scratch, MIT, 2012.</li>
 </ul>
 
-<h3>Legislação e Políticas Públicas (Brasil)</h3>
+<h3>Legislação e Políticas Públicas</h3>
 <ul>
-<li><strong>BNCC</strong> — Base Nacional Comum Curricular (2017/2018). A competência 5 aborda tecnologia.</li>
-<li><strong>Lei nº 14.533, de 11 de janeiro de 2023</strong> — Institui a Política Nacional de Alfabetização Digital (PNED). <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14533.htm">planalto.gov.br</a></li>
-<li><strong>Decreto nº 11.728, de 5 de outubro de 2023</strong> — Regulamenta a PNED.</li>
-<li><strong>SBC</strong> — Sociedade Brasileira de Computação. "Referencial Curricular para Computação na Educação Básica" (2022). <a href="https://www.sbc.org.br/">sbc.org.br</a></li>
+<li><strong>BNCC</strong> — Base Nacional Comum Curricular (2017/2018), especialmente a competência relacionada ao uso crítico de tecnologias.</li>
+<li><strong>Lei nº 14.533, de 11 de janeiro de 2023</strong> — Institui a Política Nacional de Educação Digital. <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14533.htm">planalto.gov.br</a></li>
+<li><strong>Sociedade Brasileira de Computação</strong> — Referências curriculares para Computação na Educação Básica.</li>
 </ul>
 
-<h3>Dados e Relatórios</h3>
+<h3>Dados e Recursos Atuais</h3>
 <ul>
-<li><strong>World Economic Forum (2026).</strong> <em>Four Futures for Jobs in the New Economy: AI and Talent in 2030</em>. Genebra: WEF, 7 de janeiro de 2026. <a href="https://www.weforum.org/publications/four-futures-for-jobs-in-the-new-economy-ai-and-talent-in-2030/">weforum.org</a> — Explora como o avanço da IA e as tendências de talento podem transformar o futuro do trabalho até 2030, em quatro cenários plausíveis.</li>
-<li><strong>Bebras Brasil</strong> — Desafio internacional de pensamento computacional, presente em mais de 80 países. 5ª edição em 2026 (provas de 01 a 07 de outubro). <a href="https://bebrasbrasil.com.br/">bebrasbrasil.com.br</a></li>
+<li><strong>World Economic Forum.</strong> <em>Four Futures for Jobs in the New Economy: AI and Talent in 2030</em>. O relatório discute cenários de trabalho em 2030; neste e-book, ele é usado como contexto para a importância de raciocínio estruturado, não como fonte exclusiva sobre pensamento computacional.</li>
+<li><strong>Bebras Brasil.</strong> Desafio internacional de pensamento computacional, com provas da 5ª edição brasileira previstas para 01 a 07 de outubro de 2026.</li>
+<li><strong>Python.org.</strong> Em 19 de junho de 2026, a página oficial de downloads lista Python 3.14.6, publicado em 10 de junho de 2026, como versão mais recente.</li>
+<li><strong>Curso em Vídeo, CS50P, CS50x, Khan Academy e Code.org.</strong> Recursos complementares para continuar estudando.</li>
 </ul>
+</section>
 
-<h3>Recursos de Aprendizado (verificados em 2026)</h3>
-<ul>
-<li><strong>Curso em Vídeo (Gustavo Guanabara)</strong> — Cursos gratuitos de Python (Mundos 1, 2 e 3). <a href="https://www.cursoemvideo.com/">cursoemvideo.com</a></li>
-<li><strong>CS50P (Harvard)</strong> — Introduction to Programming with Python, gratuito. <a href="https://cs50.harvard.edu/python/">cs50.harvard.edu/python</a></li>
-<li><strong>CS50x (Harvard)</strong> — Curso introdutório de ciência da computação. <a href="https://cs50.harvard.edu/x/">cs50.harvard.edu/x</a></li>
-<li><strong>Python.org</strong> — Downloads e documentação oficial (Python 3.14). <a href="https://www.python.org/downloads/">python.org/downloads</a></li>
-<li><strong>Khan Academy</strong> — Recursos interativos em português. <a href="https://pt.khanacademy.org/computing">pt.khanacademy.org/computing</a></li>
-<li><strong>Code.org</strong> — Plataforma educacional com versão em português. <a href="https://code.org/">code.org</a></li>
-</ul>
+</main>
 
-</div>
-
-<div class="footer">
+<footer class="footer">
 <p>Pensamento Computacional, Lógica de Programação e Algoritmos</p>
-<p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p>
-</div>
+<p class="author-credit">Autoria: Fernando de Oliveira — 2026</p>
+<p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p>
+</footer>
 
 </body>
 </html>

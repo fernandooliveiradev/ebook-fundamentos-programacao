@@ -1,37 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 3 — Python na Prática — Capítulo 7: Funções em Python</title><link rel="stylesheet" href="../estilo.css"></head>
-<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 7</span><a class="next" href="cap08.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 7</span></div>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 7: Funções em Python</title>
+<link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 7</span><a class="next" href="cap08.html">Próximo →</a></nav>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(176,74,63,.12);color:rgb(176,74,63);">Capítulo 7</span></div>
 <h2 style="margin-top:8px;">Funções em Python</h2>
-<div class="code"><span class="cm"># Função simples</span>
-<span class="kw">def</span> <span class="fn">saudacao</span>(nome):
+
+<p class="chapter-lead">Funções são blocos nomeados de código. Elas deixam o programa mais legível, reduzem repetição e permitem testar uma parte da solução sem rodar tudo mentalmente.</p>
+
+<div class="chapter-hook">
+<p><strong>Do Volume 2 para Python:</strong> o <code class="inline">FUNCAO</code> do pseudocódigo vira <code class="inline">def</code>. O <code class="inline">RETORNE</code> vira <code class="inline">return</code>.</p>
+</div>
+
+<h3>Função simples</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">saudacao</span>(nome):
     <span class="kw">return</span> <span class="str">"Olá, "</span> + nome + <span class="str">"!"</span>
 
-mensagem = <span class="fn">saudacao</span>(<span class="str">"Fernando"</span>)
-<span class="fn">print</span>(mensagem)  <span class="cm"># Olá, Fernando!</span>
+mensagem = <span class="fn">saudacao</span>(<span class="str">"Aluno"</span>)
+<span class="fn">print</span>(mensagem)</div>
 
-<span class="cm"># Função com múltiplos parâmetros</span>
-<span class="kw">def</span> <span class="fn">soma</span>(a, b):
+<h3>Parâmetros e retorno</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">soma</span>(a, b):
     <span class="kw">return</span> a + b
 
-<span class="fn">print</span>(<span class="fn">soma</span>(<span class="num">10</span>, <span class="num">25</span>))  <span class="cm"># 35</span>
+resultado = <span class="fn">soma</span>(<span class="num">10</span>, <span class="num">25</span>)
+<span class="fn">print</span>(resultado)</div>
 
-<span class="cm"># Função com parâmetro padrão</span>
-<span class="kw">def</span> <span class="fn">apresentar</span>(nome, idade=<span class="num">18</span>):
+<h3>Parâmetro padrão</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">apresentar</span>(nome, idade=<span class="num">18</span>):
     <span class="fn">print</span>(<span class="str">f"Nome: {nome}, Idade: {idade}"</span>)
 
-<span class="fn">apresentar</span>(<span class="str">"Carlos"</span>)       <span class="cm"># Nome: Carlos, Idade: 18</span>
-<span class="fn">apresentar</span>(<span class="str">"Maria"</span>, <span class="num">25</span>)   <span class="cm"># Nome: Maria, Idade: 25</span>
+<span class="fn">apresentar</span>(<span class="str">"Carlos"</span>)
+<span class="fn">apresentar</span>(<span class="str">"Maria"</span>, <span class="num">25</span>)</div>
 
-<span class="cm"># Recursividade — Fatorial</span>
-<span class="kw">def</span> <span class="fn">fatorial</span>(n):
-    <span class="kw">if</span> n &lt;= <span class="num">1</span>:
-        <span class="kw">return</span> <span class="num">1</span>
-    <span class="kw">else</span>:
-        <span class="kw">return</span> n * <span class="fn">fatorial</span>(n - <span class="num">1</span>)
+<h3>Função aplicada a uma lista</h3>
+<div class="code"><span class="kw">def</span> <span class="fn">calcular_media</span>(notas):
+    total = <span class="num">0</span>
+    <span class="kw">for</span> nota <span class="kw">in</span> notas:
+        total += nota
+    <span class="kw">return</span> total / <span class="fn">len</span>(notas)
 
-<span class="fn">print</span>(<span class="fn">fatorial</span>(<span class="num">5</span>))  <span class="cm"># 120</span></div>
+notas = [<span class="num">8</span>, <span class="num">7.5</span>, <span class="num">9</span>]
+<span class="fn">print</span>(<span class="fn">calcular_media</span>(notas))</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">Nomeie pela intenção</span>
+<p style="margin-bottom:0;">Prefira nomes como <code class="inline">calcular_media</code>, <code class="inline">validar_idade</code> e <code class="inline">formatar_nome</code>. Bons nomes explicam o propósito sem precisar de comentário.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 3.7 — Função reutilizável</span>
+<p>Crie uma função <code class="inline">eh_par(numero)</code> que retorne <code class="inline">True</code> quando o número for par e <code class="inline">False</code> caso contrário.</p>
+</div>
+
+<div class="chapter-bridge">
+<p>Funções deixam o programa organizado, mas ainda precisamos lidar com entradas inválidas e situações inesperadas. É aí que entra o tratamento de erros.</p>
+</div>
 
 <div class="page-nav"><a class="prev-btn" href="cap06.html">← Anterior</a><a class="next-btn" href="cap08.html">Próximo →</a></div>
-</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 7</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>
+</div>
+
+<div class="footer"><p>Volume 3 — Python na Prática — Capítulo 7</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

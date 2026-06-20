@@ -1,54 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 3 — Python na Prática — Capítulo 2: Sintaxe Básica</title><link rel="stylesheet" href="../estilo.css"></head>
-<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 2</span><a class="next" href="cap03.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 2</span></div>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 2: Sintaxe Básica</title>
+<link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 2</span><a class="next" href="cap03.html">Próximo →</a></nav>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(176,74,63,.12);color:rgb(176,74,63);">Capítulo 2</span></div>
 <h2 style="margin-top:8px;">Sintaxe Básica</h2>
-<p>A sintaxe do Python é tão limpa que parece pseudocódigo! Veja a comparação:</p>
-<div class="diagram">
-<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;">
-<text x="350" y="18" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="14" fill="#141413">Pseudocódigo vs Python</text>
-<rect x="20" y="30" width="320" height="210" rx="10" fill="#141413"/>
-<text x="180" y="50" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#87867F">PSEUDOCÓDIGO</text>
-<text x="30" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">SE</text><text x="50" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">(idade &gt;= 18)</text><text x="175" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">ENTÃO</text>
-<text x="50" y="95" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">ESCREVA "Maior"</text>
-<text x="30" y="115" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">SENÃO</text>
-<text x="50" y="135" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">ESCREVA "Menor"</text>
-<text x="30" y="155" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">FIM SE</text>
-<text x="30" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">PARA</text><text x="60" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">i de 1 até 10</text><text x="175" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">FAÇA</text>
-<text x="50" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">ESCREVA i</text>
-<text x="30" y="225" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">FIM PARA</text>
-<text x="350" y="125" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="24" fill="#D97757">→</text>
-<rect x="360" y="30" width="320" height="210" rx="10" fill="#141413"/>
-<text x="520" y="50" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">PYTHON</text>
-<text x="370" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">if</text><text x="385" y="75" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">idade &gt;= 18:</text>
-<text x="385" y="95" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">print</text><text x="415" y="95" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">"Maior"</text>
-<text x="370" y="115" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">else:</text>
-<text x="385" y="135" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">print</text><text x="415" y="135" font-family="ui-monospace,monospace" font-size="11" fill="#788C5D">"Menor"</text>
-<text x="370" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">for</text><text x="390" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">i</text><text x="400" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#D97757">in</text><text x="420" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">range</text><text x="460" y="185" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">(1, 11):</text>
-<text x="385" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#C9B98A">print</text><text x="415" y="205" font-family="ui-monospace,monospace" font-size="11" fill="#E8E6DF">i</text>
-</svg>
-<div class="diagram-caption">A sintaxe é quase idêntica!</div>
+
+<p class="chapter-lead">Sintaxe é o jeito exato de escrever uma ideia para que a linguagem entenda. A lógica continua a mesma do pseudocódigo; o que muda é a forma de expressar cada passo.</p>
+
+<div class="chapter-hook">
+<p><strong>Boa notícia:</strong> Python foi desenhado para ser legível. Se o pseudocódigo estava bem organizado, a conversão para Python costuma ser direta.</p>
 </div>
 
-<h3>Variáveis em Python (tipagem dinâmica)</h3>
+<div class="diagram figure-wide figure-scroll">
+<svg viewBox="0 0 760 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparação entre pseudocódigo e Python">
+<text x="380" y="24" text-anchor="middle" font-size="18" fill="#141413" font-family="Georgia,serif">Pseudocódigo vs Python</text>
+<rect x="30" y="46" width="320" height="196" rx="12" fill="#141413"/>
+<rect x="410" y="46" width="320" height="196" rx="12" fill="#141413"/>
+<text x="190" y="70" text-anchor="middle" font-size="12" fill="#87867F">PSEUDOCÓDIGO</text>
+<text x="570" y="70" text-anchor="middle" font-size="12" fill="#87867F">PYTHON</text>
+<text x="50" y="98" font-size="12" fill="#8DA7FF">SE</text><text x="76" y="98" font-size="12" fill="#E8E6DF">idade &gt;= 18</text><text x="184" y="98" font-size="12" fill="#8DA7FF">ENTÃO</text>
+<text x="72" y="120" font-size="12" fill="#E8E6DF">ESCREVA "Maior"</text>
+<text x="50" y="142" font-size="12" fill="#8DA7FF">SENÃO</text>
+<text x="72" y="164" font-size="12" fill="#E8E6DF">ESCREVA "Menor"</text>
+<text x="50" y="186" font-size="12" fill="#8DA7FF">FIM SE</text>
+<text x="430" y="98" font-size="12" fill="#8DA7FF">if</text><text x="450" y="98" font-size="12" fill="#E8E6DF">idade &gt;= 18:</text>
+<text x="452" y="120" font-size="12" fill="#E0C46B">print</text><text x="490" y="120" font-size="12" fill="#A8C878">("Maior")</text>
+<text x="430" y="142" font-size="12" fill="#8DA7FF">else:</text>
+<text x="452" y="164" font-size="12" fill="#E0C46B">print</text><text x="490" y="164" font-size="12" fill="#A8C878">("Menor")</text>
+<path d="M365 136 H394" stroke="#87867F" stroke-width="3" marker-end="url(#syntax-arrow)"/>
+<defs><marker id="syntax-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#87867F"/></marker></defs>
+</svg>
+<div class="diagram-caption">Python troca palavras do pseudocódigo por símbolos e palavras-chave da linguagem.</div>
+</div>
+
+<h3>Variáveis em Python</h3>
+<p>Em Python, você não precisa declarar o tipo antes. O interpretador infere o tipo a partir do valor atribuído.</p>
 <div class="code"><span class="cm"># Variáveis em Python — o tipo é inferido automaticamente</span>
-nome = <span class="str">"Fernando"</span>      <span class="cm"># str (string)</span>
-idade = <span class="num">30</span>              <span class="cm"># int (inteiro)</span>
-altura = <span class="num">1.75</span>           <span class="cm"># float (real)</span>
-estuda = <span class="kw">True</span>           <span class="cm"># bool (booleano)</span>
+nome = <span class="str">"Aluno"</span>      <span class="cm"># str</span>
+idade = <span class="num">30</span>              <span class="cm"># int</span>
+altura = <span class="num">1.75</span>           <span class="cm"># float</span>
+estuda = <span class="kw">True</span>           <span class="cm"># bool</span>
 
-<span class="cm"># Saída</span>
 <span class="fn">print</span>(<span class="str">"Olá, "</span> + nome)
-<span class="fn">print</span>(<span class="str">"Idade: "</span>, idade)
+<span class="fn">print</span>(<span class="str">"Idade:"</span>, idade)</div>
 
-<span class="cm"># Entrada</span>
-entrada = <span class="fn">input</span>(<span class="str">"Digite seu nome: "</span>)</div>
+<h3>Entrada de dados</h3>
+<p>A função <code class="inline">input()</code> sempre retorna texto. Se você precisa calcular, converta antes.</p>
+<div class="code">idade_texto = <span class="fn">input</span>(<span class="str">"Digite sua idade: "</span>)
+idade = <span class="fn">int</span>(idade_texto)
+<span class="fn">print</span>(<span class="str">f"No ano que vem você terá {idade + 1} anos."</span>)</div>
 
 <div class="callout callout-blue">
-<span class="callout-label">💡 Indentação importa!</span>
-<p style="margin-bottom:0;">Python usa <strong>espaços</strong> (indentação) para definir blocos — não usa chaves <code class="inline">{ }</code> como outras linguagens. Isso torna o código visualmente limpo e obrigatoriamente organizado.</p>
+<span class="callout-label">Indentação importa</span>
+<p style="margin-bottom:0;">Python usa espaços para definir blocos. O recuo não é enfeite: ele diz quais comandos pertencem ao <code class="inline">if</code>, ao <code class="inline">for</code>, ao <code class="inline">while</code> ou a uma função.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 3.2 — Entrada e saída</span>
+<p>Crie um programa que pergunte o nome do aluno e duas notas, converta as notas para número real e mostre a média.</p>
+</div>
+
+<div class="chapter-bridge">
+<p>Agora que você já escreve variáveis, entrada e saída em Python, o próximo passo é usar operadores para calcular e comparar valores.</p>
 </div>
 
 <div class="page-nav"><a class="prev-btn" href="cap01.html">← Anterior</a><a class="next-btn" href="cap03.html">Próximo →</a></div>
-</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 2</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>
+</div>
+
+<div class="footer"><p>Volume 3 — Python na Prática — Capítulo 2</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

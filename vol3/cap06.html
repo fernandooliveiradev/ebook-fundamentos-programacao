@@ -1,35 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 3 — Python na Prática — Capítulo 6: Listas, Tuplas e Dicionários</title><link rel="stylesheet" href="../estilo.css"></head>
-<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 6</span><a class="next" href="cap07.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 6</span></div>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 6: Listas, Tuplas e Dicionários</title>
+<link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 6</span><a class="next" href="cap07.html">Próximo →</a></nav>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(176,74,63,.12);color:rgb(176,74,63);">Capítulo 6</span></div>
 <h2 style="margin-top:8px;">Listas, Tuplas e Dicionários</h2>
-<h3>Listas (equivalente ao vetor)</h3>
-<div class="code"><span class="cm"># Listas em Python</span>
-numeros = [<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>, <span class="num">40</span>, <span class="num">50</span>]
-<span class="fn">print</span>(numeros[<span class="num">0</span>])     <span class="cm"># 10 (primeiro elemento)</span>
-<span class="fn">print</span>(numeros[-<span class="num">1</span>])    <span class="cm"># 50 (último elemento)</span>
-<span class="fn">print</span>(<span class="fn">len</span>(numeros))  <span class="cm"># 5 (tamanho)</span>
-numeros.<span class="fn">append</span>(<span class="num">60</span>)  <span class="cm"># adiciona ao final</span>
-numeros.<span class="fn">insert</span>(<span class="num">2</span>, <span class="num">25</span>)  <span class="cm"># insere na posição 2</span>
-numeros.<span class="fn">remove</span>(<span class="num">30</span>)  <span class="cm"># remove o valor 30</span></div>
-<h3>Tuplas (listas imutáveis)</h3>
-<div class="code"><span class="cm"># Tuplas — não podem ser modificadas depois de criadas</span>
-coordenadas = (<span class="num">10</span>, <span class="num">20</span>)
-<span class="fn">print</span>(coordenadas[<span class="num">0</span>])  <span class="cm"># 10</span>
-<span class="cm"># coordenadas[0] = 5  → ERRO! Tuplas são imutáveis</span></div>
-<h3>Dicionários (equivalente ao mapa)</h3>
-<div class="code"><span class="cm"># Dicionários — pares chave-valor</span>
-agenda = {
+
+<p class="chapter-lead">Até agora, cada variável guardava um valor. Coleções guardam vários valores relacionados, o que permite resolver problemas mais próximos do mundo real.</p>
+
+<div class="chapter-hook">
+<p><strong>Imagine uma chamada escolar:</strong> não faz sentido criar uma variável para cada aluno. Você cria uma lista de alunos e percorre essa lista quando precisa consultar, contar ou atualizar informações.</p>
+</div>
+
+<div class="concept-grid">
+<div class="learning-card"><h4>Lista</h4><p>Sequência mutável. Use quando os itens podem entrar, sair ou mudar de posição.</p></div>
+<div class="learning-card"><h4>Tupla</h4><p>Sequência imutável. Use quando o conjunto representa um dado fixo, como coordenadas.</p></div>
+<div class="learning-card"><h4>Dicionário</h4><p>Pares chave-valor. Use quando você quer buscar dados por nome, código ou identificador.</p></div>
+</div>
+
+<h3>Listas</h3>
+<div class="code">numeros = [<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>, <span class="num">40</span>, <span class="num">50</span>]
+<span class="fn">print</span>(numeros[<span class="num">0</span>])     <span class="cm"># primeiro elemento</span>
+<span class="fn">print</span>(numeros[-<span class="num">1</span>])    <span class="cm"># último elemento</span>
+<span class="fn">print</span>(<span class="fn">len</span>(numeros))  <span class="cm"># tamanho</span>
+
+numeros.<span class="fn">append</span>(<span class="num">60</span>)
+numeros.<span class="fn">insert</span>(<span class="num">2</span>, <span class="num">25</span>)
+numeros.<span class="fn">remove</span>(<span class="num">30</span>)</div>
+
+<h3>Tuplas</h3>
+<div class="code">coordenadas = (<span class="num">10</span>, <span class="num">20</span>)
+<span class="fn">print</span>(coordenadas[<span class="num">0</span>])
+
+<span class="cm"># coordenadas[0] = 5  # erro: tuplas são imutáveis</span></div>
+
+<h3>Dicionários</h3>
+<div class="code">agenda = {
     <span class="str">"João"</span>: <span class="str">"9999-1111"</span>,
     <span class="str">"Maria"</span>: <span class="str">"9999-2222"</span>,
 }
-<span class="fn">print</span>(agenda[<span class="str">"João"</span>])  <span class="cm"># 9999-1111</span>
-agenda[<span class="str">"Ana"</span>] = <span class="str">"9999-4444"</span>  <span class="cm"># adiciona novo contato</span>
 
-<span class="cm"># Percorrendo um dicionário</span>
+<span class="fn">print</span>(agenda[<span class="str">"João"</span>])
+agenda[<span class="str">"Ana"</span>] = <span class="str">"9999-4444"</span>
+
 <span class="kw">for</span> nome, telefone <span class="kw">in</span> agenda.<span class="fn">items</span>():
     <span class="fn">print</span>(<span class="str">f"{nome}: {telefone}"</span>)</div>
 
+<div class="callout callout-blue">
+<span class="callout-label">Índice começa em zero</span>
+<p style="margin-bottom:0;">No pseudocódigo deste e-book usamos índice começando em 1 em alguns exemplos. Em Python, listas e tuplas começam em <code class="inline">0</code>. O primeiro item é <code class="inline">lista[0]</code>.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 3.6 — Coleções</span>
+<p>Crie uma lista com cinco notas, calcule a média usando um loop e mostre a maior nota com <code class="inline">max()</code>.</p>
+</div>
+
+<div class="chapter-bridge">
+<p>Coleções armazenam vários dados; funções organizam operações sobre esses dados. No próximo capítulo, vamos transformar blocos úteis em funções reutilizáveis.</p>
+</div>
+
 <div class="page-nav"><a class="prev-btn" href="cap05.html">← Anterior</a><a class="next-btn" href="cap07.html">Próximo →</a></div>
-</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 6</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>
+</div>
+
+<div class="footer"><p>Volume 3 — Python na Prática — Capítulo 6</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

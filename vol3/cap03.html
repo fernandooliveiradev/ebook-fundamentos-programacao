@@ -1,29 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 3 — Python na Prática — Capítulo 3: Operadores em Python</title><link rel="stylesheet" href="../estilo.css"></head>
-<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 3</span><a class="next" href="cap04.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 3</span></div>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 3: Operadores em Python</title>
+<link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 3</span><a class="next" href="cap04.html">Próximo →</a></nav>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(176,74,63,.12);color:rgb(176,74,63);">Capítulo 3</span></div>
 <h2 style="margin-top:8px;">Operadores em Python</h2>
+
+<p class="chapter-lead">Operadores são os verbos curtos da linguagem: somam, comparam, combinam condições e transformam valores. Eles são pequenos, mas controlam decisões enormes dentro do programa.</p>
+
+<div class="chapter-hook">
+<p><strong>Conexão com o Volume 2:</strong> tudo o que você estudou sobre operadores aritméticos, relacionais e lógicos continua valendo. Agora veremos a grafia exata em Python.</p>
+</div>
+
 <div class="tbl-wrap"><table>
-<thead><tr><th>Operador</th><th>Pseudocódigo</th><th>Python</th></tr></thead>
+<thead><tr><th>Categoria</th><th>Pseudocódigo</th><th>Python</th><th>Uso típico</th></tr></thead>
 <tbody>
-<tr><td>Soma</td><td><code class="inline">+</code></td><td><code class="inline">+</code></td></tr>
-<tr><td>Subtração</td><td><code class="inline">-</code></td><td><code class="inline">-</code></td></tr>
-<tr><td>Multiplicação</td><td><code class="inline">*</code></td><td><code class="inline">*</code></td></tr>
-<tr><td>Divisão</td><td><code class="inline">/</code></td><td><code class="inline">/</code></td></tr>
-<tr><td>Divisão inteira</td><td>—</td><td><code class="inline">//</code></td></tr>
-<tr><td>Módulo (resto)</td><td><code class="inline">% ou MOD</code></td><td><code class="inline">%</code></td></tr>
-<tr><td>Potência</td><td>—</td><td><code class="inline">**</code></td></tr>
-<tr><td><strong>Igual</strong></td><td><code class="inline">= ou ==</code></td><td><code class="inline" style="color:var(--rust);">==</code></td></tr>
-<tr><td><strong>Diferente</strong></td><td><code class="inline">&lt;&gt; ou !=</code></td><td><code class="inline" style="color:var(--rust);">!=</code></td></tr>
-<tr><td><strong>E lógico</strong></td><td><code class="inline">E</code></td><td><code class="inline" style="color:var(--rust);">and</code></td></tr>
-<tr><td><strong>OU lógico</strong></td><td><code class="inline">OU</code></td><td><code class="inline" style="color:var(--rust);">or</code></td></tr>
-<tr><td><strong>NÃO lógico</strong></td><td><code class="inline">NAO</code></td><td><code class="inline" style="color:var(--rust);">not</code></td></tr>
+<tr><td>Soma</td><td><code class="inline">+</code></td><td><code class="inline">+</code></td><td>calcular total</td></tr>
+<tr><td>Divisão inteira</td><td>—</td><td><code class="inline">//</code></td><td>quociente sem casas decimais</td></tr>
+<tr><td>Módulo</td><td><code class="inline">%</code> ou MOD</td><td><code class="inline">%</code></td><td>descobrir resto, par ou ímpar</td></tr>
+<tr><td>Potência</td><td>—</td><td><code class="inline">**</code></td><td>elevar ao quadrado, ao cubo etc.</td></tr>
+<tr><td>Igualdade</td><td><code class="inline">=</code> ou <code class="inline">==</code></td><td><code class="inline">==</code></td><td>comparar valores</td></tr>
+<tr><td>Diferente</td><td><code class="inline">&lt;&gt;</code> ou <code class="inline">!=</code></td><td><code class="inline">!=</code></td><td>testar diferença</td></tr>
+<tr><td>E lógico</td><td><code class="inline">E</code></td><td><code class="inline">and</code></td><td>duas condições verdadeiras</td></tr>
+<tr><td>OU lógico</td><td><code class="inline">OU</code></td><td><code class="inline">or</code></td><td>pelo menos uma condição verdadeira</td></tr>
+<tr><td>NÃO lógico</td><td><code class="inline">NAO</code></td><td><code class="inline">not</code></td><td>inverter uma condição</td></tr>
 </tbody></table></div>
+
+<h3>Exemplo: par ou ímpar</h3>
+<div class="code">numero = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Digite um número: "</span>))
+
+<span class="kw">if</span> numero % <span class="num">2</span> == <span class="num">0</span>:
+    <span class="fn">print</span>(<span class="str">"Par"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">"Ímpar"</span>)</div>
+
+<h3>Exemplo: aprovação com duas condições</h3>
+<div class="code">media = <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Média: "</span>))
+frequencia = <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Frequência: "</span>))
+
+<span class="kw">if</span> media &gt;= <span class="num">7</span> <span class="kw">and</span> frequencia &gt;= <span class="num">75</span>:
+    <span class="fn">print</span>(<span class="str">"Aprovado"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="str">"Rever nota ou frequência"</span>)</div>
+
 <div class="callout callout-rust">
-<span class="callout-label">⚠️ Atenção!</span>
-<p style="margin-bottom:0;">Em Python: <code class="inline">=</code> é atribuição (<code class="inline">x = 5</code>), <code class="inline">==</code> é comparação (<code class="inline">if x == 5</code>). Confundir os dois é o erro número 1 de iniciantes!</p>
+<span class="callout-label">Atenção</span>
+<p style="margin-bottom:0;">Em Python, <code class="inline">=</code> atribui valor e <code class="inline">==</code> compara valor. Escreva <code class="inline">idade = 18</code> para guardar e <code class="inline">idade == 18</code> para testar.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 3.3 — Operadores</span>
+<p>Peça um preço e um percentual de desconto. Mostre o valor do desconto e o preço final.</p>
+</div>
+
+<div class="chapter-bridge">
+<p>Operadores produzem respostas; condicionais decidem o que fazer com elas. No próximo capítulo, essas comparações controlarão caminhos diferentes do programa.</p>
 </div>
 
 <div class="page-nav"><a class="prev-btn" href="cap02.html">← Anterior</a><a class="next-btn" href="cap04.html">Próximo →</a></div>
-</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 3</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>
+</div>
+
+<div class="footer"><p>Volume 3 — Python na Prática — Capítulo 3</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volume 2 — Lógica de Programação — Capítulo 1: O que é Algoritmo?</title>
 <link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
 <nav class="navbar">
@@ -12,15 +13,43 @@
 <span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 1</span>
 <a class="next" href="cap02.html">Próximo →</a>
 </nav>
+
 <div class="page">
-<div class="chapter-header">
-<span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 1</span>
-</div>
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 1</span></div>
 <h2 style="margin-top:8px;">O que é Algoritmo?</h2>
+
+<p class="chapter-lead">No Volume 1 você aprendeu a decompor problemas e ordenar ideias. Agora vamos dar nome técnico a esse raciocínio: quando os passos ficam claros, finitos e executáveis, temos um algoritmo.</p>
+
+<div class="chapter-hook">
+<p><strong>Pense assim:</strong> se duas pessoas seguem suas instruções e chegam ao mesmo resultado, você provavelmente escreveu um bom algoritmo. Se cada pessoa interpreta de um jeito, ainda há ambiguidade demais.</p>
+</div>
 
 <p><strong>Algoritmo</strong> é uma sequência finita de instruções bem definidas para resolver um problema ou executar uma tarefa. Todo programa de computador é, essencialmente, um algoritmo escrito em uma linguagem de programação.</p>
 
+<div class="figure figure-wide">
+<svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxo de criação de um algoritmo">
+<defs><marker id="alg-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#87867F"/></marker></defs>
+<rect x="40" y="78" width="150" height="86" rx="12" fill="#EAF0FF" stroke="#1748e8" stroke-width="2"/>
+<rect x="238" y="78" width="150" height="86" rx="12" fill="#EEF3E8" stroke="#788C5D" stroke-width="2"/>
+<rect x="436" y="78" width="150" height="86" rx="12" fill="#F8EDEA" stroke="#B04A3F" stroke-width="2"/>
+<rect x="634" y="78" width="150" height="86" rx="12" fill="#FAF9F5" stroke="#C9A227" stroke-width="2"/>
+<line x1="190" y1="121" x2="230" y2="121" stroke="#87867F" stroke-width="2" marker-end="url(#alg-arrow)"/>
+<line x1="388" y1="121" x2="428" y2="121" stroke="#87867F" stroke-width="2" marker-end="url(#alg-arrow)"/>
+<line x1="586" y1="121" x2="626" y2="121" stroke="#87867F" stroke-width="2" marker-end="url(#alg-arrow)"/>
+<text x="115" y="112" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Problema</text>
+<text x="115" y="136" text-anchor="middle" fill="#3D3D3A" font-size="12">o que resolver?</text>
+<text x="313" y="112" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Entradas</text>
+<text x="313" y="136" text-anchor="middle" fill="#3D3D3A" font-size="12">dados necessários</text>
+<text x="511" y="112" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Processo</text>
+<text x="511" y="136" text-anchor="middle" fill="#3D3D3A" font-size="12">passos lógicos</text>
+<text x="709" y="112" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Saída</text>
+<text x="709" y="136" text-anchor="middle" fill="#3D3D3A" font-size="12">resultado esperado</text>
+</svg>
+<div class="figure-caption">Todo algoritmo transforma entradas em saídas por meio de passos claros.</div>
+</div>
+
 <h3>Exemplo do dia a dia: receita de bolo</h3>
+<p>Uma receita é um algoritmo porque tem ingredientes, ordem e resultado esperado. Se a ordem muda demais, o resultado também muda.</p>
 <div class="code">Pegue a tigela
 Adicione 2 xícaras de farinha
 Adicione 1 xícara de açúcar
@@ -28,7 +57,15 @@ Adicione 3 ovos
 Misture tudo
 Leve ao forno por 30 minutos</div>
 
+<h3>Como saber se um algoritmo está bom?</h3>
+<div class="concept-grid">
+<div class="learning-card"><h4>Finitude</h4><p>Ele termina. Um algoritmo que nunca chega ao fim não resolve a tarefa.</p></div>
+<div class="learning-card"><h4>Clareza</h4><p>Cada passo deve ser entendido sem adivinhação. “Misture bem” pode precisar de mais detalhe dependendo do contexto.</p></div>
+<div class="learning-card"><h4>Entrada e saída</h4><p>Você sabe quais dados entram e qual resultado deve sair.</p></div>
+</div>
+
 <h3>Exemplo em pseudocódigo: soma de dois números</h3>
+<p>O pseudocódigo é uma ponte: parece linguagem humana, mas já exige organização parecida com a de um programa.</p>
 <div class="code"><span class="kw">ALGORITMO</span> SomaDoisNumeros
 <span class="kw">VAR</span>
     numero1, numero2, resultado: <span class="fn">REAL</span>
@@ -42,8 +79,24 @@ Leve ao forno por 30 minutos</div>
 <span class="kw">FIM</span></div>
 
 <div class="callout callout-blue">
-<span class="callout-label">💡 Estrutura de um pseudocódigo</span>
-<p style="margin-bottom:0;">Todo pseudocódigo tem: <strong>ALGORITMO</strong> (nome), <strong>VAR</strong> (declaração de variáveis), <strong>INICIO</strong> (corpo), <strong>FIM</strong> (término). Esta estrutura será mapeada para Python no Volume 3.</p>
+<span class="callout-label">Estrutura de um pseudocódigo</span>
+<p style="margin-bottom:0;">Todo pseudocódigo deste e-book segue a base: <strong>ALGORITMO</strong> para nomear, <strong>VAR</strong> para declarar dados, <strong>INICIO</strong> para executar passos e <strong>FIM</strong> para encerrar.</p>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 2.0 — Algoritmo antes do código</span>
+<p>Escreva um algoritmo em linguagem natural para calcular o troco de uma compra. Indique entrada, processo e saída.</p>
+<details><summary>Ver uma solução possível</summary>
+<div class="solution-body">
+<p><strong>Entrada:</strong> valor da compra e valor pago.</p>
+<p><strong>Processo:</strong> subtrair valor da compra do valor pago.</p>
+<p><strong>Saída:</strong> mostrar o troco. Se o valor pago for menor que a compra, informar pagamento insuficiente.</p>
+</div>
+</details>
+</div>
+
+<div class="chapter-bridge">
+<p>No próximo capítulo, esses valores que entram, mudam e saem do algoritmo vão ganhar um nome: <strong>variáveis</strong>. Elas são a memória de trabalho do programa.</p>
 </div>
 
 <div class="page-nav">
@@ -51,5 +104,7 @@ Leve ao forno por 30 minutos</div>
 <a class="next-btn" href="cap02.html">Próximo →</a>
 </div>
 </div>
-<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 1</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
-</body></html>
+
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 1</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

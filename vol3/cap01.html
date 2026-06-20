@@ -1,25 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 3 — Python na Prática — Capítulo 1: Instalação e Primeiro Programa</title><link rel="stylesheet" href="../estilo.css"></head>
-<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 1</span><a class="next" href="cap02.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 1</span></div>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 1: Instalação e Primeiro Programa</title>
+<link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 1</span><a class="next" href="cap02.html">Próximo →</a></nav>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(176,74,63,.12);color:rgb(176,74,63);">Capítulo 1</span></div>
 <h2 style="margin-top:8px;">Instalação e Primeiro Programa</h2>
-<h3>Instalando o Python</h3>
-<ol>
-<li>Acesse <a href="https://www.python.org/downloads/">python.org/downloads</a></li>
-<li>Baixe a versão mais recente (Python 3.14, lançado em outubro de 2025)</li>
-<li>Execute o instalador. <strong>Importante:</strong> marque a opção "Add Python to PATH"</li>
-<li>Abra o terminal e digite: <code class="inline">python --version</code></li>
-</ol>
-<div class="callout callout-blue">
-<span class="callout-label">💡 Versão recomendada</span>
-<p style="margin-bottom:0;">Em 2026, recomendamos Python 3.13 ou superior. O Python 3.14 (lançado em outubro de 2025) é a versão estável mais recente. As versões 3.9 e 3.10 já reached fim de vida.</p>
+
+<p class="chapter-lead">Chegou a hora de transformar pseudocódigo em programa executável. A boa notícia: Python é uma das linguagens mais amigáveis para essa transição porque valoriza código limpo e leitura direta.</p>
+
+<div class="chapter-hook">
+<p><strong>Antes de instalar:</strong> lembre-se do Volume 2. O computador não entende “mais ou menos”. Ele precisa de comandos claros, arquivos no lugar certo e um interpretador capaz de executar esses comandos.</p>
 </div>
+
+<h3>Instalando o Python</h3>
+<ol class="checklist">
+<li>Acesse <a href="https://www.python.org/downloads/">python.org/downloads</a>.</li>
+<li>Baixe a versão recomendada para o seu sistema operacional.</li>
+<li>No Windows, marque a opção <strong>Add Python to PATH</strong> no instalador.</li>
+<li>Abra o terminal e digite <code class="inline">python --version</code>.</li>
+</ol>
+
+<div class="callout callout-blue">
+<span class="callout-label">Versão recomendada</span>
+<p style="margin-bottom:0;">Em 19 de junho de 2026, a página oficial do Python lista <strong>Python 3.14.6</strong>, publicado em <strong>10 de junho de 2026</strong>, como versão mais recente. Para estudar este e-book, use Python 3.13 ou superior. Python 3.9 está em fim de vida, e Python 3.10 recebe apenas manutenção de segurança até outubro de 2026.</p>
+</div>
+
+<div class="figure">
+<svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxo de execução de um arquivo Python">
+<defs><marker id="py-flow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#87867F"/></marker></defs>
+<rect x="55" y="72" width="150" height="82" rx="12" fill="#EAF0FF" stroke="#1748e8" stroke-width="2"/>
+<rect x="305" y="72" width="150" height="82" rx="12" fill="#EEF3E8" stroke="#788C5D" stroke-width="2"/>
+<rect x="555" y="72" width="150" height="82" rx="12" fill="#F8EDEA" stroke="#B04A3F" stroke-width="2"/>
+<line x1="206" y1="113" x2="296" y2="113" stroke="#87867F" stroke-width="2" marker-end="url(#py-flow)"/>
+<line x1="456" y1="113" x2="546" y2="113" stroke="#87867F" stroke-width="2" marker-end="url(#py-flow)"/>
+<text x="130" y="105" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Arquivo</text>
+<text x="130" y="129" text-anchor="middle" fill="#3D3D3A" font-size="12">ola.py</text>
+<text x="380" y="105" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Interpretador</text>
+<text x="380" y="129" text-anchor="middle" fill="#3D3D3A" font-size="12">python</text>
+<text x="630" y="105" text-anchor="middle" fill="#141413" font-size="15" font-weight="700">Saída</text>
+<text x="630" y="129" text-anchor="middle" fill="#3D3D3A" font-size="12">Olá, Mundo!</text>
+</svg>
+<div class="figure-caption">Python lê o arquivo, interpreta as instruções e mostra o resultado no terminal.</div>
+</div>
+
 <h3>Seu primeiro programa</h3>
 <p>Crie um arquivo chamado <code class="inline">ola.py</code> e escreva:</p>
 <div class="code"><span class="fn">print</span>(<span class="str">"Olá, Mundo!"</span>)</div>
-<p>Execute no terminal:</p>
+<p>Execute no terminal, dentro da pasta onde o arquivo foi salvo:</p>
 <div class="code">python ola.py</div>
 
+<div class="exercise">
+<span class="exercise-label">Exercício 3.1 — Primeiro teste</span>
+<p>Altere o programa para exibir seu nome, sua cidade e uma frase dizendo por que você está aprendendo programação.</p>
+</div>
+
+<div class="chapter-bridge">
+<p>No próximo capítulo, você vai comparar diretamente pseudocódigo e Python. A ideia é perceber que a lógica já foi aprendida; agora mudam a sintaxe e alguns detalhes de execução.</p>
+</div>
+
 <div class="page-nav"><a class="prev-btn" href="../vol2/cap10.html">← Anterior</a><a class="next-btn" href="cap02.html">Próximo →</a></div>
-</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 1</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>
+</div>
+
+<div class="footer"><p>Volume 3 — Python na Prática — Capítulo 1</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

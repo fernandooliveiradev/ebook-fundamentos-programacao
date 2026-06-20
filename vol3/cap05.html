@@ -1,30 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 3 — Python na Prática — Capítulo 5: Loops em Python</title><link rel="stylesheet" href="../estilo.css"></head>
-<body><nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 5</span><a class="next" href="cap06.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(23,72,232,.1);color:rgb(23,72,232);">Capítulo 5</span></div>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volume 3 — Python na Prática — Capítulo 5: Loops em Python</title>
+<link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 3 — Python na Prática — Cap. 5</span><a class="next" href="cap06.html">Próximo →</a></nav>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(176,74,63,.12);color:rgb(176,74,63);">Capítulo 5</span></div>
 <h2 style="margin-top:8px;">Loops em Python</h2>
+
+<p class="chapter-lead">Loops executam o mesmo bloco várias vezes. Eles existem para evitar repetição manual e para lidar com listas, contagens, validações e processos que só terminam quando uma condição muda.</p>
+
+<div class="chapter-hook">
+<p><strong>Conexão com algoritmos:</strong> repetir também precisa de ordem. Um loop tem começo, condição, corpo e avanço. Se faltar o avanço, ele pode nunca terminar.</p>
+</div>
+
 <h3>while</h3>
-<div class="code"><span class="cm"># while</span>
-contador = <span class="num">1</span>
+<p>Use <code class="inline">while</code> quando você não sabe exatamente quantas repetições serão necessárias.</p>
+<div class="code">contador = <span class="num">1</span>
+
 <span class="kw">while</span> contador &lt;= <span class="num">5</span>:
     <span class="fn">print</span>(contador)
-    contador += <span class="num">1</span>  <span class="cm"># equivale a contador = contador + 1</span></div>
+    contador += <span class="num">1</span></div>
+
 <h3>for com range</h3>
-<div class="code"><span class="cm"># for com range (1 a 10)</span>
-<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">11</span>):
+<p>Use <code class="inline">for</code> com <code class="inline">range()</code> quando a quantidade de repetições é conhecida.</p>
+<div class="code"><span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">11</span>):
     <span class="fn">print</span>(i)
-<span class="cm"># range(1, 11) gera: 1, 2, 3, ..., 10</span>
-<span class="cm"># O segundo número é EXCLUSIVO (não inclui 11)</span></div>
+
+<span class="cm"># range(1, 11) gera 1 até 10; o segundo valor é exclusivo.</span></div>
+
 <div class="callout callout-blue">
-<span class="callout-label">💡 range() — atenção ao segundo argumento!</span>
-<p style="margin-bottom:0;"><code class="inline">range(1, 11)</code> vai de 1 a <strong>10</strong> (o 11 é exclusivo). <code class="inline">range(5)</code> vai de 0 a 4. <code class="inline">range(1, 10, 2)</code> vai de 1 a 9 pulando de 2 em 2.</p>
+<span class="callout-label">range()</span>
+<p style="margin-bottom:0;"><code class="inline">range(5)</code> gera 0 a 4. <code class="inline">range(1, 10, 2)</code> gera 1, 3, 5, 7 e 9. O terceiro argumento é o passo.</p>
 </div>
+
 <h3>for percorrendo uma lista</h3>
-<div class="code"><span class="cm"># for percorrendo lista</span>
-frutas = [<span class="str">"maçã"</span>, <span class="str">"banana"</span>, <span class="str">"uva"</span>]
+<div class="code">frutas = [<span class="str">"maçã"</span>, <span class="str">"banana"</span>, <span class="str">"uva"</span>]
+
 <span class="kw">for</span> fruta <span class="kw">in</span> frutas:
     <span class="fn">print</span>(fruta)</div>
 
+<h3>Acumuladores</h3>
+<p>Um acumulador guarda um resultado parcial. Ele aparece em somas, médias, contagens e relatórios.</p>
+<div class="code">total = <span class="num">0</span>
+
+<span class="kw">for</span> numero <span class="kw">in</span> <span class="fn">range</span>(<span class="num">1</span>, <span class="num">101</span>):
+    total += numero
+
+<span class="fn">print</span>(total)</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 3.5 — Repetição</span>
+<p>Peça um número e mostre a tabuada dele de 1 a 10 usando <code class="inline">for</code>.</p>
+</div>
+
+<div class="chapter-bridge">
+<p>Loops ficam ainda mais úteis quando percorrem coleções. No próximo capítulo, você vai trabalhar com listas, tuplas e dicionários.</p>
+</div>
+
 <div class="page-nav"><a class="prev-btn" href="cap04.html">← Anterior</a><a class="next-btn" href="cap06.html">Próximo →</a></div>
-</div><div class="footer"><p>Volume 3 — Python na Prática — Capítulo 5</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div></body></html>
+</div>
+
+<div class="footer"><p>Volume 3 — Python na Prática — Capítulo 5</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>

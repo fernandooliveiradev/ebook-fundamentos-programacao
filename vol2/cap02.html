@@ -5,69 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volume 2 — Lógica de Programação — Capítulo 2: Variáveis e Tipos de Dados</title>
 <link rel="stylesheet" href="../estilo.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
-<nav class="navbar">
-<a class="index-link" href="../index.html">📚 Índice</a>
-<span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 2</span>
-<a class="next" href="cap03.html">Próximo →</a>
-</nav>
+<nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 2</span><a class="next" href="cap03.html">Próximo →</a></nav>
+
 <div class="page">
-<div class="chapter-header">
-<span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 2</span>
-</div>
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 2</span></div>
 <h2 style="margin-top:8px;">Variáveis e Tipos de Dados</h2>
 
-<p><strong>Variáveis</strong> são espaços na memória que armazenam valores temporários. Pense nelas como "caixas" com um nome, que guardam um valor que pode mudar durante o programa — por isso, "variáveis".</p>
+<p class="chapter-lead">Um algoritmo precisa lembrar informações enquanto trabalha. Variáveis são esses espaços de memória com nome, valor e significado dentro do problema.</p>
 
-<div class="diagram">
-<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;">
-<rect x="120" y="40" width="140" height="70" rx="10" fill="#FAF9F5" stroke="#D97757" stroke-width="2.5"/>
-<text x="190" y="70" text-anchor="middle" font-family="ui-monospace,monospace" font-size="13" fill="#141413">idade</text>
-<line x1="140" y1="80" x2="240" y2="80" stroke="#D1CFC5" stroke-width="1"/>
-<text x="190" y="100" text-anchor="middle" font-family="ui-serif,Georgia,serif" font-size="22" fill="#D97757">25</text>
-<text x="190" y="30" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#87867F">NOME DA VARIÁVEL</text>
-<g font-family="ui-monospace,monospace" font-size="12" fill="#3D3D3A">
-<rect x="30" y="150" width="100" height="40" rx="6" fill="#FAF9F5" stroke="#788C5D" stroke-width="1.5"/>
-<text x="80" y="167" text-anchor="middle" font-size="11" fill="#788C5D">inteiro</text>
-<text x="80" y="183" text-anchor="middle">42</text>
-<rect x="140" y="150" width="100" height="40" rx="6" fill="#FAF9F5" stroke="#788C5D" stroke-width="1.5"/>
-<text x="190" y="167" text-anchor="middle" font-size="11" fill="#788C5D">real</text>
-<text x="190" y="183" text-anchor="middle">3.14</text>
-<rect x="250" y="150" width="100" height="40" rx="6" fill="#FAF9F5" stroke="#D97757" stroke-width="1.5"/>
-<text x="300" y="167" text-anchor="middle" font-size="11" fill="#D97757">texto</text>
-<text x="300" y="183" text-anchor="middle">"Olá"</text>
-<rect x="360" y="150" width="110" height="40" rx="6" fill="#FAF9F5" stroke="#B04A3F" stroke-width="1.5"/>
-<text x="415" y="167" text-anchor="middle" font-size="11" fill="#B04A3F">lógico</text>
-<text x="415" y="183" text-anchor="middle">V / F</text>
-</g>
+<div class="chapter-hook">
+<p><strong>Gancho do capítulo anterior:</strong> quando o algoritmo de troco recebe “valor da compra” e “valor pago”, esses dados precisam ficar guardados em algum lugar. Esse lugar é a variável.</p>
+</div>
+
+<p><strong>Variáveis</strong> são espaços na memória que armazenam valores temporários. Pense nelas como caixas com etiqueta: a etiqueta é o nome, e o conteúdo é o valor.</p>
+
+<div class="diagram figure-wide">
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Variável como caixa nomeada e tipos fundamentais">
+<rect x="250" y="35" width="220" height="86" rx="12" fill="#FAF9F5" stroke="#1748e8" stroke-width="2.5"/>
+<text x="360" y="65" text-anchor="middle" font-size="14" fill="#87867F">variável</text>
+<text x="360" y="96" text-anchor="middle" font-size="24" fill="#141413" font-weight="700">idade = 30</text>
+<line x1="360" y1="124" x2="360" y2="158" stroke="#87867F" stroke-width="2"/>
+<rect x="55" y="168" width="135" height="56" rx="8" fill="#EAF0FF" stroke="#1748e8" stroke-width="1.5"/>
+<rect x="215" y="168" width="135" height="56" rx="8" fill="#EEF3E8" stroke="#788C5D" stroke-width="1.5"/>
+<rect x="375" y="168" width="135" height="56" rx="8" fill="#F8EDEA" stroke="#B04A3F" stroke-width="1.5"/>
+<rect x="535" y="168" width="135" height="56" rx="8" fill="#FAF9F5" stroke="#C9A227" stroke-width="1.5"/>
+<text x="122" y="193" text-anchor="middle" font-size="13" fill="#141413" font-weight="700">INTEIRO</text>
+<text x="122" y="211" text-anchor="middle" font-size="11" fill="#3D3D3A">30</text>
+<text x="282" y="193" text-anchor="middle" font-size="13" fill="#141413" font-weight="700">REAL</text>
+<text x="282" y="211" text-anchor="middle" font-size="11" fill="#3D3D3A">8.5</text>
+<text x="442" y="193" text-anchor="middle" font-size="13" fill="#141413" font-weight="700">TEXTO</text>
+<text x="442" y="211" text-anchor="middle" font-size="11" fill="#3D3D3A">"Ana"</text>
+<text x="602" y="193" text-anchor="middle" font-size="13" fill="#141413" font-weight="700">LÓGICO</text>
+<text x="602" y="211" text-anchor="middle" font-size="11" fill="#3D3D3A">VERDADEIRO</text>
 </svg>
-<div class="diagram-caption">Variável como caixa + os quatro tipos fundamentais</div>
+<div class="diagram-caption">Nome, valor e tipo ajudam o algoritmo a trabalhar com dados corretamente.</div>
 </div>
 
-<div class="tbl-wrap">
-<table>
-<thead><tr><th>Tipo</th><th>O que armazena</th><th>Exemplos</th></tr></thead>
-<tbody>
-<tr><td><strong>Inteiro</strong></td><td>Números sem casas decimais</td><td><code class="inline">10, -5, 0</code></td></tr>
-<tr><td><strong>Real (Float)</strong></td><td>Números com casas decimais</td><td><code class="inline">3.14, -2.5, 100.0</code></td></tr>
-<tr><td><strong>Caractere/String</strong></td><td>Cadeia de caracteres de texto</td><td><code class="inline">"João", 'A'</code></td></tr>
-<tr><td><strong>Lógico (Booleano)</strong></td><td>Estados lógicos binários</td><td><code class="inline">VERDADEIRO, FALSO</code></td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="code"><span class="cm">// Declaração de variáveis em pseudocódigo</span>
-<span class="kw">VAR</span>
+<h3>Declarando variáveis</h3>
+<p>No pseudocódigo, declaramos variáveis antes de usá-las. Isso deixa claro quais dados participam do algoritmo.</p>
+<div class="code"><span class="kw">VAR</span>
     idade: <span class="fn">INTEIRO</span>
-    altura: <span class="fn">REAL</span>
+    media: <span class="fn">REAL</span>
     nome: <span class="fn">TEXTO</span>
     aprovado: <span class="fn">LOGICO</span></div>
 
-<div class="page-nav">
-<a class="prev-btn" href="cap01.html">← Anterior</a>
-<a class="next-btn" href="cap03.html">Próximo →</a>
+<h3>Atribuindo valores</h3>
+<p>Atribuir é colocar um valor dentro da variável. O valor antigo é substituído pelo novo.</p>
+<div class="code">idade = <span class="num">30</span>
+nome = <span class="str">"Ana"</span>
+media = <span class="num">8.5</span>
+aprovado = <span class="kw">VERDADEIRO</span></div>
+
+<div class="callout callout-blue">
+<span class="callout-label">Nome de variável importa</span>
+<p style="margin-bottom:0;">Prefira nomes que expliquem o dado: <code class="inline">idadeAluno</code> é melhor que <code class="inline">x</code>. O computador aceita os dois; quem sofre ou agradece é a pessoa lendo o algoritmo.</p>
 </div>
+
+<h3>Tipos mais comuns</h3>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Tipo</th><th>Guarda</th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td>INTEIRO</td><td>números sem casas decimais</td><td>idade = 30</td></tr>
+<tr><td>REAL</td><td>números com casas decimais</td><td>preco = 19.90</td></tr>
+<tr><td>TEXTO</td><td>palavras, frases e caracteres</td><td>nome = "Ana"</td></tr>
+<tr><td>LÓGICO</td><td>verdadeiro ou falso</td><td>ativo = VERDADEIRO</td></tr>
+</tbody></table></div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 2.1 — Escolha os tipos</span>
+<p>Defina o melhor tipo para: nome de produto, quantidade em estoque, preço, cliente ativo e nota média.</p>
+<details><summary>Ver resposta</summary>
+<div class="solution-body">
+<p>Nome de produto: TEXTO. Quantidade: INTEIRO. Preço: REAL. Cliente ativo: LÓGICO. Nota média: REAL.</p>
 </div>
-<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 2</p><p><a href="https://fernandodeoliveira.pro">fernandodeoliveira.pro</a> — 2026</p></div>
-</body></html>
+</details>
+</div>
+
+<div class="chapter-bridge">
+<p>Variáveis guardam valores. No próximo capítulo, você vai aprender a operar esses valores: somar, comparar e combinar condições.</p>
+</div>
+
+<div class="page-nav"><a class="prev-btn" href="cap01.html">← Anterior</a><a class="next-btn" href="cap03.html">Próximo →</a></div>
+</div>
+
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 2</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+</body>
+</html>
