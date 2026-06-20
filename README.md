@@ -31,7 +31,7 @@ E-book educacional em HTML/CSS, dividido em 3 volumes com 27 capítulos paginado
 - Instalação (Python 3.14.6 em 19/06/2026), sintaxe, mapeamento pseudocódigo → Python
 - Operadores (operators), condicionais (conditionals), loops, listas (lists), tuplas (tuples), dicionários (dictionaries)
 - Funções (functions), tratamento de erros (error handling: try/except)
-- 8 mini-projetos completos
+- 8 mini-projetos completos + 10 exercícios integradores com resultados
 - Recursos para continuar aprendendo
 
 ## 🎨 Design

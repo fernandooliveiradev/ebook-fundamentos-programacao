@@ -110,6 +110,226 @@ texto = <span class="fn">input</span>(<span class="str">"Digite uma palavra: "</
 imc, classe = <span class="fn">calcular_imc</span>(<span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Peso (kg): "</span>)), <span class="fn">float</span>(<span class="fn">input</span>(<span class="str">"Altura (m): "</span>)))
 <span class="fn">print</span>(<span class="str">f"IMC: {imc:.1f} — {classe}"</span>)</div>
 
+<h3>Exercícios integradores de Python</h3>
+<p>Os exercícios abaixo juntam os quatro blocos da trilha: <strong>pensamento computacional</strong>, <strong>lógica de programação</strong>, <strong>algoritmos</strong> e <strong>Python</strong>. Em cada um, leia o problema, identifique as partes, pense na regra e só depois compare com a solução.</p>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 1 — Situação do aluno</span>
+<p><strong>Pensamento computacional:</strong> separar entrada, cálculo da média, regra de aprovação e saída.</p>
+<p><strong>Lógica e algoritmo:</strong> se média for maior ou igual a 7, aprovado; se for maior ou igual a 5, recuperação; caso contrário, reprovado.</p>
+<p><strong>Python:</strong> variáveis, operadores aritméticos, condicionais e função.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">def classificar_aluno(n1, n2, n3):
+    media = (n1 + n2 + n3) / 3
+    if media &gt;= 7:
+        situacao = "Aprovado"
+    elif media &gt;= 5:
+        situacao = "Recuperação"
+    else:
+        situacao = "Reprovado"
+    return media, situacao
+
+media, situacao = classificar_aluno(8, 6, 7)
+print(f"Média: {media:.1f} - {situacao}")</div>
+<p><strong>Resultado esperado:</strong> Média: 7.0 - Aprovado</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 2 — Controle de gastos</span>
+<p><strong>Pensamento computacional:</strong> decompor em lista de gastos, soma, limite e mensagem final.</p>
+<p><strong>Lógica e algoritmo:</strong> somar todos os valores e comparar com o orçamento disponível.</p>
+<p><strong>Python:</strong> lista, laço, acumulador e condicional.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">gastos = [120, 80, 35, 60]
+orcamento = 300
+soma = 0
+
+for gasto in gastos:
+    soma = soma + gasto
+
+if soma &lt;= orcamento:
+    print(f"Total: R$ {soma}. Dentro do orçamento.")
+else:
+    print(f"Total: R$ {soma}. Estourou o orçamento.")</div>
+<p><strong>Resultado esperado:</strong> Total: R$ 295. Dentro do orçamento.</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 3 — Validador de senha</span>
+<p><strong>Pensamento computacional:</strong> identificar tentativa, senha correta, limite de erros e resultado.</p>
+<p><strong>Lógica e algoritmo:</strong> repetir enquanto a senha estiver errada e ainda houver tentativas.</p>
+<p><strong>Python:</strong> <code class="inline">while</code>, contador, operador lógico e condicional.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">senha_correta = "python123"
+tentativas = ["abc", "teste", "python123"]
+indice = 0
+acessou = False
+
+while indice &lt; 3 and not acessou:
+    senha = tentativas[indice]
+    if senha == senha_correta:
+        acessou = True
+    indice = indice + 1
+
+if acessou:
+    print("Acesso liberado")
+else:
+    print("Acesso bloqueado")</div>
+<p><strong>Resultado esperado:</strong> Acesso liberado</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 4 — Relatório de notas da turma</span>
+<p><strong>Pensamento computacional:</strong> organizar notas, calcular média, encontrar maior e menor valor.</p>
+<p><strong>Lógica e algoritmo:</strong> percorrer a lista, acumular soma e comparar valores.</p>
+<p><strong>Python:</strong> listas, laço, funções prontas e formatação de saída.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">notas = [7.5, 8.0, 6.5, 9.0, 5.0]
+media = sum(notas) / len(notas)
+maior = max(notas)
+menor = min(notas)
+
+print(f"Média da turma: {media:.1f}")
+print(f"Maior nota: {maior}")
+print(f"Menor nota: {menor}")</div>
+<p><strong>Resultado esperado:</strong> média 7.2, maior nota 9.0 e menor nota 5.0.</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 5 — Consulta de produto</span>
+<p><strong>Pensamento computacional:</strong> usar um código como chave para encontrar nome e preço.</p>
+<p><strong>Lógica e algoritmo:</strong> verificar se o código existe antes de mostrar o produto.</p>
+<p><strong>Python:</strong> dicionário, chave-valor, <code class="inline">if</code> e acesso a dados.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">produtos = {
+    "A10": {"nome": "Caderno", "preco": 18.90},
+    "B20": {"nome": "Caneta", "preco": 3.50},
+    "C30": {"nome": "Mochila", "preco": 89.90}
+}
+
+codigo = "B20"
+
+if codigo in produtos:
+    produto = produtos[codigo]
+    print(f"{produto['nome']} - R$ {produto['preco']:.2f}")
+else:
+    print("Produto não encontrado")</div>
+<p><strong>Resultado esperado:</strong> Caneta - R$ 3.50</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 6 — Caixa eletrônico simples</span>
+<p><strong>Pensamento computacional:</strong> decompor valor em cédulas maiores primeiro.</p>
+<p><strong>Lógica e algoritmo:</strong> dividir o valor pela cédula, guardar a quantidade e continuar com o resto.</p>
+<p><strong>Python:</strong> lista, laço, divisão inteira e módulo.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">valor = 380
+cedulas = [100, 50, 20, 10]
+
+for cedula in cedulas:
+    quantidade = valor // cedula
+    valor = valor % cedula
+    if quantidade &gt; 0:
+        print(f"{quantidade} cédula(s) de R$ {cedula}")</div>
+<p><strong>Resultado esperado:</strong> 3 cédulas de 100, 1 de 50, 1 de 20 e 1 de 10.</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 7 — Agenda de contatos</span>
+<p><strong>Pensamento computacional:</strong> organizar contatos por nome para facilitar a busca.</p>
+<p><strong>Lógica e algoritmo:</strong> cadastrar, consultar e tratar contato inexistente.</p>
+<p><strong>Python:</strong> dicionário, função e condicional.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">agenda = {}
+
+def adicionar(nome, telefone):
+    agenda[nome] = telefone
+
+def buscar(nome):
+    if nome in agenda:
+        return agenda[nome]
+    return "Contato não encontrado"
+
+adicionar("Ana", "9999-1111")
+adicionar("Bruno", "9888-2222")
+print(buscar("Ana"))
+print(buscar("Carla"))</div>
+<p><strong>Resultado esperado:</strong> 9999-1111; depois, Contato não encontrado.</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 8 — Pares e ímpares</span>
+<p><strong>Pensamento computacional:</strong> reconhecer o padrão: números pares têm resto zero na divisão por 2.</p>
+<p><strong>Lógica e algoritmo:</strong> percorrer números, testar o resto e separar em duas listas.</p>
+<p><strong>Python:</strong> operador módulo, listas, laço e condicional.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">numeros = [1, 2, 3, 4, 5, 6]
+pares = []
+impares = []
+
+for numero in numeros:
+    if numero % 2 == 0:
+        pares.append(numero)
+    else:
+        impares.append(numero)
+
+print("Pares:", pares)
+print("Ímpares:", impares)</div>
+<p><strong>Resultado esperado:</strong> Pares: [2, 4, 6]; Ímpares: [1, 3, 5].</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 9 — Fila de atendimento</span>
+<p><strong>Pensamento computacional:</strong> entender que o primeiro a chegar deve ser o primeiro atendido.</p>
+<p><strong>Lógica e algoritmo:</strong> remover sempre o primeiro item da fila até ela ficar vazia.</p>
+<p><strong>Python:</strong> lista, <code class="inline">while</code> e remoção por posição.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">fila = ["Ana", "Bruno", "Carla"]
+
+while fila:
+    pessoa = fila.pop(0)
+    print(f"Atendendo {pessoa}")
+
+print("Fila encerrada")</div>
+<p><strong>Resultado esperado:</strong> Atendendo Ana, depois Bruno, depois Carla; por fim, Fila encerrada.</p>
+</div></details>
+</div>
+
+<div class="exercise">
+<span class="exercise-label">Exercício 10 — Boletim completo</span>
+<p><strong>Pensamento computacional:</strong> decompor em cadastro de alunos, cálculo de média, regra de aprovação e relatório.</p>
+<p><strong>Lógica e algoritmo:</strong> para cada aluno, calcular média e classificar situação.</p>
+<p><strong>Python:</strong> lista de dicionários, função, laço, operadores e condicionais.</p>
+<details><summary>Ver solução e resultado</summary><div class="solution-body">
+<div class="code">alunos = [
+    {"nome": "Ana", "notas": [8, 7, 9]},
+    {"nome": "Bruno", "notas": [5, 6, 5]},
+    {"nome": "Carla", "notas": [3, 4, 5]}
+]
+
+def classificar(media):
+    if media &gt;= 7:
+        return "Aprovado"
+    elif media &gt;= 5:
+        return "Recuperação"
+    return "Reprovado"
+
+for aluno in alunos:
+    media = sum(aluno["notas"]) / len(aluno["notas"])
+    situacao = classificar(media)
+    print(f"{aluno['nome']}: média {media:.1f} - {situacao}")</div>
+<p><strong>Resultado esperado:</strong> Ana aprovada, Bruno em recuperação e Carla reprovada.</p>
+</div></details>
+</div>
+
 
 <div class="chapter-bridge">
 <p>Depois dos projetos, vale organizar a continuidade dos estudos: quais fundamentos revisar, quais cursos escolher e que tipo de projeto construir para evoluir com autonomia.</p>
