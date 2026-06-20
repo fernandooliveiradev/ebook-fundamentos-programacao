@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volume 2 — Lógica de Programação — Capítulo 4: Tabelas Verdade</title>
+<title>Volume 2 — Lógica de Programação — Capítulo 4: Tabelas-verdade</title>
 <link rel="stylesheet" href="../estilo.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="../favicon.svg">
 </head>
 <body>
 <nav class="navbar">
@@ -17,38 +17,77 @@
 <div class="chapter-header">
 <span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 4</span>
 </div>
-<h2 style="margin-top:8px;">Tabelas Verdade</h2>
+<h2 style="margin-top:8px;">Tabelas-verdade</h2>
 
 <div class="chapter-hook">
-<p>Tabela verdade é o mapa completo de uma condição. Ela evita chute e mostra exatamente quando uma expressão será verdadeira ou falsa.</p>
+<p>Uma tabela-verdade (<em>truth table</em>) mostra todos os resultados possíveis de uma expressão lógica. Ela tira o chute da decisão: para cada combinação de entradas, vemos com clareza se o resultado será verdadeiro ou falso.</p>
 </div>
 
-<p>As <strong>tabelas verdade</strong> mostram todos os resultados possíveis de uma operação lógica. São fundamentais para entender condicionais. <strong>Decore isto!</strong></p>
+<p>Em programação, quase toda decisão nasce de uma <strong>condição</strong> (<em>condition</em>): uma pergunta que o programa consegue responder com <strong>VERDADEIRO</strong> ou <strong>FALSO</strong>. Quando combinamos condições com operadores lógicos, criamos uma <strong>expressão booleana</strong> (<em>Boolean expression</em>).</p>
 
-<h3>Tabela completa: E, OU, XOU</h3>
+<div class="callout callout-blue">
+<span class="callout-label">Vocabulário essencial</span>
+<ul style="margin-bottom:0;">
+<li><strong>Valor lógico</strong> (<em>Boolean value</em>): resultado verdadeiro ou falso.</li>
+<li><strong>Proposição</strong> (<em>proposition</em>): afirmação que pode ser avaliada como verdadeira ou falsa.</li>
+<li><strong>Condição</strong> (<em>condition</em>): expressão usada para decidir se um bloco deve executar.</li>
+<li><strong>Operador lógico</strong> (<em>logical operator</em>): operador que combina ou inverte condições, como E, OU e NAO.</li>
+</ul>
+</div>
+
+<h3>Tabela completa: E (AND), OU (OR), XOU (XOR)</h3>
+<p>Considere duas condições: <strong>A</strong> e <strong>B</strong>. A tabela abaixo mostra como cada operador lógico responde para todas as combinações possíveis.</p>
 <div class="tbl-wrap">
 <table>
-<thead><tr><th style="text-align:center;">A</th><th style="text-align:center;">B</th><th style="text-align:center;">A E B</th><th style="text-align:center;">A OU B</th><th style="text-align:center;">A XOU B</th></tr></thead>
+<thead><tr><th style="text-align:center;">A</th><th style="text-align:center;">B</th><th style="text-align:center;">A E B<br><small>AND</small></th><th style="text-align:center;">A OU B<br><small>OR</small></th><th style="text-align:center;">A XOU B<br><small>XOR</small></th><th>Leitura prática</th></tr></thead>
 <tbody>
-<tr style="text-align:center;"><td>V</td><td>V</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--rust);">F</td></tr>
-<tr style="text-align:center;"><td>V</td><td>F</td><td style="color:var(--rust);">F</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--olive);font-weight:bold;">V</td></tr>
-<tr style="text-align:center;"><td>F</td><td>V</td><td style="color:var(--rust);">F</td><td style="color:var(--olive);font-weight:bold;">V</td><td style="color:var(--olive);font-weight:bold;">V</td></tr>
-<tr style="text-align:center;"><td>F</td><td>F</td><td style="color:var(--rust);">F</td><td style="color:var(--rust);">F</td><td style="color:var(--rust);">F</td></tr>
+<tr><td style="text-align:center;">V</td><td style="text-align:center;">V</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td style="text-align:center;color:var(--rust);">F</td><td>As duas condições são verdadeiras.</td></tr>
+<tr><td style="text-align:center;">V</td><td style="text-align:center;">F</td><td style="text-align:center;color:var(--rust);">F</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td>Apenas A é verdadeira.</td></tr>
+<tr><td style="text-align:center;">F</td><td style="text-align:center;">V</td><td style="text-align:center;color:var(--rust);">F</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td>Apenas B é verdadeira.</td></tr>
+<tr><td style="text-align:center;">F</td><td style="text-align:center;">F</td><td style="text-align:center;color:var(--rust);">F</td><td style="text-align:center;color:var(--rust);">F</td><td style="text-align:center;color:var(--rust);">F</td><td>Nenhuma condição é verdadeira.</td></tr>
 </tbody>
 </table>
 </div>
 
-<div class="callout callout-blue">
-<span class="callout-label">💡 Resumo</span>
+<div class="callout callout-olive">
+<span class="callout-label">Como ler sem decorar</span>
 <ul style="margin-bottom:0;">
 <li><strong>E (AND):</strong> só é verdadeiro se <strong>ambas</strong> forem verdadeiras.</li>
 <li><strong>OU (OR):</strong> é verdadeiro se <strong>pelo menos uma</strong> for verdadeira.</li>
 <li><strong>XOU (XOR):</strong> é verdadeiro se as duas forem <strong>diferentes</strong> (uma V e uma F).</li>
-<li><strong>NAO (NOT):</strong> inverte o valor. V vira F, F vira V.</li>
 </ul>
 </div>
 
-<h3>Tabela rápida para consulta</h3>
+<h3>Negação: NAO (NOT)</h3>
+<p>O operador <strong>NAO</strong> (<em>NOT</em>) não combina duas condições; ele inverte uma condição. Se a expressão era verdadeira, passa a ser falsa. Se era falsa, passa a ser verdadeira.</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th style="text-align:center;">A</th><th style="text-align:center;">NAO A<br><small>NOT A</small></th><th>Exemplo</th></tr></thead>
+<tbody>
+<tr><td style="text-align:center;">V</td><td style="text-align:center;color:var(--rust);">F</td><td>Se “senha correta” é verdadeira, “NAO senha correta” é falsa.</td></tr>
+<tr><td style="text-align:center;">F</td><td style="text-align:center;color:var(--olive);font-weight:bold;">V</td><td>Se “campo vazio” é falso, “NAO campo vazio” é verdadeiro.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Exemplo aplicado: acesso a um sistema</h3>
+<p>Imagine duas condições: <code class="inline">senhaCorreta</code> e <code class="inline">usuarioAtivo</code>. Para liberar o acesso, normalmente precisamos das duas verdadeiras:</p>
+<div class="code"><span class="kw">SE</span> senhaCorreta <span class="kw">E</span> usuarioAtivo <span class="kw">ENTÃO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Acesso liberado"</span>
+<span class="kw">SENÃO</span>
+    <span class="kw">ESCREVA</span> <span class="str">"Acesso bloqueado"</span>
+<span class="kw">FIM SE</span></div>
+
+<p>Se uma das condições falhar, o acesso não deve ser liberado. A tabela-verdade ajuda a verificar essa regra antes de transformar a lógica em código.</p>
+
+<h3>Erros comuns</h3>
+<div class="concept-grid">
+<div class="learning-card"><h4>Confundir E com OU</h4><p><strong>E (AND)</strong> exige tudo. <strong>OU (OR)</strong> aceita pelo menos uma condição verdadeira.</p></div>
+<div class="learning-card"><h4>Usar XOU sem necessidade</h4><p><strong>XOU (XOR)</strong> serve quando exatamente uma condição deve ser verdadeira, não as duas.</p></div>
+<div class="learning-card"><h4>Negar a expressão errada</h4><p><strong>NAO (NOT)</strong> muda o sentido da condição. Use parênteses quando a expressão for composta.</p></div>
+</div>
+
+<h3>Consulta rápida</h3>
 <div class="code">V E V = V      V OU V = V      V XOU V = F
 V E F = F      V OU F = V      V XOU F = V
 F E V = F      F OU V = V      F XOU V = V
@@ -58,7 +97,7 @@ NAO V = F
 NAO F = V</div>
 
 <div class="exercise">
-<span class="exercise-label">📝 Exercício 2.1 — Tabelas Verdade</span>
+<span class="exercise-label">📝 Exercício 2.1 — Tabelas-verdade</span>
 <p>Avalie as seguintes expressões, determinando se o resultado é <strong>VERDADEIRO</strong> ou <strong>FALSO</strong>:</p>
 <ul>
 <li>a) <code class="inline">(5 &gt; 3) E (10 = 10)</code></li>
@@ -81,12 +120,12 @@ NAO F = V</div>
 
 
 <div class="chapter-bridge">
-<p>Com as combinações lógicas claras, podemos usar essas condições para escolher caminhos dentro de um algoritmo.</p>
+<p>Com as combinações lógicas claras, as condicionais ficam mais fáceis de escrever e revisar. Uma boa decisão no algoritmo começa com uma condição bem formulada.</p>
 </div>
 <div class="page-nav">
 <a class="prev-btn" href="cap03.html">← Anterior</a>
 <a class="next-btn" href="cap05.html">Próximo →</a>
 </div>
 </div>
-<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 4</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
+<div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 4: Tabelas-verdade</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
 </body></html>

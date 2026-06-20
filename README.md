@@ -21,16 +21,16 @@ E-book educacional em HTML/CSS, dividido em 3 volumes com 27 capítulos paginado
 - 6 exercícios com soluções
 
 ### Volume 2 — Lógica de Programação (10 capítulos)
-- Algoritmos, variáveis, operadores, tabelas verdade
-- Condicionais (SE/SENÃO/ESCOLHA), laços (PARA/ENQUANTO/FAÇA-ENQUANTO)
-- Estruturas de dados (vetores, matrizes, listas, pilhas, dicionários)
+- Algoritmos (algorithms), variáveis (variables), operadores (operators), tabelas-verdade (truth tables)
+- Condicionais (conditionals: SE/SENAO/ESCOLHA), laços (loops: PARA/ENQUANTO/FAÇA-ENQUANTO)
+- Estruturas de dados (data structures: vetores, matrizes, listas, pilhas, dicionários)
 - Funções, procedimentos, recursividade
 - 35 exercícios com respostas
 
 ### Volume 3 — Python na Prática (10 capítulos)
 - Instalação (Python 3.14.6 em 19/06/2026), sintaxe, mapeamento pseudocódigo → Python
-- Operadores, condicionais, loops, listas, tuplas, dicionários
-- Funções, tratamento de erros (try/except)
+- Operadores (operators), condicionais (conditionals), loops, listas (lists), tuplas (tuples), dicionários (dictionaries)
+- Funções (functions), tratamento de erros (error handling: try/except)
 - 8 mini-projetos completos
 - Recursos para continuar aprendendo
 

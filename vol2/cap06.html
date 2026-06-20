@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volume 2 — Lógica de Programação — Capítulo 6: Laços de Repetição</title>
 <link rel="stylesheet" href="../estilo.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="../favicon.svg">
 </head>
 <body>
 <nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 6</span><a class="next" href="cap07.html">Próximo →</a></nav>
@@ -13,13 +13,13 @@
 <h2 style="margin-top:8px;">Laços de Repetição</h2>
 
 <div class="chapter-hook">
-<p>Laços resolvem tarefas repetitivas com clareza: contar, somar, procurar, validar e percorrer dados sem copiar o mesmo bloco várias vezes.</p>
+<p>Laços de repetição (<em>loops</em>) resolvem tarefas repetitivas com clareza: contar, somar, procurar, validar e percorrer dados sem copiar o mesmo bloco várias vezes.</p>
 </div>
 
-<p>Laços de repetição permitem executar um bloco de código <strong>múltiplas vezes</strong>, evitando repetição manual.</p>
+<p>Um laço executa um bloco de código (<em>code block</em>) múltiplas vezes, evitando repetição manual.</p>
 
 <h3>PARA (FOR)</h3>
-<p>Usado quando sabemos <strong>exatamente quantas vezes</strong> repetir o bloco.</p>
+<p><strong>PARA</strong> se aproxima do <code class="inline">for</code>: use quando sabemos exatamente quantas vezes repetir o bloco.</p>
 <div class="code"><span class="kw">PARA</span> variavel <span class="kw">DE</span> inicio <span class="kw">ATE</span> fim <span class="kw">PASSO</span> incremento
     <span class="cm">// código a repetir</span>
 <span class="kw">FIM PARA</span></div>
@@ -35,7 +35,7 @@
 <span class="kw">FIM</span></div>
 
 <h3>ENQUANTO (WHILE)</h3>
-<p>Usado quando <strong>não sabemos</strong> a quantidade de repetições antecipadamente. A condição é verificada <strong>antes</strong> de cada iteração.</p>
+<p><strong>ENQUANTO</strong> se aproxima do <code class="inline">while</code>: use quando não sabemos a quantidade de repetições antecipadamente. A condição é verificada antes de cada iteração.</p>
 <div class="code"><span class="kw">ALGORITMO</span> ValidaSenha
 <span class="kw">VAR</span> senha, tentativa: <span class="fn">TEXTO</span>; tentativas: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
@@ -57,7 +57,7 @@
 <span class="kw">FIM</span></div>
 
 <h3>FAÇA-ENQUANTO (DO WHILE)</h3>
-<p>Executa o bloco <strong>obrigatoriamente pelo menos uma vez</strong> antes de avaliar a condição.</p>
+<p><strong>FAÇA-ENQUANTO</strong> se aproxima do padrão <em>do while</em>: executa o bloco obrigatoriamente pelo menos uma vez antes de avaliar a condição.</p>
 <div class="code"><span class="kw">ALGORITMO</span> Menu
 <span class="kw">VAR</span> opcao: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>

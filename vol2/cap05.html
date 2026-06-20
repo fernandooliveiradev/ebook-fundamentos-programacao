@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volume 2 — Lógica de Programação — Capítulo 5: Condicionais</title>
 <link rel="stylesheet" href="../estilo.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231748e8'/%3E%3Cpath d='M9 17h14M16 10l7 7-7 7' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="../favicon.svg">
 </head>
 <body>
 <nav class="navbar">
@@ -20,12 +20,13 @@
 <h2 style="margin-top:8px;">Condicionais</h2>
 
 <div class="chapter-hook">
-<p>Condicionais são pontos de decisão. Elas fazem o algoritmo reagir a dados diferentes sem precisar escrever vários programas separados.</p>
+<p>Condicionais (<em>conditionals</em>) são pontos de decisão. Elas fazem o algoritmo reagir a dados diferentes sem precisar escrever vários programas separados.</p>
 </div>
 
-<p>Condicionais permitem que o programa <strong>tome decisões</strong>: executa um bloco de código se uma condição for verdadeira e outro se for falsa.</p>
+<p>Uma condicional avalia uma <strong>condição</strong> (<em>condition</em>) e escolhe qual <strong>bloco de código</strong> (<em>code block</em>) deve executar. Se a condição for verdadeira, segue pelo caminho verdadeiro; se for falsa, segue pelo caminho alternativo.</p>
 
-<h3>SE / SENÃO (if / else)</h3>
+<h3>SE / SENAO (if / else)</h3>
+<p><strong>SE</strong> corresponde a <code class="inline">if</code>. <strong>SENAO</strong> corresponde a <code class="inline">else</code>. O primeiro bloco trata a condição verdadeira; o segundo trata a condição falsa.</p>
 <div class="code"><span class="kw">SE</span> condição <span class="kw">ENTÃO</span>
     <span class="cm">// código se verdadeiro</span>
 <span class="kw">SENÃO</span>
@@ -45,7 +46,8 @@
     <span class="kw">FIM SE</span>
 <span class="kw">FIM</span></div>
 
-<h3>SENÃO SE — Múltiplas condições</h3>
+<h3>SENAO SE — Múltiplas condições (else if / elif)</h3>
+<p><strong>SENAO SE</strong> é usado quando existem mais de dois caminhos. Em muitas linguagens aparece como <code class="inline">else if</code>; em Python, a palavra usada é <code class="inline">elif</code>.</p>
 <div class="code"><span class="kw">ALGORITMO</span> ClassificarNota
 <span class="kw">VAR</span> nota: <span class="fn">REAL</span>
 <span class="kw">INICIO</span>
@@ -60,8 +62,8 @@
     <span class="kw">FIM SE</span>
 <span class="kw">FIM</span></div>
 
-<h3>ESCOLHA (case / switch)</h3>
-<p>Usado quando há múltiplas opções baseadas no valor de uma variável:</p>
+<h3>ESCOLHA / CASO (switch / case)</h3>
+<p><strong>ESCOLHA</strong> e <strong>CASO</strong> representam uma decisão baseada em valores específicos de uma variável. Em inglês, esse padrão costuma aparecer como <em>switch/case</em>.</p>
 <div class="code"><span class="kw">ALGORITMO</span> DiaSemana
 <span class="kw">VAR</span> dia: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
@@ -101,7 +103,7 @@
 
 
 <div class="chapter-bridge">
-<p>Quando uma decisão precisa acontecer várias vezes, entramos no território dos laços de repetição.</p>
+<p>Quando uma decisão precisa acontecer várias vezes, a lógica passa a depender de repetição. É aí que entram os laços, conhecidos em inglês como <em>loops</em>.</p>
 </div>
 <div class="page-nav">
 <a class="prev-btn" href="cap04.html">← Anterior</a>
