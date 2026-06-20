@@ -9,55 +9,103 @@
 </head>
 <body>
 <nav class="navbar"><a class="index-link" href="../index.html">📚 Índice</a><span class="navbar-brand">Volume 2 — Lógica de Programação — Cap. 6</span><a class="next" href="cap07.html">Próximo →</a></nav>
-<div class="page"><div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 6</span></div>
+
+<div class="page">
+<div class="chapter-header"><span class="chapter-num" style="background:rgba(120,140,93,.1);color:rgb(120,140,93);">Capítulo 6</span></div>
 <h2 style="margin-top:8px;">Laços de Repetição</h2>
 
+<p class="chapter-lead">Um laço de repetição, em inglês <em>loop</em>, serve para executar a mesma ideia várias vezes sem copiar o mesmo bloco de código. Em vez de escrever dez comandos parecidos, você escreve uma regra de repetição.</p>
+
 <div class="chapter-hook">
-<p>Laços de repetição (<em>loops</em>) resolvem tarefas repetitivas com clareza: contar, somar, procurar, validar e percorrer dados sem copiar o mesmo bloco várias vezes.</p>
+<p>Pense em uma chamada escolar. O professor não escreve uma instrução diferente para cada aluno. Ele segue uma regra: para cada nome da lista, chamar o aluno e marcar presença. Esse “para cada” é exatamente o tipo de raciocínio que um laço representa.</p>
 </div>
 
-<p>Um laço executa um bloco de código (<em>code block</em>) múltiplas vezes, evitando repetição manual.</p>
+<h3>A ideia antes do código</h3>
+<p>Todo laço tem três perguntas importantes. Se o aluno consegue responder essas perguntas, fica muito mais fácil escolher entre <strong>PARA</strong>, <strong>ENQUANTO</strong> e <strong>FAÇA-ENQUANTO</strong>.</p>
 
-<h3>PARA (FOR)</h3>
-<p><strong>PARA</strong> se aproxima do <code class="inline">for</code>: use quando sabemos exatamente quantas vezes repetir o bloco.</p>
-<div class="code"><span class="kw">PARA</span> variavel <span class="kw">DE</span> inicio <span class="kw">ATE</span> fim <span class="kw">PASSO</span> incremento
-    <span class="cm">// código a repetir</span>
+<div class="concept-grid">
+<div class="learning-card"><h4>O que repete?</h4><p>Identifique o bloco de código (<em>code block</em>) que será executado mais de uma vez.</p></div>
+<div class="learning-card"><h4>Quando começa?</h4><p>Defina o valor inicial ou a primeira situação da repetição.</p></div>
+<div class="learning-card"><h4>Quando para?</h4><p>Determine a condição (<em>condition</em>) que encerra o laço.</p></div>
+</div>
+
+<div class="callout callout-blue">
+<span class="callout-label">Leitura simples</span>
+<p>Um laço pode ser lido assim: “enquanto esta regra for verdadeira, repita este bloco” ou “para cada valor dentro deste intervalo, execute este bloco”.</p>
+</div>
+
+<h3>PARA (for): quando sabemos quantas vezes repetir</h3>
+<p>Use <strong>PARA</strong>, em inglês <code class="inline">for</code>, quando a quantidade de repetições já está clara. Ele é comum para contar, fazer tabuadas, somar intervalos e percorrer posições conhecidas.</p>
+
+<div class="code"><span class="kw">PARA</span> contador <span class="kw">DE</span> inicio <span class="kw">ATE</span> fim <span class="kw">PASSO</span> incremento
+    <span class="cm">// bloco repetido</span>
 <span class="kw">FIM PARA</span></div>
-<p>Exemplo: tabuada:</p>
+
+<div class="process-panel">
+<div>
+<h4>Como ler o PARA</h4>
+<p>O contador começa em um valor, muda a cada volta e para quando chega ao limite definido.</p>
+</div>
+<ol class="process-list">
+<li>Comece o contador.</li>
+<li>Execute o bloco.</li>
+<li>Atualize o contador.</li>
+<li>Verifique se ainda deve repetir.</li>
+</ol>
+</div>
+
+<h4>Exemplo: tabuada</h4>
+<p>Na tabuada, sabemos que queremos repetir de 1 até 10. Por isso, <strong>PARA</strong> é a escolha mais direta.</p>
 <div class="code"><span class="kw">ALGORITMO</span> Tabuada
 <span class="kw">VAR</span> numero, i: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
     <span class="kw">ESCREVA</span> <span class="str">"Digite um número:"</span>
     <span class="kw">LEIA</span> numero
-    <span class="kw">PARA</span> i = <span class="num">1</span> <span class="kw">ATE</span> <span class="num">10</span> <span class="kw">PASSO</span> <span class="num">1</span>
+
+    <span class="kw">PARA</span> i <span class="kw">DE</span> <span class="num">1</span> <span class="kw">ATE</span> <span class="num">10</span> <span class="kw">PASSO</span> <span class="num">1</span>
         <span class="kw">ESCREVA</span> numero, <span class="str">" x "</span>, i, <span class="str">" = "</span>, numero * i
     <span class="kw">FIM PARA</span>
 <span class="kw">FIM</span></div>
 
-<h3>ENQUANTO (WHILE)</h3>
-<p><strong>ENQUANTO</strong> se aproxima do <code class="inline">while</code>: use quando não sabemos a quantidade de repetições antecipadamente. A condição é verificada antes de cada iteração.</p>
+<h3>ENQUANTO (while): quando a repetição depende de uma condição</h3>
+<p>Use <strong>ENQUANTO</strong>, em inglês <code class="inline">while</code>, quando não sabemos de antemão quantas vezes o bloco vai repetir. O laço continua enquanto a condição for verdadeira.</p>
+
+<div class="callout callout-olive">
+<span class="callout-label">Ponto importante</span>
+<p>No <strong>ENQUANTO</strong>, a condição é testada antes da primeira execução. Se ela já começar falsa, o bloco não executa nenhuma vez.</p>
+</div>
+
+<h4>Exemplo: validar senha</h4>
+<p>Neste exemplo, não sabemos se o usuário vai acertar na primeira, segunda ou terceira tentativa. Por isso usamos uma condição: repetir enquanto a senha estiver errada e ainda houver tentativas.</p>
 <div class="code"><span class="kw">ALGORITMO</span> ValidaSenha
-<span class="kw">VAR</span> senha, tentativa: <span class="fn">TEXTO</span>; tentativas: <span class="fn">INTEIRO</span>
+<span class="kw">VAR</span> senhaCorreta, tentativa: <span class="fn">TEXTO</span>
+<span class="kw">VAR</span> tentativas: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
-    senha = <span class="str">"1234"</span>
+    senhaCorreta = <span class="str">"1234"</span>
+    tentativa = <span class="str">""</span>
     tentativas = <span class="num">0</span>
-    <span class="kw">ENQUANTO</span> tentativa &lt;&gt; senha E tentativas &lt; <span class="num">3</span> <span class="kw">FAÇA</span>
+
+    <span class="kw">ENQUANTO</span> tentativa &lt;&gt; senhaCorreta <span class="kw">E</span> tentativas &lt; <span class="num">3</span> <span class="kw">FACA</span>
         <span class="kw">ESCREVA</span> <span class="str">"Digite a senha:"</span>
         <span class="kw">LEIA</span> tentativa
         tentativas = tentativas + <span class="num">1</span>
-        <span class="kw">SE</span> tentativa &lt;&gt; senha <span class="kw">ENTÃO</span>
-            <span class="kw">ESCREVA</span> <span class="str">"Senha incorreta. Tentativa "</span>, tentativas, <span class="str">" de 3"</span>
-        <span class="kw">FIM SE</span>
     <span class="kw">FIM ENQUANTO</span>
-    <span class="kw">SE</span> tentativa = senha <span class="kw">ENTÃO</span>
-        <span class="kw">ESCREVA</span> <span class="str">"Acesso liberado!"</span>
-    <span class="kw">SENÃO</span>
-        <span class="kw">ESCREVA</span> <span class="str">"Acesso bloqueado."</span>
+
+    <span class="kw">SE</span> tentativa = senhaCorreta <span class="kw">ENTAO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Acesso liberado"</span>
+    <span class="kw">SENAO</span>
+        <span class="kw">ESCREVA</span> <span class="str">"Acesso bloqueado"</span>
     <span class="kw">FIM SE</span>
 <span class="kw">FIM</span></div>
 
-<h3>FAÇA-ENQUANTO (DO WHILE)</h3>
-<p><strong>FAÇA-ENQUANTO</strong> se aproxima do padrão <em>do while</em>: executa o bloco obrigatoriamente pelo menos uma vez antes de avaliar a condição.</p>
+<div class="callout callout-rust">
+<span class="callout-label">Atenção: loop infinito</span>
+<p>Loop infinito (<em>infinite loop</em>) acontece quando a condição nunca fica falsa. Sempre garanta que algo dentro do laço altere a variável que controla a repetição.</p>
+</div>
+
+<h3>FAÇA-ENQUANTO (do while): quando precisa executar pelo menos uma vez</h3>
+<p>Use <strong>FAÇA-ENQUANTO</strong>, em inglês <em>do while</em>, quando o bloco precisa rodar antes do teste. Ele é comum em menus, porque o usuário precisa ver as opções pelo menos uma vez.</p>
+
 <div class="code"><span class="kw">ALGORITMO</span> Menu
 <span class="kw">VAR</span> opcao: <span class="fn">INTEIRO</span>
 <span class="kw">INICIO</span>
@@ -69,42 +117,47 @@
     <span class="kw">ENQUANTO</span> opcao &lt;&gt; <span class="num">3</span>
 <span class="kw">FIM</span></div>
 
-<div class="callout callout-rust">
-<span class="callout-label">⚠️ Atenção — Loop infinito!</span>
-<p style="margin-bottom:0;">Se a condição do ENQUANTO nunca se torna falsa, o laço executa para sempre! Sempre garanta que algo dentro do laço <strong>modifique</strong> a condição.</p>
-</div>
-
+<h3>Como escolher o laço certo</h3>
 <div class="tbl-wrap">
 <table>
-<thead><tr><th>Tipo</th><th>Quando usar</th><th>Verifica antes?</th></tr></thead>
+<thead><tr><th>Tipo</th><th>Nome em inglês</th><th>Quando usar</th><th>Teste da condição</th></tr></thead>
 <tbody>
-<tr><td><strong>PARA</strong></td><td>Quando sabemos o número exato de repetições</td><td>Sim</td></tr>
-<tr><td><strong>ENQUANTO</strong></td><td>Quando a repetição depende de uma condição dinâmica</td><td>Sim (pode não executar nenhuma vez)</td></tr>
-<tr><td><strong>FAÇA-ENQUANTO</strong></td><td>Quando precisamos executar pelo menos 1 vez</td><td>Não (executa 1 vez antes de verificar)</td></tr>
+<tr><td><strong>PARA</strong></td><td><code class="inline">for</code></td><td>Quando sabemos o número exato de repetições.</td><td>Antes de cada volta.</td></tr>
+<tr><td><strong>ENQUANTO</strong></td><td><code class="inline">while</code></td><td>Quando a repetição depende de uma condição dinâmica.</td><td>Antes de cada volta; pode não executar nenhuma vez.</td></tr>
+<tr><td><strong>FAÇA-ENQUANTO</strong></td><td><em>do while</em></td><td>Quando o bloco precisa executar pelo menos uma vez.</td><td>Depois da primeira execução.</td></tr>
 </tbody>
 </table>
 </div>
 
+<h3>Erros comuns de iniciantes</h3>
+<div class="concept-grid">
+<div class="learning-card"><h4>Esquecer de atualizar</h4><p>Se o contador ou a variável de controle não muda, o laço pode nunca terminar.</p></div>
+<div class="learning-card"><h4>Escolher o laço errado</h4><p>Se você sabe que vai de 1 a 10, use <strong>PARA</strong>. Se depende de uma resposta do usuário, geralmente use <strong>ENQUANTO</strong>.</p></div>
+<div class="learning-card"><h4>Colocar código fora do bloco</h4><p>Indentação e organização visual ajudam a mostrar o que repete e o que executa apenas uma vez.</p></div>
+</div>
+
 <div class="exercise">
-<span class="exercise-label">📝 Exercício 2.3 — Laços de Repetição</span>
-<p>Escreva um pseudocódigo que <strong>somar os números de 1 a 100</strong> e mostre o resultado.</p>
+<span class="exercise-label">Exercício 2.3 — Laços de repetição</span>
+<p>Escreva um pseudocódigo para <strong>somar os números de 1 a 100</strong> e mostrar o resultado final.</p>
 <details>
 <summary>Ver solução</summary>
 <div class="solution-body">
-<div class="code">soma ← 0
-<span class="kw">PARA</span> i <span class="kw">DE</span> 1 <span class="kw">ATE</span> 100 <span class="kw">FAÇA</span>
-    soma ← soma + i
+<div class="code">soma = <span class="num">0</span>
+
+<span class="kw">PARA</span> i <span class="kw">DE</span> <span class="num">1</span> <span class="kw">ATE</span> <span class="num">100</span> <span class="kw">PASSO</span> <span class="num">1</span>
+    soma = soma + i
 <span class="kw">FIM PARA</span>
-<span class="kw">ESCREVA</span> <span class="str">"A soma é: "</span> + soma</div>
-<p><strong>Resultado: 5050</strong> (a famosa soma de Gauss!)</p>
+
+<span class="kw">ESCREVA</span> <span class="str">"A soma é: "</span>, soma</div>
+<p><strong>Resultado:</strong> 5050.</p>
 </div>
 </details>
 </div>
 
-
 <div class="chapter-bridge">
-<p>Repetição fica mais útil quando existe um conjunto de dados a percorrer. Para isso, precisamos entender vetores, matrizes e outras estruturas.</p>
+<p>Depois de entender repetição, fica natural trabalhar com vários dados de uma vez. O próximo tema organiza esses dados em vetores, matrizes e outras estruturas.</p>
 </div>
+
 <div class="page-nav"><a class="prev-btn" href="cap05.html">← Anterior</a><a class="next-btn" href="cap07.html">Próximo →</a></div>
 </div>
 <div class="footer"><p>Volume 2 — Lógica de Programação — Capítulo 6</p><p class="author-credit">Autoria: Fernando de Oliveira — 2026</p><p class="author-links"><a href="https://fernandodeoliveira.pro">Site</a><span>·</span><a href="https://github.com/fernandooliveiradev">GitHub</a><span>·</span><a href="https://www.linkedin.com/in/fernandodeoliveiraprod">LinkedIn</a></p></div>
